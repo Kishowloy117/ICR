@@ -89,89 +89,235 @@
 
 "use client";
 
-import Image from "next/image";
+import Carousel from "./Carousel";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#041a2e] via-[#062944] to-[#041a2e]">
       {/* Hero Content */}
-      <section className="mx-auto max-w-7xl px-4 pt-10 pb-24 text-center">
-        {/* Badge */}
-        <div className="mb-6 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs text-slate-200 backdrop-blur">
-          Research. Insight. Strategic Clarity
-        </div>
-
-        {/* Heading */}
-        <h1 className="mx-auto max-w-3xl text-4xl font-bold leading-tight text-white md:text-6xl">
-          We turn complex data
+      <section className="mx-auto max-w-7xl px-4 pt-6 pb-12 text-center">
+        <h1 className="mx-auto max-w-3xl text-3xl font-extrabold leading-tight text-white md:text-5xl">
+          Turning Insight into
           <br />
-          into <span className="text-emerald-400">clear direction</span>
+          <span className="text-emerald-400">Informed Decisions</span>
         </h1>
 
-        {/* Description */}
-        <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-slate-300 md:text-base">
-          ICR helps you understand people, markets, and performance through
-          reliable research. With nationwide reach and strict quality checks,
-          you get insights you can trust and act on.
+        <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
+          Insight Consultancy & Research (ICR) partners with organizations to
+          deliver evidence-based research, strategic analysis, and actionable
+          insights.
         </p>
 
+        <p className="mx-auto mt-2 max-w-2xl text-sm font-semibold leading-relaxed text-slate-200 md:text-base">
+          We help clients navigate complexity and make confident, informed
+          decisions.
+        </p>
+
+        {/* Feature Row */}
+        <div className="mt-6 mx-auto flex w-full max-w-3xl flex-col items-stretch gap-3 text-left text-slate-200 sm:flex-row sm:items-center">
+          {/* Card 1 */}
+          <div className="w-full sm:flex-1 rounded-lg p-4 sm:p-5 border-l-4 border-emerald-400/30">
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 items-center justify-center rounded-md text-emerald-400">
+                <svg
+                  className="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 15V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M7 10l5 5 5-5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+
+              <div>
+                <div className="text-sm font-semibold text-white">Research</div>
+                <div className="mt-1 text-xs text-slate-200">
+                  Rigorous methodologies and reliable evidence
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Arrow (visible on sm+) */}
+          <div className="hidden sm:flex items-center justify-center px-2">
+            <svg
+              className="h-6 w-6 text-emerald-300"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 12h14"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M13 5l7 7-7 7"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+
+          {/* Card 2 */}
+          <div className="w-full sm:flex-1 rounded-lg p-4 sm:p-5 border-l-4 border-slate-200/10">
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 items-center justify-center rounded-md text-emerald-400">
+                <svg
+                  className="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3 3v18h18"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M7 14l4-4 4 4"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+
+              <div>
+                <div className="text-sm font-semibold text-white">Insight</div>
+                <div className="mt-1 text-xs text-slate-200">
+                  Clear analysis that explains what the data means
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Arrow (visible on sm+) */}
+          <div className="hidden sm:flex items-center justify-center px-2">
+            <svg
+              className="h-6 w-6 text-emerald-300"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 12h14"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M13 5l7 7-7 7"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+
+          {/* Card 3 */}
+          <div className="w-full sm:flex-1 rounded-lg p-4 sm:p-5 border-l-4 border-emerald-400/30">
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 items-center justify-center rounded-md text-emerald-400">
+                <svg
+                  className="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  />
+                  <path
+                    d="M12 8v4l2 2"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+
+              <div>
+                <div className="text-sm font-semibold text-white">
+                  Strategic Clarity
+                </div>
+                <div className="mt-1 text-xs text-slate-200">
+                  Actionable direction for confident decisions
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* CTA Buttons */}
-        <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button className="bg-emerald-500 px-6 py-5 text-sm font-semibold hover:bg-emerald-600">
+        <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Button className="bg-emerald-500 px-5 py-2.5 text-sm font-semibold hover:bg-emerald-600">
             Request a Consultation »
           </Button>
           <Button
-            variant="outline"
-            className="border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black"
+            // variant="outline"
+            className="bg-transparent border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black"
           >
             Explore Our Services
           </Button>
         </div>
       </section>
 
-      {/* Image Grid */}
-      <section className="mx-auto max-w-7xl px-4 pb-28">
-        <div className="grid gap-6 md:grid-cols-3 items-start">
-          {/* Left Large Image */}
-          <div className="relative md:col-span-2">
-            <div className="relative h-[520px] overflow-hidden rounded-[28px]">
-              <Image
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-                alt="Team"
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            {/* Experience Badge (cut-out style) */}
-            <div className="absolute -bottom-6 left-6 rounded-full bg-[#041a2e] px-5 py-2 text-xs font-medium text-white shadow-lg ring-1 ring-white/10">
-              ★ 16 Years+ Experience
-            </div>
-          </div>
-
-          {/* Right Stacked Images */}
-          <div className="flex flex-col gap-6">
-            <div className="relative -mt-6 h-48 overflow-hidden rounded-[20px] md:h-64">
-              <Image
-                src="https://images.unsplash.com/photo-1556761175-4b46a572b786"
-                alt="Meeting"
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            <div className="relative h-48 overflow-hidden rounded-[20px] md:h-64">
-              <Image
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df"
-                alt="Analysis"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Image Carousel */}
+      <Carousel
+        interval={4500}
+        heightClass="h-[360px] md:h-[420px]"
+        images={[
+          {
+            src: "/images/WhatsApp Image 2025-12-20 at 8.39.39 PM (1).jpeg",
+            alt: "Slide 1",
+          },
+          {
+            src: "/images/WhatsApp Image 2025-12-20 at 8.39.39 PM (2).jpeg",
+            alt: "Slide 2",
+          },
+          {
+            src: "/images/WhatsApp Image 2025-12-20 at 8.39.39 PM.jpeg",
+            alt: "Slide 3",
+          },
+          {
+            src: "/images/WhatsApp Image 2025-12-20 at 8.39.40 PM.jpeg",
+            alt: "Slide 4",
+          },
+          {
+            src: "/images/WhatsApp Image 2025-12-20 at 8.39.42 PM.jpeg",
+            alt: "Slide 5",
+          },
+        ]}
+      />
 
       {/* About / Features Section */}
       <section className="w-full bg-white py-20">
