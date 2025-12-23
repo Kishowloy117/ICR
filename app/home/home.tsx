@@ -424,13 +424,13 @@ export default async function name() {
 
       {/* Services / What We Do Section */}
       <section className="w-full bg-white from-emerald-50/50 via-white">
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="mx-auto max-w-7xl px-4 py-10">
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-block rounded-full border border-emerald-200 bg-emerald-50/40 px-4 py-1 text-sm text-emerald-600">
               What We Do
             </div>
 
-            <h3 className="mt-6 text-3xl font-sans text-slate-900 sm:text-4xl">
+            <h3 className="mt-6 text-3xl font-sans text-slate-900 sm:text-4xl ">
               Why Choose Insight Consultancy & Research
             </h3>
 
