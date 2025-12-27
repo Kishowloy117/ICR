@@ -37,7 +37,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#why-icr" className="hover:underline">
+                <Link href="/why-icr" className="hover:underline">
                   Why ICR
                 </Link>
               </li>
@@ -52,7 +52,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:underline">
+                <Link href="/ContactUS" className="hover:underline">
                   Contact
                 </Link>
               </li>

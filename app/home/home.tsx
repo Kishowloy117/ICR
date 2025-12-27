@@ -6,24 +6,21 @@ import { Button } from "@/components/ui/button";
 export default async function name() {
   // } Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#041a2e] via-[#062944] to-[#041a2e]">
+    <main className="relative min-h-screen overflow-hidden bg-linear-to-br from-[#041a2e] via-[#062944] to-[#041a2e]">
       {/* Hero Content */}
       <section className="mx-auto max-w-7xl px-4 pt-6 pb-12 text-center">
         <h1 className="mx-auto max-w-3xl text-3xl font-sans leading-tight text-white md:text-5xl">
-          Turning Insight into
+          Turning Evidence into
           <br />
-          <span className="text-emerald-400">Informed Decisions</span>
+          <span className="text-emerald-400">Confident Decisions</span>
         </h1>
 
         <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-          Insight Consultancy & Research (ICR) partners with organizations to
-          deliver evidence-based research, strategic analysis, and actionable
-          insights.
+          Insight Consultancy & Research (ICR) is an independent research and advisory firm supporting public sector, corporate, and international organisations with decision-focused research, evaluation, and insight.
         </p>
 
         <p className="mx-auto mt-2 max-w-2xl text-sm font-semibold leading-relaxed text-slate-200 md:text-base">
-          We help clients navigate complexity and make confident, informed
-          decisions.
+          We design and deliver rigorous evidence and clear analysis to support strategic, operational, and policy decisions in complex environments.
         </p>
 
         {/* Feature Row */}
@@ -58,7 +55,7 @@ export default async function name() {
               <div>
                 <div className="text-sm font-semibold text-white">Research</div>
                 <div className="mt-1 text-xs text-slate-200">
-                  Rigorous methodologies and reliable evidence
+                  Rigorous, defensible methodologies designed for real-world decisions
                 </div>
               </div>
             </div>
@@ -119,7 +116,7 @@ export default async function name() {
               <div>
                 <div className="text-sm font-semibold text-white">Insight</div>
                 <div className="mt-1 text-xs text-slate-200">
-                  Clear analysis that explains what the data means
+                  Clear interpretation of evidence, grounded in context
                 </div>
               </div>
             </div>
@@ -182,7 +179,7 @@ export default async function name() {
                   Strategic Clarity
                 </div>
                 <div className="mt-1 text-xs text-slate-200">
-                  Actionable direction for confident decisions
+                  Decision-ready guidance for senior leaders and stakeholders
                 </div>
               </div>
             </div>
@@ -435,9 +432,7 @@ export default async function name() {
             </h3>
 
             <p className="mt-3 text-sm text-slate-500">
-              At Insight Consultancy & Research (ICR), we help organizations
-              move from evidence to insight and from insight to confident
-              decision-making.
+              At Insight Consultancy & Research (ICR), we support organisations to move from evidence to insight — and from insight to clear, defensible decisions.
             </p>
           </div>
 
@@ -445,20 +440,20 @@ export default async function name() {
             {[
               {
                 title: "Quantitative Research",
-                desc: "Large-scale surveys, modelling, and advanced analytics designed to provide robust evidence and reduce uncertainty in decision-making.",
+                desc: "Survey design, modelling, and analytical techniques to generate robust evidence and support defensible decisions.",
               },
               {
                 title: "Qualitative Research",
-                desc: "In-depth interviews, focus groups, and ethnographic approaches that uncover the human context behind the data and explain why patterns exist.",
+                desc: "In-depth interviews and qualitative methods to understand behaviours, perceptions, and contextual drivers.",
                 highlighted: true,
               },
               {
                 title: "Tracking Studies",
-                desc: "Continuous measurement of brand health, performance, and perception to identify trends, monitor change, and support timely decisions.",
+                desc: "Ongoing measurement frameworks to track performance, identify trends, and support timely operational and strategic decisions.",
               },
               {
-                title: "Retail & Shopper Research",
-                desc: "Store audits, shelf visibility, and shopper behaviour analysis that translate in-store realities into practical commercial insight.",
+                title: "Retail & Field Research",
+                desc: "Structured audits and observational research to generate reliable insight from real-world environments.",
               },
               {
                 title: "Market Assessments & Opportunity Analysis",
@@ -573,21 +568,20 @@ export default async function name() {
         </div>
       </section>
 
-      {/* Why organizations trust us Section */}
+{/* Why organisations trust ICR Section */}
       <section className="w-full bg-white py-10">
         <div className="mx-auto max-w-7xl px-4 text-center">
           <div className="inline-block rounded-full border border-emerald-200 bg-emerald-50/40 px-3 py-1 text-sm text-emerald-600 mb-4">
             Why ICR
           </div>
           <h3 className="mt-6 text-3xl font-sans text-slate-900 sm:text-4xl">
-            Why organizations trust us
+            Why organisations trust ICR
           </h3>
           <p className="mt-3 text-sm text-slate-600">
-            Our work is grounded in robust research methodologies and analytical
-            rigor.
+            Our work is grounded in methodological rigour, independence, and a clear focus on decision-maker needs.
           </p>
 
-          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
+          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-3 md:grid-cols-3">
             <div className="flex flex-col items-center text-center px-4">
               <div className="flex h-16 w-16 items-center justify-center rounded-full border border-emerald-200 text-emerald-500">
                 <svg
@@ -603,23 +597,14 @@ export default async function name() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
-                  <path
-                    d="M8 12l2 2 4-4"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
                 </svg>
               </div>
 
               <h4 className="mt-4 text-sm font-semibold text-slate-900">
-                Evidence-Driven Approach
+                Evidence-Led Delivery
               </h4>
               <p className="mt-2 text-xs text-slate-600 max-w-[18rem]">
-                Our work is built on rigorous research design, strong analytical
-                discipline, and a clear focus on evidence that supports real
-                decisions.
+                Robust research design, quality assurance, and defensible findings.
               </p>
             </div>
 
@@ -638,23 +623,14 @@ export default async function name() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
-                  <path
-                    d="M21 21H3"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
                 </svg>
               </div>
 
               <h4 className="mt-4 text-sm font-semibold text-slate-900">
-                Client-Centric Solutions
+                Decision-Focused Engagements
               </h4>
               <p className="mt-2 text-xs text-slate-600 max-w-[18rem]">
-                Every engagement is shaped around our clients’ objectives,
-                operating context, and decision needs — not off-the-shelf
-                frameworks
+                Structured around governance and decision needs.
               </p>
             </div>
 
@@ -677,45 +653,10 @@ export default async function name() {
               </div>
 
               <h4 className="mt-4 text-sm font-semibold text-slate-900">
-                Experienced Professionals
+                Experienced Research & Advisory Team
               </h4>
               <p className="mt-2 text-xs text-slate-600 max-w-[18rem]">
-                Our team brings cross-sector expertise and practical experience
-                across research, analysis, and strategic advisory work.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center text-center px-4">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full border border-emerald-200 text-emerald-500">
-                <svg
-                  className="h-8 w-8"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3 12h18"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M12 5v14"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-
-              <h4 className="mt-4 text-sm font-semibold text-slate-900">
-                Actionable Insights
-              </h4>
-              <p className="mt-2 text-xs text-slate-600 max-w-[18rem]">
-                We turn complex findings into clear, decision-ready insights
-                that leaders can act on with confidence
+                Public, corporate, and international experience.
               </p>
             </div>
           </div>
@@ -723,7 +664,9 @@ export default async function name() {
       </section>
 
       {/* CTA: Let's Work Together */}
-      <section className="w-full relative bg-gradient-to-br from-[#0b2a36] via-[#082633] to-[#07202a] text-white py-20">
+
+      {/* CTA: Let's Work Together */}
+      <section className="w-full relative bg-linear-to-br from-[#0b2a36] via-[#082633] to-[#07202a] text-white py-20">
         {/* decorative pattern (subtle topographic lines) */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <svg
@@ -752,7 +695,7 @@ export default async function name() {
               fill="none"
             />
           </svg>
-          <div className="absolute inset-0 bg-gradient-to-br from-black/25 to-black/40 pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-br from-black/25 to-black/40 pointer-events-none" />
         </div>
 
         <div className="mx-auto max-w-4xl px-4 text-center">
@@ -760,10 +703,7 @@ export default async function name() {
             Let’s Work Together
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm text-white/80">
-            Whether you need reliable research, strategic insight, or evaluation
-            support, Insight Consultancy & Research (ICR) is ready to help.
-            Contact us today to discuss how our expertise can support your
-            objectives and deliver meaningful results.
+            If you require independent research, evaluation, or decision support, ICR can support your objectives with rigorous evidence and clear insight.
           </p>
 
           <div className="mt-8">
