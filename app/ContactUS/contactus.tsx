@@ -51,22 +51,21 @@ export default function ContactUs() {
 
         <div className="mx-auto max-w-4xl px-4 text-center">
           <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-4">
-            Contact ICR
+            Contact
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold">
-            Let’s talk about your
+            Let’s discuss
             <br />
             <span className="bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-emerald-200">
-              next project
+              your requirements
             </span>
           </h1>
 
           <p className="mx-auto mt-4 max-w-2xl text-sm text-white/80">
-            Whether you’re planning a study, exploring a market, or simply have
-            a research challenge — we’re here to help. Contact us to discuss how
-            our expertise can support your objectives and deliver meaningful
-            results.
+            Whether you are planning a study, assessing a market, or seeking
+            research or advisory support, our team is available to discuss your
+            requirements and how we can support informed decision-making.
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -75,7 +74,7 @@ export default function ContactUs() {
             </Button>
             <Link href="/services">
               <Button className="bg-transparent border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black">
-                Explore Our Services
+                View Our Services
               </Button>
             </Link>
           </div>
@@ -86,60 +85,9 @@ export default function ContactUs() {
         <div className="mx-auto max-w-7xl px-4 grid gap-12 lg:grid-cols-2 items-start">
           {/* Left: Contact info */}
           <div className="space-y-8">
-            <h2 className="text-3xl font-bold text-slate-900">
-              Contact Details
-            </h2>
+            <h2 className="text-3xl font-bold text-slate-900">Contact</h2>
 
             <div className="divide-y divide-slate-200 bg-white rounded-lg p-6 shadow-sm">
-              <div className="flex gap-4 py-6">
-                <div className="h-12 w-12 flex items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
-                  <MapPin className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-slate-900">
-                    Our Offices
-                  </h3>
-                  <p className="mt-2 text-sm text-slate-600">
-                    <span className="font-medium">Head Office – Jeddah</span>
-                    <br />
-                    Al-Fayhaa District, Jeddah 22241
-                  </p>
-                  <p className="mt-3 text-sm text-slate-600">
-                    <span className="font-medium">Riyadh Branch</span>
-                    <br />
-                    Al Olaya, Riyadh
-                  </p>
-                  <p className="mt-3 text-sm text-slate-600">
-                    <span className="font-medium">Dammam Branch</span>
-                    <br />
-                    King Khalid St., Dammam
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4 py-6">
-                <div className="h-12 w-12 flex items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
-                  <Phone className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-slate-900">
-                    Phone
-                  </h3>
-                  <p className="mt-2 text-sm text-slate-600">
-                    Jeddah Branch:{" "}
-                    <span className="font-medium">+966 12 693 3631</span>
-                  </p>
-                  <p className="mt-1 text-sm text-slate-600">
-                    Riyadh Branch:{" "}
-                    <span className="font-medium">+966 11 462 2269</span>
-                  </p>
-                  <p className="mt-1 text-sm text-slate-600">
-                    Dammam Branch:{" "}
-                    <span className="font-medium">+966 13 814 4221</span>
-                  </p>
-                </div>
-              </div>
-
               <div className="flex gap-4 py-6 items-center">
                 <div className="h-12 w-12 flex items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
                   <Mail className="h-5 w-5" />
@@ -149,7 +97,8 @@ export default function ContactUs() {
                     Email
                   </h3>
                   <p className="mt-2 text-sm text-slate-600">
-                    Jeddah:{" "}
+                    Email For general enquiries, project discussions, and
+                    partnership opportunities::{" "}
                     <a
                       href="mailto:info@icr-me.com"
                       className="text-emerald-600 font-medium"

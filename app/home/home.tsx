@@ -16,11 +16,14 @@ export default async function name() {
         </h1>
 
         <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-          Insight Consultancy & Research (ICR) is an independent research and advisory firm supporting public sector, corporate, and international organisations with decision-focused research, evaluation, and insight.
+          Insight Consultancy & Research (ICR) is an independent research and
+          advisory firm supporting public sector, corporate, and international
+          organisations with decision-focused research, evaluation, and insight.
         </p>
 
         <p className="mx-auto mt-2 max-w-2xl text-sm font-semibold leading-relaxed text-slate-200 md:text-base">
-          We design and deliver rigorous evidence and clear analysis to support strategic, operational, and policy decisions in complex environments.
+          We design and deliver rigorous evidence and clear analysis to support
+          strategic, operational, and policy decisions in complex environments.
         </p>
 
         {/* Feature Row */}
@@ -55,7 +58,8 @@ export default async function name() {
               <div>
                 <div className="text-sm font-semibold text-white">Research</div>
                 <div className="mt-1 text-xs text-slate-200">
-                  Rigorous, defensible methodologies designed for real-world decisions
+                  Rigorous, defensible methodologies designed for real-world
+                  decisions
                 </div>
               </div>
             </div>
@@ -432,7 +436,9 @@ export default async function name() {
             </h3>
 
             <p className="mt-3 text-sm text-slate-500">
-              At Insight Consultancy & Research (ICR), we support organisations to move from evidence to insight — and from insight to clear, defensible decisions.
+              At Insight Consultancy & Research (ICR), we support organisations
+              to move from evidence to insight — and from insight to clear,
+              defensible decisions.
             </p>
           </div>
 
@@ -520,7 +526,7 @@ export default async function name() {
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
             <div className="flex flex-col items-center text-center px-6">
               <div
-                className="text-5xl md:text-6xl font-serif tracking-tight"
+                className="text-5xl md:text-6xl font-sans tracking-tight"
                 style={{ textShadow: "0 8px 20px rgba(0,0,0,0.5)" }}
               >
                 100000+
@@ -568,7 +574,7 @@ export default async function name() {
         </div>
       </section>
 
-{/* Why organisations trust ICR Section */}
+      {/* Why organisations trust ICR Section */}
       <section className="w-full bg-white py-10">
         <div className="mx-auto max-w-7xl px-4 text-center">
           <div className="inline-block rounded-full border border-emerald-200 bg-emerald-50/40 px-3 py-1 text-sm text-emerald-600 mb-4">
@@ -578,7 +584,8 @@ export default async function name() {
             Why organisations trust ICR
           </h3>
           <p className="mt-3 text-sm text-slate-600">
-            Our work is grounded in methodological rigour, independence, and a clear focus on decision-maker needs.
+            Our work is grounded in methodological rigour, independence, and a
+            clear focus on decision-maker needs.
           </p>
 
           <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-3 md:grid-cols-3">
@@ -604,7 +611,8 @@ export default async function name() {
                 Evidence-Led Delivery
               </h4>
               <p className="mt-2 text-xs text-slate-600 max-w-[18rem]">
-                Robust research design, quality assurance, and defensible findings.
+                Robust research design, quality assurance, and defensible
+                findings.
               </p>
             </div>
 
@@ -703,7 +711,9 @@ export default async function name() {
             Let’s Work Together
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm text-white/80">
-            If you require independent research, evaluation, or decision support, ICR can support your objectives with rigorous evidence and clear insight.
+            If you require independent research, evaluation, or decision
+            support, ICR can support your objectives with rigorous evidence and
+            clear insight.
           </p>
 
           <div className="mt-8">
