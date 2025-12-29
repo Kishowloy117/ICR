@@ -154,7 +154,7 @@ export default function ServicesPage() {
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="max-w-md">
                 <div className="inline-block rounded-full border border-emerald-200 bg-emerald-50/40 px-3 py-1 text-xs text-emerald-600 mb-4">
-                  Work Process
+                  How we work
                 </div>
 
                 <h3 className="text-4xl font-extrabold text-slate-900 mb-4">
