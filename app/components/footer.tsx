@@ -25,34 +25,34 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-white mb-4">
               Quick Links
             </h4>
-            <ul className="space-y-2 text-sm text-slate-300">
+            <ul className="grid grid-cols-2 gap-2 text-sm text-slate-300">
               <li>
-                <Link href="/services" className="hover:underline">
+                <Link href="/services" className="hover:underline block">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/expertise" className="hover:underline">
+                <Link href="/expertise" className="hover:underline block">
                   Expertise
                 </Link>
               </li>
               <li>
-                <Link href="/why-icr" className="hover:underline">
+                <Link href="/why-icr" className="hover:underline block">
                   Why ICR
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:underline">
+                <Link href="/about" className="hover:underline block">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="hover:underline">
+                <Link href="/careers" className="hover:underline block">
                   Careers
                 </Link>
               </li>
               <li>
-                <Link href="/ContactUS" className="hover:underline">
+                <Link href="/ContactUS" className="hover:underline block">
                   Contact
                 </Link>
               </li>

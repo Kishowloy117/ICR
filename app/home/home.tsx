@@ -445,29 +445,29 @@ export default async function name() {
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
             {[
               {
-                title: "Quantitative Research",
-                desc: "Survey design, modelling, and analytical techniques to generate robust evidence and support defensible decisions.",
+                title: "Evidence-Driven Decisions",
+                desc: "We ensure every decision is grounded in robust quantitative data, providing confidence in your choices.",
               },
               {
-                title: "Qualitative Research",
-                desc: "In-depth interviews and qualitative methods to understand behaviours, perceptions, and contextual drivers.",
+                title: "Contextual Insights",
+                desc: "Our qualitative research uncovers the human context behind the data, enriching your strategic understanding.",
                 highlighted: true,
               },
               {
-                title: "Tracking Studies",
-                desc: "Ongoing measurement frameworks to track performance, identify trends, and support timely operational and strategic decisions.",
+                title: "Continuous Monitoring",
+                desc: "We provide ongoing tracking to keep you informed of trends and changes as they happen.",
               },
               {
-                title: "Retail & Field Research",
-                desc: "Structured audits and observational research to generate reliable insight from real-world environments.",
+                title: "Practical Market Insights",
+                desc: "Our retail research turns in-store observations into actionable insights for your business.",
               },
               {
-                title: "Market Assessments & Opportunity Analysis",
-                desc: "Market sizing, segmentation, and competitive analysis to identify where opportunities lie and how to prioritise growth.",
+                title: "Strategic Market Clarity",
+                desc: "We help you identify and prioritise opportunities with clear, data-backed assessments.",
               },
               {
-                title: "Strategic Consulting",
-                desc: "End-to-end advisory support that transforms research findings into clear, actionable marketing and business strategies.",
+                title: "Actionable Strategies",
+                desc: "We turn complex research into straightforward, actionable strategies for decision-makers.",
               },
             ].map((s, i) => (
               <div
@@ -529,7 +529,7 @@ export default async function name() {
                 className="text-5xl md:text-6xl font-sans tracking-tight"
                 style={{ textShadow: "0 8px 20px rgba(0,0,0,0.5)" }}
               >
-                100000+
+                100,000+
               </div>
               <div className="mt-3 text-sm md:text-base font-medium">
                 {" "}
