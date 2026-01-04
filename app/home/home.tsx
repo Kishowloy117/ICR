@@ -2,6 +2,7 @@
 
 import Carousel from "./Carousel";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default async function name() {
   // } Home() {
@@ -195,12 +196,14 @@ export default async function name() {
           <Button className="bg-emerald-500 px-5 py-2.5 text-sm font-semibold hover:bg-emerald-600">
             Request a Consultation »
           </Button>
-          <Button
-            // variant="outline"
-            className="bg-transparent border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black"
-          >
-            Explore Our Services
-          </Button>
+          <Link href="/services">
+            <Button
+              variant="outline"
+              className="bg-transparent border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black"
+            >
+              Explore Our Services
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -262,8 +265,15 @@ export default async function name() {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                       >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="3"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        />
                         <path
-                          d="M20 6L9 17l-5-5"
+                          d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"
                           stroke="currentColor"
                           strokeWidth="2"
                           strokeLinecap="round"
@@ -292,7 +302,43 @@ export default async function name() {
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M20 6L9 17l-5-5"
+                          d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        />
+                        <polyline
+                          points="7.5 4.21 12 6.81 16.5 4.21"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <polyline
+                          points="7.5 19.79 7.5 14.6 3 12"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <polyline
+                          points="21 12 16.5 14.6 16.5 19.79"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <polyline
+                          points="3.27 6.96 12 12.01 20.73 6.96"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <line
+                          x1="12"
+                          y1="22.08"
+                          x2="12"
+                          y2="12"
                           stroke="currentColor"
                           strokeWidth="2"
                           strokeLinecap="round"
@@ -320,8 +366,8 @@ export default async function name() {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <path
-                          d="M20 6L9 17l-5-5"
+                        <polyline
+                          points="22 12 18 12 15 21 9 3 6 12 2 12"
                           stroke="currentColor"
                           strokeWidth="2"
                           strokeLinecap="round"
@@ -349,8 +395,31 @@ export default async function name() {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <path
-                          d="M20 6L9 17l-5-5"
+                        <line
+                          x1="18"
+                          y1="20"
+                          x2="18"
+                          y2="10"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <line
+                          x1="12"
+                          y1="20"
+                          x2="12"
+                          y2="4"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <line
+                          x1="6"
+                          y1="20"
+                          x2="6"
+                          y2="14"
                           stroke="currentColor"
                           strokeWidth="2"
                           strokeLinecap="round"
@@ -372,47 +441,172 @@ export default async function name() {
                 </ul>
               </div>
 
-              <Button
-                variant="outline"
-                className="mt-6 border-emerald-400 text-emerald-600 hover:bg-emerald-50 px-4 py-2"
-              >
-                Explore Our Services »
-              </Button>
+              <Link href="/services">
+                <Button
+                  variant="outline"
+                  className="mt-6 border-emerald-400 text-emerald-600 hover:bg-emerald-50 px-4 py-2"
+                >
+                  Explore Our Services »
+                </Button>
+              </Link>
             </div>
 
             {/* Right: Feature list */}
             <div className="space-y-4">
               {[
-                "We listen first and design research around your business questions.",
-                "Nationwide field coverage with trained supervisors and quality teams.",
-                "Real-time monitoring and strict validation for reliable data.",
-                "Clear reporting with insights your teams can use immediately.",
-              ].map((t, i) => (
+                {
+                  text: "We listen first and design research around your business questions.",
+                  icon: (
+                    <svg
+                      className="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 2a3 3 0 00-3 3v7a3 3 0 006 0V5a3 3 0 00-3-3z"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M19 10v2a7 7 0 01-14 0v-2M12 19v3"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M8 22h8"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  ),
+                },
+                {
+                  text: "Nationwide field coverage with trained supervisors and quality teams.",
+                  icon: (
+                    <svg
+                      className="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <circle
+                        cx="12"
+                        cy="10"
+                        r="3"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  ),
+                },
+                {
+                  text: "Real-time monitoring and strict validation for reliable data.",
+                  icon: (
+                    <svg
+                      className="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M22 11.08V12a10 10 0 11-5.93-9.14"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <polyline
+                        points="22 4 12 14.01 9 11.01"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  ),
+                },
+                {
+                  text: "Clear reporting with insights your teams can use immediately.",
+                  icon: (
+                    <svg
+                      className="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <polyline
+                        points="14 2 14 8 20 8"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <line
+                        x1="16"
+                        y1="13"
+                        x2="8"
+                        y2="13"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <line
+                        x1="16"
+                        y1="17"
+                        x2="8"
+                        y2="17"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <polyline
+                        points="10 9 9 9 8 9"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  ),
+                },
+              ].map((item, i) => (
                 <div
                   key={i}
                   className="rounded-2xl bg-slate-900 p-5 text-white shadow-md"
                 >
                   <div className="flex items-center gap-4">
                     <div className="flex h-10 w-10 items-center justify-center rounded-md bg-white/10 text-emerald-400">
-                      <svg
-                        className="h-5 w-5"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      {item.icon}
                     </div>
 
                     <div>
                       <div className="text-sm font-semibold text-slate-100">
-                        {t}
+                        {item.text}
                       </div>
                     </div>
                   </div>
@@ -517,8 +711,8 @@ export default async function name() {
           <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-4">
             Our Impact
           </div>
-          <h3 className="text-3xl font-sans text-white">ICR in numbers</h3>
-          <p className="mt-2 max-w-2xl mx-auto text-sm text-white/80">
+          <h3 className="text-4xl font-sans text-white">ICR in numbers</h3>
+          <p className="mt-2 max-w-2xl mx-auto text-md text-white/80">
             Research and advisory expertise since 2009 — the scale and reach of
             our work speaks for itself.
           </p>
@@ -583,87 +777,117 @@ export default async function name() {
           <h3 className="mt-6 text-3xl font-sans text-slate-900 sm:text-4xl">
             Why organisations trust ICR
           </h3>
-          <p className="mt-3 text-sm text-slate-600">
+          <p className="mt-3 text-base text-slate-600">
             Our work is grounded in methodological rigour, independence, and a
             clear focus on decision-maker needs.
           </p>
 
           <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-3 md:grid-cols-3">
             <div className="flex flex-col items-center text-center px-4">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full border border-emerald-200 text-emerald-500">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-emerald-50 text-emerald-500 border-2 border-emerald-200">
                 <svg
-                  className="h-8 w-8"
+                  className="h-10 w-10"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M3 12a9 9 0 1118 0 9 9 0 01-18 0z"
+                    d="M9 11l3 3L22 4"
                     stroke="currentColor"
-                    strokeWidth="1.6"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"
+                    stroke="currentColor"
+                    strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                 </svg>
               </div>
 
-              <h4 className="mt-4 text-sm font-semibold text-slate-900">
+              <h4 className="mt-4 text-lg font-semibold text-slate-900">
                 Evidence-Led Delivery
               </h4>
-              <p className="mt-2 text-xs text-slate-600 max-w-[18rem]">
+              <p className="mt-2 text-sm text-slate-600 max-w-[20rem]">
                 Robust research design, quality assurance, and defensible
                 findings.
               </p>
             </div>
 
             <div className="flex flex-col items-center text-center px-4">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full border border-emerald-200 text-emerald-500">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-emerald-50 text-emerald-500 border-2 border-emerald-200">
                 <svg
-                  className="h-8 w-8"
+                  className="h-10 w-10"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12 3v6l4 2"
+                    d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"
                     stroke="currentColor"
-                    strokeWidth="1.6"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <circle
+                    cx="9"
+                    cy="7"
+                    r="4"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"
+                    stroke="currentColor"
+                    strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                 </svg>
               </div>
 
-              <h4 className="mt-4 text-sm font-semibold text-slate-900">
+              <h4 className="mt-4 text-lg font-semibold text-slate-900">
                 Decision-Focused Engagements
               </h4>
-              <p className="mt-2 text-xs text-slate-600 max-w-[18rem]">
+              <p className="mt-2 text-sm text-slate-600 max-w-[20rem]">
                 Structured around governance and decision needs.
               </p>
             </div>
 
             <div className="flex flex-col items-center text-center px-4">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full border border-emerald-200 text-emerald-500">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-emerald-50 text-emerald-500 border-2 border-emerald-200">
                 <svg
-                  className="h-8 w-8"
+                  className="h-10 w-10"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12 2l2 4 4 .5-3 3 .7 4-3.7-2-3.7 2 .7-4-3-3L10 6l2-4z"
+                    d="M12 2L2 7l10 5 10-5-10-5z"
                     stroke="currentColor"
-                    strokeWidth="1.2"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M2 17l10 5 10-5M2 12l10 5 10-5"
+                    stroke="currentColor"
+                    strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                 </svg>
               </div>
 
-              <h4 className="mt-4 text-sm font-semibold text-slate-900">
+              <h4 className="mt-4 text-lg font-semibold text-slate-900">
                 Experienced Research & Advisory Team
               </h4>
-              <p className="mt-2 text-xs text-slate-600 max-w-[18rem]">
+              <p className="mt-2 text-sm text-slate-600 max-w-[20rem]">
                 Public, corporate, and international experience.
               </p>
             </div>

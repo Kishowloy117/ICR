@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="w-full relative bg-linear-to-br from-[#041a2e] via-[#062944] to-[#041a2e] text-white py-12">
+      <section className="w-full relative bg-linear-to-br from-[#041a2e] via-[#062944] to-[#041a2e] text-white py-6">
         {/* decorative pattern */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <svg

@@ -13,7 +13,7 @@ import {
 export default function Page() {
   return (
     <main>
-      <section className="relative bg-[#071827] py-12">
+      <section className="relative bg-linear-to-br from-[#041a2e] via-[#062944] to-[#041a2e] py-8">
         {/* subtle background pattern */}
         <div className="absolute inset-0 -z-10 opacity-20">
           <svg
@@ -42,7 +42,7 @@ export default function Page() {
             Why ICR
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight text-white">
+          <h1 className="mx-auto max-w-3xl text-3xl font-sans leading-tight text-white md:text-5xl">
             Turning Research Into
             <br />
             <span className="bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-emerald-200">
@@ -136,9 +136,9 @@ export default function Page() {
           <div className="inline-block rounded-full bg-white/30 px-3 py-1 text-xs text-emerald-700 mb-4">
             Retail-Audit
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+          <h3 className="mt-6 text-3xl font-sans text-slate-900 sm:text-4xl">
             Retail Audit Expertise
-          </h2>
+          </h3>
           <p className="mx-auto mt-4 max-w-2xl text-slate-600">
             We help you get the most out of your retail audit programs by
             improving quality, speed, and actionability at every stage.
@@ -205,58 +205,67 @@ export default function Page() {
           <div className="inline-block rounded-full bg-white/30 px-3 py-1 text-xs text-emerald-700 mb-6">
             Process
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+          <h3 className="mt-6 text-3xl font-sans text-slate-900 sm:text-4xl">
             How We Work
-          </h2>
+          </h3>
           <p className="mx-auto mt-3 max-w-2xl text-slate-600">
             We follow a simple, proven process to turn insight into action —
             from scoping and research to strategy and implementation support.
           </p>
 
-          <div className="relative mt-12">
-            <div className="absolute left-0 right-0 top-1/2 h-px bg-slate-200 -translate-y-1/2" />
+          <div className="relative mt-16">
+            {/* Connecting line - hidden on mobile */}
+            <div className="absolute left-0 right-0 top-12 h-0.5 bg-gradient-to-r from-emerald-200 via-emerald-400 to-emerald-200 hidden sm:block" />
 
-            <div className="grid grid-cols-1 sm:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-8 sm:gap-6">
+              {/* Step 1 */}
               <div className="relative flex flex-col items-center text-center">
-                <div className="mb-4 text-3xl  text-emerald-500">01</div>
-                <div className="h-3 w-3 rounded-full bg-emerald-500 -mt-6 mb-3" />
-                <h4 className="text-lg font-semibold text-slate-900">
+                <div className="relative z-10 flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg mb-6">
+                  <span className="text-3xl font-bold text-white">01</span>
+                </div>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">
                   Understand
                 </h4>
-                <p className="mt-2 text-sm text-slate-600">
+                <p className="text-sm text-slate-600">
                   Clarifying decisions, objectives, and evidence requirements
                 </p>
               </div>
 
+              {/* Step 2 */}
               <div className="relative flex flex-col items-center text-center">
-                <div className="mb-4 text-3xl  text-emerald-500">02</div>
-                <div className="h-3 w-3 rounded-full bg-emerald-500 -mt-6 mb-3" />
-                <h4 className="text-lg font-semibold text-slate-900">
+                <div className="relative z-10 flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg mb-6">
+                  <span className="text-3xl font-bold text-white">02</span>
+                </div>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">
                   Research
                 </h4>
-                <p className="mt-2 text-sm text-slate-600">
+                <p className="text-sm text-slate-600">
                   Structured field management and quality assurance
                 </p>
               </div>
 
+              {/* Step 3 */}
               <div className="relative flex flex-col items-center text-center">
-                <div className="mb-4 text-3xl  text-emerald-500">03</div>
-                <div className="h-3 w-3 rounded-full bg-emerald-500 -mt-6 mb-3" />
-                <h4 className="text-lg font-semibold text-slate-900">
+                <div className="relative z-10 flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg mb-6">
+                  <span className="text-3xl font-bold text-white">03</span>
+                </div>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">
                   Strategize
                 </h4>
-                <p className="mt-2 text-sm text-slate-600">
+                <p className="text-sm text-slate-600">
                   Continuous monitoring and validation for data integrity
                 </p>
               </div>
 
+              {/* Step 4 */}
               <div className="relative flex flex-col items-center text-center">
-                <div className="mb-4 text-3xl text-emerald-500">04</div>
-                <div className="h-3 w-3 rounded-full bg-emerald-500 -mt-6 mb-3" />
-                <h4 className="text-lg font-semibold text-slate-900">
+                <div className="relative z-10 flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg mb-6">
+                  <span className="text-3xl font-bold text-white">04</span>
+                </div>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">
                   Support
                 </h4>
-                <p className="mt-2 text-sm text-slate-600">
+                <p className="text-sm text-slate-600">
                   Decision-ready reporting focused on implications and next
                   steps
                 </p>
@@ -301,18 +310,23 @@ export default function Page() {
           </p>
 
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 justify-center max-w-4xl mx-auto">
-            <div className="rounded-xl bg-emerald-50 p-6 flex flex-col items-center gap-3">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-md text-emerald-600">
+            <div className="rounded-xl bg-emerald-50 p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-shadow">
+              <div className="inline-flex h-16 w-16 items-center justify-center rounded-lg text-emerald-600">
                 <svg
-                  className="h-6 w-6"
+                  className="h-10 w-10"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
+                  strokeWidth="1.5"
                 >
                   <path
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4"
-                    strokeWidth="1.5"
+                    d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M9 22V12h6v10"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
@@ -323,30 +337,18 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="rounded-xl bg-emerald-50 p-6 flex flex-col items-center gap-3">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-md text-emerald-600">
+            <div className="rounded-xl bg-emerald-50 p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-shadow">
+              <div className="inline-flex h-16 w-16 items-center justify-center rounded-lg text-emerald-600">
                 <svg
-                  className="h-6 w-6"
+                  className="h-10 w-10"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
+                  strokeWidth="1.5"
                 >
                   <path
-                    d="M20 21v-2a4 4 0 00-3-3.87"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M4 21v-2a4 4 0 013-3.87"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M12 11a4 4 0 100-8 4 4 0 000 8z"
-                    strokeWidth="1.5"
+                    d="M22 12h-4l-3 9L9 3l-3 9H2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
@@ -357,18 +359,49 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="rounded-xl bg-emerald-50 p-6 flex flex-col items-center gap-3">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-md text-emerald-600">
+            <div className="rounded-xl bg-emerald-50 p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-shadow">
+              <div className="inline-flex h-16 w-16 items-center justify-center rounded-lg text-emerald-600">
                 <svg
-                  className="h-6 w-6"
+                  className="h-10 w-10"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
+                  strokeWidth="1.5"
                 >
-                  <path
-                    d="M5 12h14M12 5v14"
-                    strokeWidth="1.5"
+                  <rect
+                    x="2"
+                    y="2"
+                    width="20"
+                    height="8"
+                    rx="2"
+                    ry="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <rect
+                    x="2"
+                    y="14"
+                    width="20"
+                    height="8"
+                    rx="2"
+                    ry="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <line
+                    x1="6"
+                    y1="6"
+                    x2="6.01"
+                    y2="6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <line
+                    x1="6"
+                    y1="18"
+                    x2="6.01"
+                    y2="18"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
@@ -379,18 +412,32 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="rounded-xl bg-emerald-50 p-6 flex flex-col items-center gap-3">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-md text-emerald-600">
+            <div className="rounded-xl bg-emerald-50 p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-shadow">
+              <div className="inline-flex h-16 w-16 items-center justify-center rounded-lg text-emerald-600">
                 <svg
-                  className="h-6 w-6"
+                  className="h-10 w-10"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
+                  strokeWidth="1.5"
                 >
                   <path
-                    d="M3 7h18M5 7v10a2 2 0 002 2h10a2 2 0 002-2V7"
-                    strokeWidth="1.5"
+                    d="M18 6L6 18M8 6h10v10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <circle
+                    cx="7"
+                    cy="17"
+                    r="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <circle
+                    cx="17"
+                    cy="7"
+                    r="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
@@ -401,18 +448,28 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="rounded-xl bg-emerald-50 p-6 flex flex-col items-center gap-3">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-md text-emerald-600">
+            <div className="rounded-xl bg-emerald-50 p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-shadow">
+              <div className="inline-flex h-16 w-16 items-center justify-center rounded-lg text-emerald-600">
                 <svg
-                  className="h-6 w-6"
+                  className="h-10 w-10"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
+                  strokeWidth="1.5"
                 >
-                  <path
-                    d="M4 6h16M4 10h16M4 14h16M4 18h16"
-                    strokeWidth="1.5"
+                  <polygon
+                    points="23 7 16 12 23 17 23 7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <rect
+                    x="1"
+                    y="5"
+                    width="15"
+                    height="14"
+                    rx="2"
+                    ry="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />

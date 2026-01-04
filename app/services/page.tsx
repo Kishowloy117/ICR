@@ -49,12 +49,13 @@ export default function ServicesPage() {
             Services
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-sans leading-tight text-white">
+          <h1 className="mx-auto max-w-3xl text-3xl font-sans leading-tight text-white md:text-5xl">
             Explore Our
             <br />
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-emerald-200">
+            <span className="text-emerald-400">services</span>
+            {/* <span className="bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-emerald-200">
               services
-            </span>
+            </span> */}
           </h1>
 
           <p className="mx-auto mt-4 max-w-2xl text-sm font-semibold leading-relaxed text-slate-200 md:text-base">
@@ -158,7 +159,7 @@ export default function ServicesPage() {
                 </div>
 
                 <h3 className="text-4xl font-extrabold text-slate-900 mb-4">
-                  4 Step Work Process
+                  5 Step Work Process
                 </h3>
 
                 <p className="text-sm text-slate-600">

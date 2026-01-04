@@ -17,7 +17,7 @@ export default function ContactUs() {
 
   return (
     <main className="relative min-h-screen overflow-hidden">
-      <section className="w-full relative  bg-linear-to-br from-[#041a2e] via-[#062944] to-[#041a2e] text-white py-12">
+      <section className="w-full relative  bg-linear-to-br from-[#041a2e] via-[#062944] to-[#041a2e] text-white py-6">
         {/* decorative pattern */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <svg
@@ -54,7 +54,7 @@ export default function ContactUs() {
             Contact
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold">
+          <h1 className="mx-auto max-w-4xl text-3xl font-sans leading-tight text-white md:text-5xl">
             Let’s discuss
             <br />
             <span className="bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-emerald-200">
