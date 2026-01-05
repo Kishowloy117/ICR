@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -13,15 +14,22 @@ import { useState } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
 
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
     { label: "Expertise", href: "/expertise" },
     { label: "Why ICR", href: "/why-icr" },
-    { label: "Careers", href: "/careers" },
     { label: "About", href: "/about" },
+    { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/ContactUS" },
+  ];
+
+  const languages = [
+    { code: "en", name: "English", flag: "🇬🇧" },
+    { code: "zh", name: "中文", flag: "🇨🇳" },
+    { code: "ar", name: "العربية", flag: "🇸🇦" },
   ];
 
   return (
@@ -29,12 +37,22 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="h-9 w-9 rounded-full bg-cyan-400/80" />
-            <span className="text-lg font-semibold tracking-wide text-white">
-              INSIGHT
-            </span>
-          </div>
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative">
+              {/* Multiple glow layers for better visibility */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-emerald-400/20 via-cyan-400/30 to-emerald-400 blur-2xl rounded-full animate-pulse" />
+              <div className="absolute -inset-2 bg-gradient-to-br from-white/20 to-emerald-300/20 blur-xl rounded-full" />
+
+              <Image
+                src="/images/logo1.png"
+                alt="ICR Logo"
+                width={120}
+                height={120}
+                className="object-contain relative z-10 drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]"
+                priority
+              />
+            </div>
+          </Link>
 
           {/* Desktop Menu */}
           <nav className="hidden items-center gap-2 md:flex">
@@ -56,11 +74,49 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <Button className="bg-emerald-500 hover:bg-emerald-600 text-white">
-              Get Started »
+          {/* Desktop Language Selector */}
+          <div className="hidden md:block relative">
+            <Button
+              onClick={() => setLangMenuOpen(!langMenuOpen)}
+              className="bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm transition-all duration-300"
+            >
+              <Globe className="h-4 w-4 mr-2" />
+              <span className="text-sm">EN</span>
+              <svg
+                className={`ml-2 h-4 w-4 transition-transform ${
+                  langMenuOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
             </Button>
+
+            {/* Language Dropdown */}
+            {langMenuOpen && (
+              <div className="absolute right-0 mt-2 w-48 rounded-lg bg-white shadow-lg border border-slate-200 overflow-hidden z-50">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    className="w-full flex items-center gap-3 px-4 py-3 text-sm text-slate-700 hover:bg-emerald-50 transition-colors"
+                    onClick={() => {
+                      // Language change logic will be added later
+                      setLangMenuOpen(false);
+                    }}
+                  >
+                    {/* <span className="text-2xl">{lang.flag}</span> */}
+                    <span className="font-medium">{lang.name}</span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Mobile Menu (ShadCN Sheet) */}
@@ -70,9 +126,9 @@ export default function Navbar() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white hover:bg-white/10"
+                  className="text-white hover:bg-white/10 h-12 w-12"
                 >
-                  <Menu size={24} />
+                  <Menu size={32} />
                 </Button>
               </SheetTrigger>
               <SheetContent
@@ -81,12 +137,22 @@ export default function Navbar() {
               >
                 {/* Header with Logo and Close */}
                 <div className="flex items-center justify-between p-6 border-b border-white/10">
-                  <div className="flex items-center gap-2">
-                    <div className="h-8 w-8 rounded-full bg-cyan-400/80" />
-                    <span className="text-base font-semibold tracking-wide text-white">
-                      INSIGHT
-                    </span>
-                  </div>
+                  <Link
+                    href="/"
+                    className="flex items-center gap-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <div className="relative">
+                      <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/25 to-cyan-400/25 blur-lg rounded-full" />
+                      <Image
+                        src="/images/logo1.png"
+                        alt="ICR Logo"
+                        width={55}
+                        height={55}
+                        className="object-contain relative z-10 drop-shadow-[0_0_10px_rgba(16,185,129,0.4)]"
+                      />
+                    </div>
+                  </Link>
                   <SheetClose asChild>
                     <Button
                       variant="ghost"
@@ -123,15 +189,31 @@ export default function Navbar() {
                   ))}
                 </nav>
 
+                {/* Language Selector in Mobile */}
+                <div className="absolute bottom-20 left-0 right-0 p-6 border-t border-white/10">
+                  <div className="text-xs text-slate-400 mb-3">Language</div>
+                  <div className="grid grid-cols-3 gap-2">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        className="flex flex-col items-center gap-1 p-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-all"
+                        onClick={() => {
+                          // Language change logic will be added later
+                        }}
+                      >
+                        {/* <span className="text-2xl">{lang.flag}</span> */}
+                        <span className="text-xs text-slate-300">
+                          {lang.code.toUpperCase()}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
                 {/* CTA Button */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-white/10 bg-gradient-to-t from-[#061b2d]/50">
                   <SheetClose asChild>
-                    <Button
-                      className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-6 rounded-lg shadow-lg"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      Get Started →
-                    </Button>
+                    <Link href="/ContactUS"></Link>
                   </SheetClose>
                 </div>
               </SheetContent>
