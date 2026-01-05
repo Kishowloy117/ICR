@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -9,12 +10,19 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-3">
           {/* Left */}
           <div>
-            <div className="text-2xl font-extrabold tracking-tight">
-              INSIGHT
-            </div>
-            <div className="mt-1 text-sm text-slate-300">
-              Consultancy & Research
-            </div>
+            <Link href="/" className="inline-block">
+              <div className="relative">
+                {/* Glow effect */}
+                <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/20 to-cyan-400/20 blur-lg rounded-full" />
+                <Image
+                  src="/images/logo1.png"
+                  alt="ICR Logo"
+                  width={100}
+                  height={100}
+                  className="object-contain relative z-10 drop-shadow-[0_0_10px_rgba(16,185,129,0.3)]"
+                />
+              </div>
+            </Link>
             <div className="mt-4 text-sm text-slate-400">
               Research • Insight • Strategic Clarity
             </div>

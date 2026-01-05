@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function CareerPage() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="w-full relative bg-linear-to-br from-[#041a2e] via-[#062944] to-[#041a2e] text-white py-8">
+      <section className="w-full relative bg-linear-to-br from-[#041a2e] via-[#062944] to-[#041a2e] text-white py-6">
         {/* decorative pattern */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <svg
@@ -36,7 +37,7 @@ export default function CareerPage() {
         </div>
 
         <div className="mx-auto max-w-3xl px-4 text-center">
-          <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-6">
+          <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-4">
             Careers at ICR
           </div>
           <h1 className="mx-auto max-w-3xl text-3xl font-sans leading-tight text-white md:text-5xl">
@@ -47,7 +48,7 @@ export default function CareerPage() {
             </span>
           </h1>
           <p className="mx-auto mt-2 max-w-xl text-base text-slate-200">
-            At ICR, we believe insight starts with people. We’re always looking
+            At ICR, we believe insight starts with people. We're always looking
             for thoughtful, curious professionals who want to do work that
             matters.
           </p>
@@ -55,23 +56,23 @@ export default function CareerPage() {
       </section>
 
       {/* Why Work With Us Section */}
-      <section className="w-full bg-gradient-to-b from-[#f7fafc] to-[#eef4f7] py-16">
+      <section className="w-full bg-gradient-to-b from-[#f7fafc] to-[#eef4f7] py-12">
         <div className="mx-auto max-w-5xl px-4">
-          <div className="text-center mb-12">
-            <div className="inline-block rounded-full bg-[#e6f6f3] px-4 py-1 text-sm text-emerald-600 font-semibold mb-6 shadow-sm">
+          <div className="text-center mb-8">
+            <div className="inline-block rounded-full bg-[#e6f6f3] px-4 py-1 text-sm text-emerald-600 font-semibold mb-4 shadow-sm">
               Why Work With Us
             </div>
-            <h3 className="mt-6 text-3xl font-sans font-semibold text-slate-900 sm:text-4xl">
+            <h3 className="mt-4 text-3xl font-sans font-semibold text-slate-900 sm:text-4xl">
               Real projects. Smart people.
               <br /> Growth that matters
             </h3>
-            <p className="text-slate-500 text-base max-w-2xl mx-auto">
-              At ICR, you won’t just do a job — you’ll contribute to work that
+            <p className="text-slate-500 text-base max-w-2xl mx-auto mt-2">
+              At ICR, you won't just do a job — you'll contribute to work that
               informs real decisions across industries and regions. We offer a
               culture built on purpose, collaboration, learning, and impact.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {/* Row 1 */}
             <div className="bg-white rounded-2xl shadow-md p-7 flex flex-col items-start h-full">
               <div className="mb-4">
@@ -219,7 +220,7 @@ export default function CareerPage() {
       </section>
 
       {/* CV Submission Section */}
-      <section className="w-full py-12 md:py-20 bg-[#071829] relative overflow-hidden">
+      <section className="w-full py-12 bg-[#071829] relative overflow-hidden">
         {/* Subtle pattern background */}
         <div className="absolute inset-0 pointer-events-none -z-10">
           <svg
@@ -244,8 +245,8 @@ export default function CareerPage() {
           </svg>
         </div>
         <div className="mx-auto max-w-2xl px-2">
-          <div className="text-center mb-8">
-            <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-4">
+          <div className="text-center mb-6">
+            <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-3">
               Submit Your CV
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
@@ -256,7 +257,7 @@ export default function CareerPage() {
               and keep qualified profiles for future roles.
             </p>
           </div>
-          <form className="bg-white/90 border border-slate-200 rounded-3xl shadow-xl p-8 md:p-10 space-y-6">
+          <form className="bg-white/90 border border-slate-200 rounded-3xl shadow-xl p-6 md:p-8 space-y-4">
             <div className="space-y-4">
               <div>
                 <label className="block text-slate-600 text-sm font-medium mb-1">
@@ -356,10 +357,10 @@ export default function CareerPage() {
       </section>
 
       {/* How We Process Your Application Section */}
-      <section className="w-full bg-gradient-to-b from-[#f7fafc] to-[#eef4f7] py-16">
+      <section className="w-full bg-gradient-to-b from-[#f7fafc] to-[#eef4f7] py-12">
         <div className="mx-auto max-w-3xl px-4">
-          <div className="text-center mb-10">
-            <div className="inline-block rounded-full bg-[#e6f6f3] px-4 py-1 text-sm text-emerald-600 font-semibold mb-6 shadow-sm">
+          <div className="text-center mb-8">
+            <div className="inline-block rounded-full bg-[#e6f6f3] px-4 py-1 text-sm text-emerald-600 font-semibold mb-4 shadow-sm">
               Process
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-2">

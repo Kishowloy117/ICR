@@ -193,9 +193,11 @@ export default async function name() {
 
         {/* CTA Buttons */}
         <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button className="bg-emerald-500 px-5 py-2.5 text-sm font-semibold hover:bg-emerald-600">
-            Request a Consultation »
-          </Button>
+          <Link href="/ContactUS">
+            <Button className="bg-emerald-500 px-5 py-2.5 text-sm font-semibold hover:bg-emerald-600">
+              Request a Consultation »
+            </Button>
+          </Link>
           <Link href="/services">
             <Button
               variant="outline"
@@ -941,9 +943,11 @@ export default async function name() {
           </p>
 
           <div className="mt-8">
-            <Button className="bg-emerald-500 px-6 py-3 text-sm font-semibold hover:bg-emerald-600 rounded-md">
-              Request a Consultation »
-            </Button>
+            <Link href="/ContactUS">
+              <Button className="bg-emerald-500 px-6 py-3 text-sm font-semibold hover:bg-emerald-600 rounded-md">
+                Request a Consultation »
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
