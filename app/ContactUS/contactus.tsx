@@ -86,7 +86,7 @@ export default function ContactUs() {
               onClick={scrollToForm}
               className="bg-emerald-500 px-6 py-3 text-sm font-semibold hover:bg-emerald-600"
             >
-              Request a Consultation »
+              Discuss Your Requirements »
             </Button>
             <Link href="/services">
               <Button className="bg-transparent border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black">
@@ -285,16 +285,16 @@ export default function ContactUs() {
       </section>
 
       {/* What Happens Next Section */}
-      <section className="w-full py-5 bg-white">
+      <section className="w-full py-12 bg-gradient-to-br from-[#0a1f2e] to-[#041a2e]">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-12">
-            <div className="inline-block rounded-full bg-emerald-50 px-4 py-1 text-sm text-emerald-600 font-semibold mb-4 shadow-sm">
+            <div className="inline-block rounded-full bg-emerald-500/20 border border-emerald-400/30 px-4 py-1 text-sm text-emerald-400 font-semibold mb-4 shadow-sm">
               Next Steps
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               What Happens Next
             </h2>
-            <p className="text-base text-slate-600 max-w-2xl mx-auto">
+            <p className="text-base text-slate-300 max-w-2xl mx-auto">
               All enquiries are reviewed by our consulting team, and we respond
               where there is a clear fit with our expertise.
             </p>
@@ -302,10 +302,10 @@ export default function ContactUs() {
 
           <div className="relative">
             {/* Timeline line - vertical on mobile, hidden on desktop */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-emerald-200 md:hidden" />
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-emerald-400/30 md:hidden" />
 
             {/* Timeline line - horizontal on desktop */}
-            <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-emerald-200" />
+            <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-emerald-400/30" />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
               {/* Step 1 */}
@@ -314,10 +314,10 @@ export default function ContactUs() {
                   <span className="text-2xl font-bold text-white">01</span>
                 </div>
                 <div className="ml-6 md:ml-0 md:mt-6">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                  <h3 className="text-lg font-semibold text-white mb-2">
                     Review
                   </h3>
-                  <p className="text-sm text-slate-600">
+                  <p className="text-sm text-slate-300">
                     Our team reviews your enquiry within 24-48 hours to
                     understand your needs and requirements.
                   </p>
@@ -330,10 +330,10 @@ export default function ContactUs() {
                   <span className="text-2xl font-bold text-white">02</span>
                 </div>
                 <div className="ml-6 md:ml-0 md:mt-6">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                  <h3 className="text-lg font-semibold text-white mb-2">
                     Initial Contact
                   </h3>
-                  <p className="text-sm text-slate-600">
+                  <p className="text-sm text-slate-300">
                     If there&apos;s a clear fit, we&apos;ll reach out to
                     schedule an initial consultation to discuss your objectives.
                   </p>
@@ -342,14 +342,14 @@ export default function ContactUs() {
 
               {/* Step 3 */}
               <div className="relative flex md:flex-col items-start md:items-center text-left md:text-center">
-                <div className="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-linear-to-br from-emerald-400 to-emerald-600 shadow-lg shrink-0">
+                <div className="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg shrink-0">
                   <span className="text-2xl font-bold text-white">03</span>
                 </div>
                 <div className="ml-6 md:ml-0 md:mt-6">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                  <h3 className="text-lg font-semibold text-white mb-2">
                     Proposal
                   </h3>
-                  <p className="text-sm text-slate-600">
+                  <p className="text-sm text-slate-300">
                     We prepare a tailored proposal outlining our approach,
                     timeline, and how we can support your goals.
                   </p>
@@ -360,11 +360,11 @@ export default function ContactUs() {
 
           {/* CTA */}
           <div className="mt-12 text-center">
-            <p className="text-sm text-slate-500 mb-4">
+            <p className="text-sm text-slate-400 mb-4">
               Need urgent assistance? Reach out directly at{" "}
               <a
                 href="mailto:info@icr-me.com"
-                className="text-emerald-600 font-semibold hover:underline"
+                className="text-emerald-400 font-semibold hover:text-emerald-300 transition-colors"
               >
                 info@icr-me.com
               </a>

@@ -357,18 +357,18 @@ export default function CareerPage() {
       </section>
 
       {/* How We Process Your Application Section */}
-      <section className="w-full bg-gradient-to-b from-[#f7fafc] to-[#eef4f7] py-12">
+      <section className="w-full bg-gradient-to-br from-[#0a1f2e] to-[#041a2e] py-16">
         <div className="mx-auto max-w-3xl px-4">
           <div className="text-center mb-8">
-            <div className="inline-block rounded-full bg-[#e6f6f3] px-4 py-1 text-sm text-emerald-600 font-semibold mb-4 shadow-sm">
+            <div className="inline-block rounded-full bg-emerald-500/20 border border-emerald-400/30 px-4 py-1 text-sm text-emerald-400 font-semibold mb-4 shadow-sm">
               Process
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-2">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-2">
               How We Process Your
               <br />
               Application
             </h2>
-            <p className="text-slate-500 text-base max-w-xl mx-auto">
+            <p className="text-slate-300 text-base max-w-xl mx-auto">
               Clear steps from submission to selection.
             </p>
           </div>
@@ -434,50 +434,50 @@ export default function CareerPage() {
             </svg>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-60 gap-y-30 z-10">
               {/* Step 1 */}
-              <div className="bg-white rounded-2xl shadow-md flex flex-col justify-center items-center w-full max-w-[320px] min-h-[160px] text-center p-7">
-                <h3 className="font-bold text-lg text-slate-900 mb-2">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl shadow-md flex flex-col justify-center items-center w-full max-w-[320px] min-h-[160px] text-center p-7">
+                <h3 className="font-bold text-lg text-white mb-2">
                   Resume Review
                 </h3>
-                <p className="text-slate-500 text-sm">
+                <p className="text-slate-300 text-sm">
                   We evaluate your resume for role fit and experience.
                 </p>
               </div>
               {/* Step 2 */}
-              <div className="bg-white rounded-2xl shadow-md flex flex-col justify-center items-center w-full max-w-[320px] min-h-[160px] text-center p-7">
-                <h3 className="font-bold text-lg text-slate-900 mb-2">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl shadow-md flex flex-col justify-center items-center w-full max-w-[320px] min-h-[160px] text-center p-7">
+                <h3 className="font-bold text-lg text-white mb-2">
                   Initial Screening
                 </h3>
-                <p className="text-slate-500 text-sm">
+                <p className="text-slate-300 text-sm">
                   Shortlisted candidates are contacted for a quick phone or
                   video screen.
                 </p>
               </div>
               {/* Step 3 */}
-              <div className="bg-white rounded-2xl shadow-md flex flex-col justify-center items-center w-full max-w-[320px] min-h-[160px] text-center p-7">
-                <h3 className="font-bold text-lg text-slate-900 mb-2">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl shadow-md flex flex-col justify-center items-center w-full max-w-[320px] min-h-[160px] text-center p-7">
+                <h3 className="font-bold text-lg text-white mb-2">
                   Interviews
                 </h3>
-                <p className="text-slate-500 text-sm">
-                  You’ll meet with relevant team leads and managers (1–2
+                <p className="text-slate-300 text-sm">
+                  You'll meet with relevant team leads and managers (1–2
                   rounds).
                 </p>
               </div>
               {/* Step 4 */}
-              <div className="bg-white rounded-2xl shadow-md flex flex-col justify-center items-center w-full max-w-[320px] min-h-[160px] text-center p-7">
-                <h3 className="font-bold text-lg text-slate-900 mb-2">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl shadow-md flex flex-col justify-center items-center w-full max-w-[320px] min-h-[160px] text-center p-7">
+                <h3 className="font-bold text-lg text-white mb-2">
                   Final Review
                 </h3>
-                <p className="text-slate-500 text-sm">
+                <p className="text-slate-300 text-sm">
                   We assess skills, fit, and culture alignment before making an
                   offer.
                 </p>
               </div>
               {/* Step 5 (centered below) */}
-              <div className="bg-white rounded-2xl shadow-md flex flex-col justify-center items-center w-full max-w-[320px] min-h-[160px] text-center col-span-1 md:col-span-2 mx-auto p-7">
-                <h3 className="font-bold text-lg text-slate-900 mb-2">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl shadow-md flex flex-col justify-center items-center w-full max-w-[320px] min-h-[160px] text-center col-span-1 md:col-span-2 mx-auto p-7">
+                <h3 className="font-bold text-lg text-white mb-2">
                   Offer & Onboarding
                 </h3>
-                <p className="text-slate-500 text-sm">
+                <p className="text-slate-300 text-sm">
                   Selected candidates receive a formal offer and onboarding
                   plan.
                 </p>

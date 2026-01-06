@@ -61,7 +61,7 @@ export default function Page() {
               href="/ContactUS"
               className="inline-block rounded-md bg-emerald-500 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-600"
             >
-              Request a Consultation »
+              Discuss Your Requirements »
             </Link>
 
             <Link
@@ -486,7 +486,7 @@ export default function Page() {
               href="/ContactUS"
               className="inline-block rounded-md bg-emerald-500 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-600"
             >
-              Request a Consultation »
+              Discuss Your Requirements »
             </Link>
           </div>
         </div>

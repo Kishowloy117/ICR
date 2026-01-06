@@ -62,7 +62,7 @@ export default function AboutPage() {
 
           <div className="mt-8">
             <Button className="bg-emerald-500 px-6 py-3 text-sm font-semibold hover:bg-emerald-600 rounded-md">
-              Request a Consultation »
+              Discuss Your Requirements »
             </Button>
           </div>
         </div>
@@ -208,43 +208,39 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mt-8 mb-8">
+      <section className="mt-8 mb-8 bg-gradient-to-br from-[#0a1f2e] to-[#041a2e] py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="max-w-md">
-              <div className="inline-block rounded-full border border-emerald-200 bg-emerald-50/40 px-3 py-1 text-xs text-emerald-600 mb-4">
+              <div className="inline-block rounded-full bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 text-xs text-emerald-400 mb-4">
                 How we work
               </div>
 
-              <h3 className="text-3xl font-extrabold text-slate-900 mb-4">
+              <h3 className="text-3xl font-extrabold text-white mb-4">
                 How We Work with Clients
               </h3>
 
-              <p className="text-md text-slate-600">
+              <p className="text-md text-slate-300">
                 We engage closely with clients throughout the lifecycle of an
                 assignment, beginning with a clear understanding of decision
                 needs and ending with outputs designed for real-world use.
               </p>
               <br />
-              <p className="text-md text-slate-600">
+              <p className="text-md text-slate-300">
                 We value long-term partnerships built on trust, transparency,
                 and consistent delivery.
               </p>
 
               <div className="mt-6 flex items-center space-x-3">
                 <div className="h-1 w-20 rounded bg-emerald-400"></div>
-                <div className="h-1 w-24 rounded bg-slate-200"></div>
-                <div className="h-1 w-24 rounded bg-slate-200"></div>
-                <div className="h-1 w-24 rounded bg-slate-200"></div>
+                <div className="h-1 w-24 rounded bg-slate-600"></div>
+                <div className="h-1 w-24 rounded bg-slate-600"></div>
+                <div className="h-1 w-24 rounded bg-slate-600"></div>
               </div>
             </div>
 
             <div className="relative">
-              {/* <div
-                className="absolute left-11 top-10 bottom-0 w-0.75 bg-emerald-200 pointer-events-none"
-                aria-hidden
-              /> */}
-              <div className="inline-block rounded-full border border-emerald-200 bg-emerald-50/40 px-3 py-1 text-xs text-emerald-600 mb-4">
+              <div className="inline-block rounded-full bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 text-xs text-emerald-400 mb-4">
                 Our approach emphasises:
               </div>
               <div className="space-y-8 pl-6">
@@ -256,12 +252,9 @@ export default function AboutPage() {
                   </div>
 
                   <div>
-                    <h4 className="text-lg font-semibold text-emerald-600">
+                    <h4 className="text-lg font-semibold text-white">
                       Careful framing of questions before data collection begins
                     </h4>
-                    {/* <p className="mt-2 text-sm text-slate-600">
-                      Decision requirements clarified upfront
-                    </p> */}
                   </div>
                 </div>
 
@@ -273,12 +266,9 @@ export default function AboutPage() {
                   </div>
 
                   <div>
-                    <h4 className="text-lg font-semibold text-emerald-600">
+                    <h4 className="text-lg font-semibold text-white">
                       Ongoing dialogue to ensure relevance and alignment
                     </h4>
-                    {/* <p className="mt-2 text-sm text-slate-600">
-                      Structured delivery and quality assurance processes
-                    </p> */}
                   </div>
                 </div>
 
@@ -290,13 +280,10 @@ export default function AboutPage() {
                   </div>
 
                   <div>
-                    <h4 className="text-lg font-semibold text-emerald-600">
+                    <h4 className="text-lg font-semibold text-white">
                       Structured outputs that support decision-making, not just
                       reporting
                     </h4>
-                    {/* <p className="mt-2 text-sm text-slate-600">
-                      Ongoing validation and oversight
-                    </p> */}
                   </div>
                 </div>
               </div>

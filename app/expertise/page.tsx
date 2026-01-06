@@ -63,7 +63,7 @@ export default function ServicesPage() {
 
           <div className="mt-8">
             <Button className="bg-emerald-500 px-6 py-3 text-sm font-semibold hover:bg-emerald-600 rounded-md">
-              Request a Consultation »
+              Discuss Your Requirements »
             </Button>
           </div>
         </div>

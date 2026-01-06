@@ -150,34 +150,34 @@ export default function ServicesPage() {
           </div>
         </div>
         {/* Work Process */}
-        <section className="mt-12">
+        <section className="mt-12 bg-gradient-to-br from-[#0a1f2e] to-[#041a2e] py-16">
           <div className="mx-auto max-w-7xl px-4">
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="max-w-md">
-                <div className="inline-block rounded-full border border-emerald-200 bg-emerald-50/40 px-3 py-1 text-xs text-emerald-600 mb-4">
+                <div className="inline-block rounded-full bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 text-xs text-emerald-400 mb-4">
                   How we work
                 </div>
 
-                <h3 className="text-4xl font-extrabold text-slate-900 mb-4">
+                <h3 className="text-4xl font-extrabold text-white mb-4">
                   5 Step Work Process
                 </h3>
 
-                <p className="text-sm text-slate-600">
+                <p className="text-sm text-slate-300">
                   We combine rigorous methods and practical experience to
                   deliver research that informs confident decisions.
                 </p>
 
                 <div className="mt-6 flex items-center space-x-3">
                   <div className="h-1 w-20 rounded bg-emerald-400"></div>
-                  <div className="h-1 w-24 rounded bg-slate-200"></div>
-                  <div className="h-1 w-24 rounded bg-slate-200"></div>
-                  <div className="h-1 w-24 rounded bg-slate-200"></div>
+                  <div className="h-1 w-24 rounded bg-slate-600"></div>
+                  <div className="h-1 w-24 rounded bg-slate-600"></div>
+                  <div className="h-1 w-24 rounded bg-slate-600"></div>
                 </div>
               </div>
 
               <div className="relative">
                 <div
-                  className="absolute left-11 top-10 bottom-0 w-0.75 bg-emerald-200 pointer-events-none"
+                  className="absolute left-11 top-10 bottom-0 w-0.75 bg-emerald-400/30 pointer-events-none"
                   aria-hidden
                 />
 
@@ -190,10 +190,10 @@ export default function ServicesPage() {
                     </div>
 
                     <div>
-                      <h4 className="text-lg font-semibold text-emerald-600">
+                      <h4 className="text-lg font-semibold text-white">
                         Clear Decisions
                       </h4>
-                      <p className="mt-2 text-sm text-slate-600">
+                      <p className="mt-2 text-sm text-slate-300">
                         Decision requirements clarified upfront
                       </p>
                     </div>
@@ -207,10 +207,10 @@ export default function ServicesPage() {
                     </div>
 
                     <div>
-                      <h4 className="text-lg font-semibold text-emerald-600">
+                      <h4 className="text-lg font-semibold text-white">
                         Structured Delivery
                       </h4>
-                      <p className="mt-2 text-sm text-slate-600">
+                      <p className="mt-2 text-sm text-slate-300">
                         Structured delivery and quality assurance processes
                       </p>
                     </div>
@@ -224,10 +224,10 @@ export default function ServicesPage() {
                     </div>
 
                     <div>
-                      <h4 className="text-lg font-semibold text-emerald-600">
+                      <h4 className="text-lg font-semibold text-white">
                         Continuous Oversight
                       </h4>
-                      <p className="mt-2 text-sm text-slate-600">
+                      <p className="mt-2 text-sm text-slate-300">
                         Ongoing validation and oversight
                       </p>
                     </div>
@@ -241,10 +241,10 @@ export default function ServicesPage() {
                     </div>
 
                     <div>
-                      <h4 className="text-lg font-semibold text-emerald-600">
+                      <h4 className="text-lg font-semibold text-white">
                         Actionable Reporting
                       </h4>
-                      <p className="mt-2 text-sm text-slate-600">
+                      <p className="mt-2 text-sm text-slate-300">
                         Clear, decision-ready reporting
                       </p>
                     </div>
@@ -258,10 +258,10 @@ export default function ServicesPage() {
                     </div>
 
                     <div>
-                      <h4 className="text-lg font-semibold text-emerald-600">
+                      <h4 className="text-lg font-semibold text-white">
                         Governed Engagements
                       </h4>
-                      <p className="mt-2 text-sm text-slate-600">
+                      <p className="mt-2 text-sm text-slate-300">
                         Engagements scoped and governed to meet client,
                         regulatory, and stakeholder requirements
                       </p>
@@ -274,7 +274,7 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA */}
-        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center py-4">
+        <div className=" flex flex-col items-center gap-4 sm:flex-row sm:justify-center py-4 bg-gradient-to-br from-[#0a1f2e] to-[#041a2e]">
           <Button className="bg-emerald-500 px-6 py-6 text-sm font-semibold hover:bg-emerald-600">
             Discuss Your Research or Evaluation Requirements
           </Button>

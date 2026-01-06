@@ -9,6 +9,7 @@ import {
   SheetContent,
   SheetTrigger,
   SheetClose,
+  SheetTitle,
 } from "@/components/ui/sheet";
 import { useState } from "react";
 
@@ -33,15 +34,17 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="w-full bg-linear-to-r from-[#061b2d] to-[#0b2f4a]">
+    // <header className="w-full bg-linear-to-r from-[#061b2d] to-[#0b2f4a]">
+    // <header className="w-full bg-linear-to-r from-[#02a863] to-[#068964]">
+    <header className="w-full bg-white/5 ">
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative">
               {/* Multiple glow layers for better visibility */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-emerald-400/20 via-cyan-400/30 to-emerald-400 blur-2xl rounded-full animate-pulse" />
-              <div className="absolute -inset-2 bg-gradient-to-br from-white/20 to-emerald-300/20 blur-xl rounded-full" />
+              {/* <div className="absolute -inset-4 bg-gradient-to-r from-emerald-400/20 via-cyan-400/30 to-emerald-400 blur-2xl rounded-full animate-pulse" /> */}
+              {/* <div className="absolute -inset-2 bg-gradient-to-br from-white/20 to-emerald-300/20 blur-xl rounded-full" /> */}
 
               <Image
                 src="/images/logo1.png"
@@ -60,13 +63,13 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="relative text-sm font-medium text-slate-200 px-4 py-2 rounded-lg transition-all duration-300 hover:text-white group overflow-hidden"
+                className="relative text-sm font-medium text-slate-700 px-4 py-2 rounded-lg transition-all duration-300 hover:text-emerald-600 group overflow-hidden"
               >
                 {/* Glass effect background */}
-                <span className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-white/20" />
+                <span className="absolute inset-0 bg-emerald-50/80 backdrop-blur-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-emerald-200/50" />
 
                 {/* Shine effect */}
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-200/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
 
                 {/* Text */}
                 <span className="relative z-10">{item.label}</span>
@@ -78,7 +81,7 @@ export default function Navbar() {
           <div className="hidden md:block relative">
             <Button
               onClick={() => setLangMenuOpen(!langMenuOpen)}
-              className="bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm transition-all duration-300"
+              className="bg-emerald-500 hover:bg-emerald-600 text-white border-0 shadow-md transition-all duration-300"
             >
               <Globe className="h-4 w-4 mr-2" />
               <span className="text-sm">EN</span>
@@ -111,7 +114,6 @@ export default function Navbar() {
                       setLangMenuOpen(false);
                     }}
                   >
-                    {/* <span className="text-2xl">{lang.flag}</span> */}
                     <span className="font-medium">{lang.name}</span>
                   </button>
                 ))}
@@ -126,40 +128,28 @@ export default function Navbar() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white hover:bg-white/10 h-12 w-12"
+                  className="text-slate-900 hover:bg-slate-100 h-12 w-12"
                 >
                   <Menu size={32} />
                 </Button>
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="w-[300px] bg-gradient-to-b from-[#061b2d] to-[#0b2f4a] border-l border-white/10 p-0"
+                className="w-[300px] bg-gradient-to-b from-[#061b2d] to-[#0b2f4a] border-l border-white/10 p-0 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right duration-300"
               >
-                {/* Header with Logo and Close */}
+                {/* Header with Close Button Only */}
                 <div className="flex items-center justify-between p-6 border-b border-white/10">
-                  <Link
-                    href="/"
-                    className="flex items-center gap-2"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <div className="relative">
-                      <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/25 to-cyan-400/25 blur-lg rounded-full" />
-                      <Image
-                        src="/images/logo1.png"
-                        alt="ICR Logo"
-                        width={55}
-                        height={55}
-                        className="object-contain relative z-10 drop-shadow-[0_0_10px_rgba(16,185,129,0.4)]"
-                      />
-                    </div>
-                  </Link>
+                  <SheetTitle className="text-lg font-semibold text-white">
+                    Menu
+                  </SheetTitle>
                   <SheetClose asChild>
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="text-white hover:bg-white/10 h-8 w-8"
+                      className="text-white hover:bg-white/10 h-10 w-10"
                     >
-                      <X size={20} />
+                      <X size={24} />
+                      <span className="sr-only">Close</span>
                     </Button>
                   </SheetClose>
                 </div>
@@ -190,7 +180,7 @@ export default function Navbar() {
                 </nav>
 
                 {/* Language Selector in Mobile */}
-                <div className="absolute bottom-20 left-0 right-0 p-6 border-t border-white/10">
+                <div className="absolute bottom-4 left-0 right-0 p-6 border-t border-white/10">
                   <div className="text-xs text-slate-400 mb-3">Language</div>
                   <div className="grid grid-cols-3 gap-2">
                     {languages.map((lang) => (
@@ -201,20 +191,12 @@ export default function Navbar() {
                           // Language change logic will be added later
                         }}
                       >
-                        {/* <span className="text-2xl">{lang.flag}</span> */}
                         <span className="text-xs text-slate-300">
                           {lang.code.toUpperCase()}
                         </span>
                       </button>
                     ))}
                   </div>
-                </div>
-
-                {/* CTA Button */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-white/10 bg-gradient-to-t from-[#061b2d]/50">
-                  <SheetClose asChild>
-                    <Link href="/ContactUS"></Link>
-                  </SheetClose>
                 </div>
               </SheetContent>
             </Sheet>

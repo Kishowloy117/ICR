@@ -8,14 +8,9 @@ type Slide = { src: string; alt?: string };
 interface CarouselProps {
   images: Slide[];
   interval?: number;
-  heightClass?: string;
 }
 
-export default function Carousel({
-  images,
-  interval = 4000,
-  heightClass = "h-[360px]",
-}: CarouselProps) {
+export default function Carousel({ images, interval = 4000 }: CarouselProps) {
   const [index, setIndex] = useState(0);
   const timerRef = useRef<number | undefined>(undefined);
 
@@ -39,9 +34,9 @@ export default function Carousel({
   }, [start, stop]);
 
   return (
-    <section className="mx-auto ">
+    <section className="w-full">
       <div
-        className={`relative overflow-hidden  ${heightClass}`}
+        className="relative w-full h-[400px] md:h-[500px] overflow-hidden"
         onMouseEnter={stop}
         onMouseLeave={start}
       >
@@ -56,13 +51,13 @@ export default function Carousel({
               src={img.src}
               alt={img.alt ?? ""}
               fill
-              className="object-cover"
+              className="object-cover object-contain"
             />
           </div>
         ))}
 
         {/* Dots */}
-        <div className="absolute inset-x-0 bottom-4 flex justify-center gap-2">
+        <div className="absolute inset-x-0 bottom-4 flex justify-center gap-2 z-20">
           {images.map((_, i) => (
             <button
               key={i}

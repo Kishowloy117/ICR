@@ -195,7 +195,7 @@ export default async function name() {
         <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link href="/ContactUS">
             <Button className="bg-emerald-500 px-5 py-2.5 text-sm font-semibold hover:bg-emerald-600">
-              Request a Consultation »
+              Discuss Your Requirements »
             </Button>
           </Link>
           <Link href="/services">
@@ -212,27 +212,22 @@ export default async function name() {
       {/* Image Carousel */}
       <Carousel
         interval={4500}
-        heightClass="h-[360px] md:h-[420px]"
         images={[
           {
-            src: "/images/WhatsApp Image 2025-12-20 at 8.39.39 PM (1).jpeg",
+            src: "/images/carousel.jpeg",
             alt: "Slide 1",
           },
           {
-            src: "/images/WhatsApp Image 2025-12-20 at 8.39.39 PM (2).jpeg",
+            src: "/images/carousel2.jpeg",
             alt: "Slide 2",
           },
           {
-            src: "/images/WhatsApp Image 2025-12-20 at 8.39.39 PM.jpeg",
+            src: "/images/carousel3.jpeg",
             alt: "Slide 3",
           },
           {
-            src: "/images/WhatsApp Image 2025-12-20 at 8.39.40 PM.jpeg",
+            src: "/images/carousel4.jpeg",
             alt: "Slide 4",
-          },
-          {
-            src: "/images/WhatsApp Image 2025-12-20 at 8.39.42 PM.jpeg",
-            alt: "Slide 5",
           },
         ]}
       />
@@ -945,7 +940,7 @@ export default async function name() {
           <div className="mt-8">
             <Link href="/ContactUS">
               <Button className="bg-emerald-500 px-6 py-3 text-sm font-semibold hover:bg-emerald-600 rounded-md">
-                Request a Consultation »
+                Discuss Your Requirements »
               </Button>
             </Link>
           </div>
