@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, Globe, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -16,6 +16,7 @@ import { useState } from "react";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
+  const [selectedLang, setSelectedLang] = useState("en");
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -28,14 +29,12 @@ export default function Navbar() {
   ];
 
   const languages = [
-    { code: "en", name: "English", flag: "🇬🇧" },
-    { code: "zh", name: "中文", flag: "🇨🇳" },
-    { code: "ar", name: "العربية", flag: "🇸🇦" },
+    { code: "en", name: "English" },
+    { code: "zh", name: "中文" },
+    { code: "ar", name: "العربية" },
   ];
 
   return (
-    // <header className="w-full bg-linear-to-r from-[#061b2d] to-[#0b2f4a]">
-    // <header className="w-full bg-linear-to-r from-[#02a863] to-[#068964]">
     <header className="w-full bg-white/5 ">
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-20 items-center justify-between">
@@ -51,7 +50,7 @@ export default function Navbar() {
                 alt="ICR Logo"
                 width={120}
                 height={120}
-                className="object-contain relative z-10 drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]"
+                className="object-contain relative z-10"
                 priority
               />
             </div>
@@ -79,42 +78,29 @@ export default function Navbar() {
 
           {/* Desktop Language Selector */}
           <div className="hidden md:block relative">
-            <Button
+            <button
               onClick={() => setLangMenuOpen(!langMenuOpen)}
-              className="bg-emerald-500 hover:bg-emerald-600 text-white border-0 shadow-md transition-all duration-300"
+              className="text-slate-700 hover:text-emerald-600 transition-colors p-0 bg-transparent border-0"
             >
-              <Globe className="h-4 w-4 mr-2" />
-              <span className="text-sm">EN</span>
-              <svg
-                className={`ml-2 h-4 w-4 transition-transform ${
-                  langMenuOpen ? "rotate-180" : ""
-                }`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </Button>
+              <Globe className="h-8 w-8" strokeWidth={1.3} />
+            </button>
 
             {/* Language Dropdown */}
             {langMenuOpen && (
-              <div className="absolute right-0 mt-2 w-48 rounded-lg bg-white shadow-lg border border-slate-200 overflow-hidden z-50">
+              <div className="absolute right-0 mt-2 w-56 rounded-lg bg-white shadow-lg border border-slate-200 overflow-hidden z-50">
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
-                    className="w-full flex items-center gap-3 px-4 py-3 text-sm text-slate-700 hover:bg-emerald-50 transition-colors"
+                    className="w-full flex items-center justify-between px-4 py-3 text-sm text-slate-700 hover:bg-emerald-50 transition-colors"
                     onClick={() => {
-                      // Language change logic will be added later
+                      setSelectedLang(lang.code);
                       setLangMenuOpen(false);
                     }}
                   >
                     <span className="font-medium">{lang.name}</span>
+                    {selectedLang === lang.code && (
+                      <Check className="h-4 w-4 text-emerald-600" />
+                    )}
                   </button>
                 ))}
               </div>
@@ -155,7 +141,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Navigation Items */}
-                <nav className="flex flex-col p-6 space-y-1">
+                <nav className="flex flex-col p-6 pb-48 space-y-1 overflow-y-auto max-h-[calc(110vh-280px)]">
                   {navItems.map((item) => (
                     <SheetClose asChild key={item.label}>
                       <Link
@@ -180,20 +166,43 @@ export default function Navbar() {
                 </nav>
 
                 {/* Language Selector in Mobile */}
-                <div className="absolute bottom-4 left-0 right-0 p-6 border-t border-white/10">
-                  <div className="text-xs text-slate-400 mb-3">Language</div>
-                  <div className="grid grid-cols-3 gap-2">
+                <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-white/10 bg-gradient-to-t from-[#061b2d] to-[#061b2d]/95">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Globe className="h-4 w-4 text-emerald-400" />
+                    <span className="text-xs font-semibold text-slate-300 uppercase tracking-wide">
+                      Language
+                    </span>
+                  </div>
+                  <div className="space-y-2">
                     {languages.map((lang) => (
                       <button
                         key={lang.code}
-                        className="flex flex-col items-center gap-1 p-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-all"
+                        className={`w-full flex items-center justify-between p-3 rounded-lg transition-all ${
+                          selectedLang === lang.code
+                            ? "bg-emerald-500/20 border border-emerald-400/40"
+                            : "bg-white/5 border border-white/10 hover:bg-white/10"
+                        }`}
                         onClick={() => {
-                          // Language change logic will be added later
+                          setSelectedLang(lang.code);
                         }}
                       >
-                        <span className="text-xs text-slate-300">
-                          {lang.code.toUpperCase()}
+                        <span
+                          className={`text-sm font-medium ${
+                            selectedLang === lang.code
+                              ? "text-white"
+                              : "text-slate-300"
+                          }`}
+                        >
+                          {lang.name}
                         </span>
+                        {selectedLang === lang.code && (
+                          <div className="flex items-center justify-center h-5 w-5 rounded-full bg-emerald-500">
+                            <Check
+                              className="h-3 w-3 text-white"
+                              strokeWidth={3}
+                            />
+                          </div>
+                        )}
                       </button>
                     ))}
                   </div>

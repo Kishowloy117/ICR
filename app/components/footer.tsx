@@ -13,13 +13,13 @@ export default function Footer() {
             <Link href="/" className="inline-block">
               <div className="relative">
                 {/* Glow effect */}
-                <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/10 to-cyan-400/10 blur-lg rounded-full" />
+                {/* <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/10 to-cyan-400/10 blur-lg rounded-full" /> */}
                 <Image
                   src="/images/logo1.png"
                   alt="ICR Logo"
                   width={100}
                   height={100}
-                  className="object-contain relative z-10 drop-shadow-md"
+                  className="object-contain relative z-10"
                 />
               </div>
             </Link>
