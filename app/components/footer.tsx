@@ -2,10 +2,16 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
-    <footer className="bg-slate-50 text-slate-900 border-t border-slate-200">
+    <footer
+      className="bg-slate-50 text-slate-900 border-t border-slate-200"
+      dir="ltr"
+    >
       <div className="mx-auto max-w-7xl px-4 py-12">
         <div className="grid gap-8 md:grid-cols-3">
           {/* Left */}
@@ -13,18 +19,18 @@ export default function Footer() {
             <Link href="/" className="inline-block">
               <div className="relative">
                 {/* Glow effect */}
-                {/* <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/10 to-cyan-400/10 blur-lg rounded-full" /> */}
+                <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/10 to-cyan-400/10 blur-lg rounded-full" />
                 <Image
                   src="/images/logo1.png"
                   alt="ICR Logo"
                   width={100}
                   height={100}
-                  className="object-contain relative z-10"
+                  className="object-contain relative z-10 drop-shadow-md"
                 />
               </div>
             </Link>
             <div className="mt-4 text-sm text-slate-600">
-              Research • Insight • Strategic Clarity
+              {t("footer.tagline")}
             </div>
           </div>
 

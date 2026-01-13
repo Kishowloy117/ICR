@@ -12,11 +12,12 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { useState } from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
-  const [selectedLang, setSelectedLang] = useState("en");
+  const { language, setLanguage } = useLanguage();
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -29,13 +30,13 @@ export default function Navbar() {
   ];
 
   const languages = [
-    { code: "en", name: "English" },
-    { code: "zh", name: "中文" },
-    { code: "ar", name: "العربية" },
+    { code: "en" as const, name: "English" },
+    { code: "zh" as const, name: "中文" },
+    { code: "ar" as const, name: "العربية" },
   ];
 
   return (
-    <header className="w-full bg-white/5 ">
+    <header className="w-full bg-white/5" dir="ltr">
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
@@ -93,12 +94,12 @@ export default function Navbar() {
                     key={lang.code}
                     className="w-full flex items-center justify-between px-4 py-3 text-sm text-slate-700 hover:bg-emerald-50 transition-colors"
                     onClick={() => {
-                      setSelectedLang(lang.code);
+                      setLanguage(lang.code);
                       setLangMenuOpen(false);
                     }}
                   >
                     <span className="font-medium">{lang.name}</span>
-                    {selectedLang === lang.code && (
+                    {language === lang.code && (
                       <Check className="h-4 w-4 text-emerald-600" />
                     )}
                   </button>
@@ -178,24 +179,24 @@ export default function Navbar() {
                       <button
                         key={lang.code}
                         className={`w-full flex items-center justify-between p-3 rounded-lg transition-all ${
-                          selectedLang === lang.code
+                          language === lang.code
                             ? "bg-emerald-500/20 border border-emerald-400/40"
                             : "bg-white/5 border border-white/10 hover:bg-white/10"
                         }`}
                         onClick={() => {
-                          setSelectedLang(lang.code);
+                          setLanguage(lang.code);
                         }}
                       >
                         <span
                           className={`text-sm font-medium ${
-                            selectedLang === lang.code
+                            language === lang.code
                               ? "text-white"
                               : "text-slate-300"
                           }`}
                         >
                           {lang.name}
                         </span>
-                        {selectedLang === lang.code && (
+                        {language === lang.code && (
                           <div className="flex items-center justify-center h-5 w-5 rounded-full bg-emerald-500">
                             <Check
                               className="h-3 w-3 text-white"

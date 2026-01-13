@@ -1,30 +1,31 @@
-"use server";
+"use client";
 
+import { useLanguage } from "../contexts/LanguageContext";
 import Carousel from "./Carousel";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-export default async function name() {
-  // } Home() {
+export default function HomePage() {
+  const { t } = useLanguage();
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-linear-to-br from-[#041a2e] via-[#062944] to-[#041a2e]">
       {/* Hero Content */}
       <section className="mx-auto max-w-7xl px-4 pt-6 pb-12 text-center">
         <h1 className="mx-auto max-w-3xl text-3xl font-sans leading-tight text-white md:text-5xl">
-          Turning Evidence into
+          {t("home.hero.title")}
           <br />
-          <span className="text-emerald-400">Confident Decisions</span>
+          <span className="bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-emerald-200">
+            {t("home.hero.subtitle")}
+          </span>
         </h1>
 
         <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-          Insight Consultancy & Research (ICR) is an independent research and
-          advisory firm supporting public sector, corporate, and international
-          organisations with decision-focused research, evaluation, and insight.
+          {t("home.hero.description")}
         </p>
 
         <p className="mx-auto mt-2 max-w-2xl text-sm font-semibold leading-relaxed text-slate-200 md:text-base">
-          We design and deliver rigorous evidence and clear analysis to support
-          strategic, operational, and policy decisions in complex environments.
+          {t("home.hero.description2")}
         </p>
 
         {/* Feature Row */}
@@ -57,10 +58,11 @@ export default async function name() {
               </div>
 
               <div>
-                <div className="text-sm font-semibold text-white">Research</div>
+                <div className="text-sm font-semibold text-white">
+                  {t("home.feature.research")}
+                </div>
                 <div className="mt-1 text-xs text-slate-200">
-                  Rigorous, defensible methodologies designed for real-world
-                  decisions
+                  {t("home.feature.research.desc")}
                 </div>
               </div>
             </div>
@@ -119,9 +121,11 @@ export default async function name() {
               </div>
 
               <div>
-                <div className="text-sm font-semibold text-white">Insight</div>
+                <div className="text-sm font-semibold text-white">
+                  {t("home.feature.insight")}
+                </div>
                 <div className="mt-1 text-xs text-slate-200">
-                  Clear interpretation of evidence, grounded in context
+                  {t("home.feature.insight.desc")}
                 </div>
               </div>
             </div>
@@ -181,10 +185,10 @@ export default async function name() {
 
               <div>
                 <div className="text-sm font-semibold text-white">
-                  Strategic Clarity
+                  {t("home.feature.clarity")}
                 </div>
                 <div className="mt-1 text-xs text-slate-200">
-                  Decision-ready guidance for senior leaders and stakeholders
+                  {t("home.feature.clarity.desc")}
                 </div>
               </div>
             </div>
@@ -195,7 +199,7 @@ export default async function name() {
         <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link href="/ContactUS">
             <Button className="bg-emerald-500 px-5 py-2.5 text-sm font-semibold hover:bg-emerald-600">
-              Discuss Your Requirements »
+              {t("home.cta.discuss")} »
             </Button>
           </Link>
           <Link href="/services">
@@ -203,7 +207,7 @@ export default async function name() {
               variant="outline"
               className="bg-transparent border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black"
             >
-              Explore Our Services
+              {t("home.cta.services")}
             </Button>
           </Link>
         </div>
@@ -243,13 +247,11 @@ export default async function name() {
               </div>
 
               <h2 className="mt-6 text-3xl font-sans leading-tight text-slate-900 sm:text-4xl">
-                Our Expertise
+                {t("home.expertise.title")}
               </h2>
 
               <p className="mt-4 text-sm text-slate-600">
-                At Insight Consultancy & Research (ICR), we provide tailored
-                research and advisory services designed to support strategic
-                planning, policy development, and organizational growth.
+                {t("home.expertise.description")}
               </p>
 
               <div className="mt-6 space-y-4">
@@ -281,11 +283,10 @@ export default async function name() {
 
                     <div>
                       <div className="text-sm font-semibold text-slate-900">
-                        Market &amp; Social Research:
+                        {t("home.expertise.market")}:
                       </div>
                       <div className="mt-1 text-xs text-slate-600">
-                        Generating reliable data and insights to understand
-                        markets, communities, and stakeholders.
+                        {t("home.expertise.market.desc")}
                       </div>
                     </div>
                   </li>
@@ -346,11 +347,10 @@ export default async function name() {
 
                     <div>
                       <div className="text-sm font-semibold text-slate-900">
-                        Strategic Advisory:
+                        {t("home.expertise.advisory")}:
                       </div>
                       <div className="mt-1 text-xs text-slate-600">
-                        Supporting evidence-based decision-making through
-                        analysis and foresight.
+                        {t("home.expertise.advisory.desc")}
                       </div>
                     </div>
                   </li>
@@ -375,11 +375,10 @@ export default async function name() {
 
                     <div>
                       <div className="text-sm font-semibold text-slate-900">
-                        Monitoring &amp; Evaluation:
+                        {t("home.expertise.monitoring")}:
                       </div>
                       <div className="mt-1 text-xs text-slate-600">
-                        Measuring performance, impact, and effectiveness of
-                        programs and initiatives.
+                        {t("home.expertise.monitoring.desc")}
                       </div>
                     </div>
                   </li>
@@ -427,11 +426,10 @@ export default async function name() {
 
                     <div>
                       <div className="text-sm font-semibold text-slate-900">
-                        Data Analysis &amp; Reporting:
+                        {t("home.expertise.data")}:
                       </div>
                       <div className="mt-1 text-xs text-slate-600">
-                        Transforming complex data into clear, actionable
-                        insights
+                        {t("home.expertise.data.desc")}
                       </div>
                     </div>
                   </li>
@@ -443,7 +441,7 @@ export default async function name() {
                   variant="outline"
                   className="mt-6 border-emerald-400 text-emerald-600 hover:bg-emerald-50 px-4 py-2"
                 >
-                  Explore Our Services »
+                  {t("home.cta.services")} »
                 </Button>
               </Link>
             </div>
@@ -623,41 +621,39 @@ export default async function name() {
             </div>
 
             <h3 className="mt-6 text-3xl font-sans text-slate-900 sm:text-4xl ">
-              Why Choose Insight Consultancy & Research
+              {t("home.why.title")}
             </h3>
 
             <p className="mt-3 text-sm text-slate-500">
-              At Insight Consultancy & Research (ICR), we support organisations
-              to move from evidence to insight — and from insight to clear,
-              defensible decisions.
+              {t("home.why.description")}
             </p>
           </div>
 
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
             {[
               {
-                title: "Evidence-Driven Decisions",
+                title: t("home.why.evidence"),
                 desc: "We ensure every decision is grounded in robust quantitative data, providing confidence in your choices.",
               },
               {
-                title: "Contextual Insights",
+                title: t("home.why.contextual"),
                 desc: "Our qualitative research uncovers the human context behind the data, enriching your strategic understanding.",
                 highlighted: true,
               },
               {
-                title: "Continuous Monitoring",
+                title: t("home.why.monitoring"),
                 desc: "We provide ongoing tracking to keep you informed of trends and changes as they happen.",
               },
               {
-                title: "Practical Market Insights",
+                title: t("home.why.practical"),
                 desc: "Our retail research turns in-store observations into actionable insights for your business.",
               },
               {
-                title: "Strategic Market Clarity",
+                title: t("home.why.strategic"),
                 desc: "We help you identify and prioritise opportunities with clear, data-backed assessments.",
               },
               {
-                title: "Actionable Strategies",
+                title: t("home.why.actionable"),
                 desc: "We turn complex research into straightforward, actionable strategies for decision-makers.",
               },
             ].map((s, i) => (
@@ -708,7 +704,9 @@ export default async function name() {
           <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-4">
             Our Impact
           </div>
-          <h3 className="text-4xl font-sans text-white">ICR in numbers</h3>
+          <h3 className="text-4xl font-sans text-white">
+            {t("home.numbers.title")}
+          </h3>
           <p className="mt-2 max-w-2xl mx-auto text-md text-white/80">
             Research and advisory expertise since 2009 — the scale and reach of
             our work speaks for itself.
@@ -723,8 +721,7 @@ export default async function name() {
                 100,000+
               </div>
               <div className="mt-3 text-sm md:text-base font-medium">
-                {" "}
-                Interviews Conducted
+                {t("home.numbers.interviews")}
               </div>
               <p className="mt-2 text-xs md:text-sm text-white/80 max-w-[22rem]">
                 Face-to-face, telephone, and digital data collection — and
@@ -740,7 +737,7 @@ export default async function name() {
                 100+
               </div>
               <div className="mt-3 text-sm md:text-base font-medium">
-                Projects Delivered
+                {t("home.numbers.projects")}
               </div>
               <p className="mt-2 text-xs md:text-sm text-white/80 max-w-[22rem]">
                 Completed across multiple sectors and industries.
@@ -755,7 +752,7 @@ export default async function name() {
                 55+
               </div>
               <div className="mt-3 text-sm md:text-base font-medium">
-                Years of Combined Team Experience
+                {t("home.numbers.experience")}
               </div>
               <p className="mt-2 text-xs md:text-sm text-white/80 max-w-[22rem]">
                 Across research, analysis, and strategic advisory roles.
@@ -772,11 +769,10 @@ export default async function name() {
             Why ICR
           </div>
           <h3 className="mt-6 text-3xl font-sans text-slate-900 sm:text-4xl">
-            Why organisations trust ICR
+            {t("home.trust.title")}
           </h3>
           <p className="mt-3 text-base text-slate-600">
-            Our work is grounded in methodological rigour, independence, and a
-            clear focus on decision-maker needs.
+            {t("home.trust.description")}
           </p>
 
           <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-3 md:grid-cols-3">
@@ -806,7 +802,7 @@ export default async function name() {
               </div>
 
               <h4 className="mt-4 text-lg font-semibold text-slate-900">
-                Evidence-Led Delivery
+                {t("home.trust.delivery")}
               </h4>
               <p className="mt-2 text-sm text-slate-600 max-w-[20rem]">
                 Robust research design, quality assurance, and defensible
@@ -849,7 +845,7 @@ export default async function name() {
               </div>
 
               <h4 className="mt-4 text-lg font-semibold text-slate-900">
-                Decision-Focused Engagements
+                {t("home.trust.engagement")}
               </h4>
               <p className="mt-2 text-sm text-slate-600 max-w-[20rem]">
                 Structured around governance and decision needs.
@@ -882,7 +878,7 @@ export default async function name() {
               </div>
 
               <h4 className="mt-4 text-lg font-semibold text-slate-900">
-                Experienced Research & Advisory Team
+                {t("home.trust.team")}
               </h4>
               <p className="mt-2 text-sm text-slate-600 max-w-[20rem]">
                 Public, corporate, and international experience.
@@ -891,8 +887,6 @@ export default async function name() {
           </div>
         </div>
       </section>
-
-      {/* CTA: Let's Work Together */}
 
       {/* CTA: Let's Work Together */}
       <section className="w-full relative bg-linear-to-br from-[#0b2a36] via-[#082633] to-[#07202a] text-white py-20">
@@ -929,18 +923,16 @@ export default async function name() {
 
         <div className="mx-auto max-w-4xl px-4 text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans">
-            Let’s Work Together
+            {t("home.final.title")}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm text-white/80">
-            If you require independent research, evaluation, or decision
-            support, ICR can support your objectives with rigorous evidence and
-            clear insight.
+            {t("home.final.description")}
           </p>
 
           <div className="mt-8">
             <Link href="/ContactUS">
               <Button className="bg-emerald-500 px-6 py-3 text-sm font-semibold hover:bg-emerald-600 rounded-md">
-                Discuss Your Requirements »
+                {t("home.cta.discuss")} »
               </Button>
             </Link>
           </div>

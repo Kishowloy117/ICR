@@ -1,15 +1,40 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  BarChart2,
-  Users,
-  TrendingUp,
-  ShoppingCart,
-  Globe,
-  Briefcase,
-} from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function ServicesPage() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      title: t("services.quantitative.title"),
+      desc: t("services.quantitative.desc"),
+    },
+    {
+      title: t("services.qualitative.title"),
+      desc: t("services.qualitative.desc"),
+      highlighted: true,
+    },
+    {
+      title: t("services.tracking.title"),
+      desc: t("services.tracking.desc"),
+    },
+    {
+      title: t("services.retail.title"),
+      desc: t("services.retail.desc"),
+    },
+    {
+      title: t("services.market.title"),
+      desc: t("services.market.desc"),
+    },
+    {
+      title: t("services.strategic.title"),
+      desc: t("services.strategic.desc"),
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-white">
       <section className="w-full relative bg-linear-to-br from-[#041a2e] via-[#062944] to-[#041a2e] text-white py-8">
@@ -50,18 +75,15 @@ export default function ServicesPage() {
           </div>
 
           <h1 className="mx-auto max-w-3xl text-3xl font-sans leading-tight text-white md:text-5xl">
-            Explore Our
+            {t("services.hero.title")}
             <br />
-            <span className="text-emerald-400">services</span>
-            {/* <span className="bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-emerald-200">
-              services
-            </span> */}
+            <span className="text-emerald-400">
+              {t("services.hero.subtitle")}
+            </span>
           </h1>
 
           <p className="mx-auto mt-4 max-w-2xl text-sm font-semibold leading-relaxed text-slate-200 md:text-base">
-            Our services are designed to support complex decisions through
-            rigorous research, structured analysis, and clear, decision-ready
-            outputs.
+            {t("services.hero.description")}
           </p>
         </div>
       </section>
@@ -74,44 +96,16 @@ export default function ServicesPage() {
             </div>
 
             <h3 className="mt-6 text-3xl font-sans text-slate-900 sm:text-4xl ">
-              Why Choose Insight Consultancy & Research
+              {t("services.why.title")}
             </h3>
 
             <p className="mt-3 text-sm text-slate-500">
-              At Insight Consultancy & Research (ICR), we support organisations
-              to move from evidence to insight — and from insight to clear,
-              defensible decisions.
+              {t("services.why.description")}
             </p>
           </div>
 
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-            {[
-              {
-                title: "Quantitative Research",
-                desc: "Survey design, modelling, and analytical techniques used to generate robust evidence and support defensible strategic, operational, and policy decisions at scale. Includes large-scale surveys, performance measurement, and analytical modelling designed to address complex decision requirements.",
-              },
-              {
-                title: "Qualitative Research",
-                desc: "In-depth interviews and qualitative methods to understand behaviours, perceptions, and contextual drivers behind observed outcomes, informing interpretation and decision-making. Approaches include stakeholder interviews, focus groups, and contextual enquiry to explain not just what is happening, but why.",
-                highlighted: true,
-              },
-              {
-                title: "Tracking Studies",
-                desc: "Ongoing tracking frameworks designed to monitor performance over time, identify emerging trends, and support timely operational and strategic decisions. Used for brand, programme, or performance tracking where consistency, comparability, and timely insight are critical.",
-              },
-              {
-                title: "Retail & Shopper Research",
-                desc: "Structured field audits and observational research designed to generate reliable evidence from real-world environments and operating contexts. Covers store audits, shelf visibility, and in-store behaviour to translate on-the-ground realities into actionable findings.",
-              },
-              {
-                title: "Market Assessments & Opportunity Analysis",
-                desc: "Market assessments, segmentation, and comparative analysis to inform prioritisation, strategy, and investment decisions in complex and evolving markets. Applied in market entry, expansion planning, and investment assessment contexts.",
-              },
-              {
-                title: "Strategic Consulting",
-                desc: "Advisory and decision-support services that translate research findings into clear options, implications, and recommendations for decision-makers. Focused on helping leadership teams evaluate trade-offs, risks, and implications before committing resources.",
-              },
-            ].map((s, i) => (
+            {services.map((s, i) => (
               <div
                 key={i}
                 className={`rounded-2xl bg-white p-6 shadow-sm transition-all ${
@@ -159,12 +153,11 @@ export default function ServicesPage() {
                 </div>
 
                 <h3 className="text-4xl font-extrabold text-white mb-4">
-                  5 Step Work Process
+                  {t("services.process.title")}
                 </h3>
 
                 <p className="text-sm text-slate-300">
-                  We combine rigorous methods and practical experience to
-                  deliver research that informs confident decisions.
+                  {t("services.process.description")}
                 </p>
 
                 <div className="mt-6 flex items-center space-x-3">
@@ -191,10 +184,10 @@ export default function ServicesPage() {
 
                     <div>
                       <h4 className="text-lg font-semibold text-white">
-                        Clear Decisions
+                        {t("services.process.step1")}
                       </h4>
                       <p className="mt-2 text-sm text-slate-300">
-                        Decision requirements clarified upfront
+                        {t("services.process.step1.desc")}
                       </p>
                     </div>
                   </div>
@@ -208,10 +201,10 @@ export default function ServicesPage() {
 
                     <div>
                       <h4 className="text-lg font-semibold text-white">
-                        Structured Delivery
+                        {t("services.process.step2")}
                       </h4>
                       <p className="mt-2 text-sm text-slate-300">
-                        Structured delivery and quality assurance processes
+                        {t("services.process.step2.desc")}
                       </p>
                     </div>
                   </div>
@@ -225,10 +218,10 @@ export default function ServicesPage() {
 
                     <div>
                       <h4 className="text-lg font-semibold text-white">
-                        Continuous Oversight
+                        {t("services.process.step3")}
                       </h4>
                       <p className="mt-2 text-sm text-slate-300">
-                        Ongoing validation and oversight
+                        {t("services.process.step3.desc")}
                       </p>
                     </div>
                   </div>
@@ -242,10 +235,10 @@ export default function ServicesPage() {
 
                     <div>
                       <h4 className="text-lg font-semibold text-white">
-                        Actionable Reporting
+                        {t("services.process.step4")}
                       </h4>
                       <p className="mt-2 text-sm text-slate-300">
-                        Clear, decision-ready reporting
+                        {t("services.process.step4.desc")}
                       </p>
                     </div>
                   </div>
@@ -259,11 +252,10 @@ export default function ServicesPage() {
 
                     <div>
                       <h4 className="text-lg font-semibold text-white">
-                        Governed Engagements
+                        {t("services.process.step5")}
                       </h4>
                       <p className="mt-2 text-sm text-slate-300">
-                        Engagements scoped and governed to meet client,
-                        regulatory, and stakeholder requirements
+                        {t("services.process.step5.desc")}
                       </p>
                     </div>
                   </div>
@@ -274,13 +266,13 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA */}
-        <div className=" flex flex-col items-center gap-4 sm:flex-row sm:justify-center py-4 bg-gradient-to-br from-[#0a1f2e] to-[#041a2e]">
+        <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center py-4 bg-gradient-to-br from-[#0a1f2e] to-[#041a2e]">
           <Button className="bg-emerald-500 px-6 py-6 text-sm font-semibold hover:bg-emerald-600">
-            Discuss Your Research or Evaluation Requirements
+            {t("services.cta.discuss")}
           </Button>
           <Link href="/ContactUS" className="inline-block text-sm">
-            <Button className="bg-transparent border px-6 py-6 border-emerald-400 text-emerald-600 hover:bg-emerald-50">
-              Request an Initial Discussion
+            <Button className="bg-transparent border px-6 py-6 border-emerald-400 text-white hover:bg-emerald-50/10">
+              {t("services.cta.request")}
             </Button>
           </Link>
         </div>
