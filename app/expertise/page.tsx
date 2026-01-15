@@ -1,7 +1,157 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function ServicesPage() {
+  const { t } = useLanguage();
+
+  const expertiseItems = [
+    {
+      title: t("expertise.government.title"),
+      img: "/images/expertise/expersite_2.jpeg",
+      content: (
+        <>
+          <p className="text-sm text-slate-600 mb-4">
+            {t("expertise.government.desc1")}
+          </p>
+          <p className="text-sm text-slate-600 mb-4">
+            {t("expertise.government.desc2")}
+          </p>
+
+          <h5 className="mt-4 text-sm font-semibold text-slate-900">
+            {t("expertise.government.includes")}
+          </h5>
+          <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-slate-600">
+            <li>{t("expertise.government.item1")}</li>
+            <li>{t("expertise.government.item2")}</li>
+            <li>{t("expertise.government.item3")}</li>
+            <li>{t("expertise.government.item4")}</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: t("expertise.corporate.title"),
+      img: "/images/expertise/expersite_3.jpeg",
+      content: (
+        <>
+          <p className="text-sm text-slate-600 mb-4">
+            {t("expertise.corporate.desc1")}
+          </p>
+          <p className="text-sm text-slate-600 mb-4">
+            {t("expertise.corporate.desc2")}
+          </p>
+
+          <h5 className="mt-4 text-sm font-semibold text-slate-900">
+            {t("expertise.corporate.includes")}
+          </h5>
+          <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-slate-600">
+            <li>{t("expertise.corporate.item1")}</li>
+            <li>{t("expertise.corporate.item2")}</li>
+            <li>{t("expertise.corporate.item3")}</li>
+            <li>{t("expertise.corporate.item4")}</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: t("expertise.methodological.title"),
+      img: "/images/expertise/expersite_4.jpeg",
+      content: (
+        <>
+          <p className="text-sm text-slate-600 mb-4">
+            {t("expertise.methodological.desc1")}
+          </p>
+          <p className="text-sm text-slate-600 mb-4">
+            {t("expertise.methodological.desc2")}
+          </p>
+
+          <h5 className="mt-4 text-sm font-semibold text-slate-900">
+            {t("expertise.methodological.includes")}
+          </h5>
+          <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-slate-600">
+            <li>{t("expertise.methodological.item1")}</li>
+            <li>{t("expertise.methodological.item2")}</li>
+            <li>{t("expertise.methodological.item3")}</li>
+            <li>{t("expertise.methodological.item4")}</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: t("expertise.ai.title"),
+      img: "/images/expertise/expersite_1.jpeg",
+      content: (
+        <>
+          <p className="text-sm text-slate-600 mb-4">
+            {t("expertise.ai.desc1")}
+          </p>
+          <p className="text-sm text-slate-600 mb-4">
+            {t("expertise.ai.desc2")}
+          </p>
+
+          <h5 className="mt-4 text-sm font-semibold text-slate-900">
+            {t("expertise.ai.includes")}
+          </h5>
+          <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-slate-600">
+            <li>{t("expertise.ai.item1")}</li>
+            <li>{t("expertise.ai.item2")}</li>
+            <li>{t("expertise.ai.item3")}</li>
+            <li>{t("expertise.ai.item4")}</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: t("expertise.decision.title"),
+      img: "/images/expertise/expersite_5.jpeg",
+      content: (
+        <>
+          <p className="text-sm text-slate-600 mb-4">
+            {t("expertise.decision.desc1")}
+          </p>
+          <p className="text-sm text-slate-600 mb-4">
+            {t("expertise.decision.desc2")}
+          </p>
+
+          <h5 className="mt-4 text-sm font-semibold text-slate-900">
+            {t("expertise.decision.includes")}
+          </h5>
+          <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-slate-600">
+            <li>{t("expertise.decision.item1")}</li>
+            <li>{t("expertise.decision.item2")}</li>
+            <li>{t("expertise.decision.item3")}</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: t("expertise.closing.title"),
+      img: "/images/expertise/expersite_6.jpeg",
+      content: (
+        <>
+          <p className="text-sm text-slate-600 mb-4">
+            {t("expertise.closing.desc1")}
+          </p>
+          <p className="text-sm text-slate-600">
+            {t("expertise.closing.desc2")}
+          </p>
+
+          <h5 className="mt-4 text-sm font-semibold text-slate-900">
+            What It Includes:
+          </h5>
+          <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-slate-600">
+            <li>{t("expertise.closing.item1")}</li>
+            <li>{t("expertise.closing.item2")}</li>
+            <li>{t("expertise.closing.item3")}</li>
+          </ul>
+        </>
+      ),
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-white">
       <section className="w-full relative bg-linear-to-br from-[#041a2e] via-[#062944] to-[#041a2e] text-white py-6">
@@ -45,25 +195,23 @@ export default function ServicesPage() {
             {/* Our */}
             {/* <br /> */}
             <span className="bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-emerald-200">
-              Our Expertise
+              {t("expertise.hero.title")}
             </span>
           </h1>
 
-          <p className="mx-auto mt-4 max-w-4xl text-sm font-semibold leading-relaxed text-slate-200 md:text-base">
-            At Insight Consultancy & Research (ICR), our expertise is built on
-            delivering rigorous research and analysis to support complex
-            decision-making across public, corporate, and international
-            contexts. We combine sector knowledge, methodological rigour, and
-            advanced analytical capabilities to address strategic, operational,
-            and policy challenges. Our approach integrates established research
-            practices with modern analytical tools, including the responsible
-            use of AI-enabled techniques, to enhance accuracy, efficiency, and
-            insight generation.
+          <p className="mx-auto mt-4 max-w-4xl text-sm leading-relaxed text-slate-200 md:text-base">
+            {t("expertise.hero.description1")}
+          </p>
+          <p className="mx-auto mt-2 max-w-4xl text-sm leading-relaxed text-slate-200 md:text-base">
+            {t("expertise.hero.description2")}
+          </p>
+          <p className="mx-auto mt-2 max-w-4xl text-sm leading-relaxed text-slate-200 md:text-base">
+            {t("expertise.hero.description3")}
           </p>
 
           <div className="mt-8">
             <Button className="bg-emerald-500 px-6 py-3 text-sm font-semibold hover:bg-emerald-600 rounded-md">
-              Discuss Your Requirements »
+              {t("expertise.cta.discuss")} »
             </Button>
           </div>
         </div>
@@ -72,164 +220,11 @@ export default function ServicesPage() {
       {/* Expertise list (zig-zag) */}
       <section className="py-20 bg-slate-50">
         <div className="mx-auto max-w-5xl px-4 space-y-16">
-          {[
-            {
-              title: "Governmental & Public Sector Projects",
-              img: "/images/expertise/expersite_2.jpeg",
-              content: (
-                <>
-                  <p className="text-sm text-slate-600 mb-4">
-                    We have extensive experience supporting governmental and
-                    public sector entities through research, evaluation, and
-                    advisory engagements. Our work reflects a strong
-                    understanding of governance frameworks, accountability
-                    requirements, and the need for evidence that can withstand
-                    public and regulatory scrutiny.
-                  </p>
-
-                  <h5 className="mt-4 text-sm font-semibold text-slate-900">
-                    What It Includes:
-                  </h5>
-                  <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-slate-600">
-                    <li>Policy research and programme monitoring</li>
-                    <li>Public service performance assessment</li>
-                    <li>Stakeholder and beneficiary research</li>
-                    <li>
-                      Impact studies to inform policy and programme improvement
-                    </li>
-                  </ul>
-                </>
-              ),
-            },
-            {
-              title: "Corporate & Market-Focused Expertise",
-              img: "/images/expertise/expersite_3.jpeg",
-              content: (
-                <>
-                  <p className="text-sm text-slate-600 mb-4">
-                    Alongside public sector work, we support corporate
-                    organisations operating in complex and competitive
-                    environments. Our expertise helps clients understand market
-                    dynamics, customer behaviour, and operational performance to
-                    inform strategic planning and investment decisions.
-                  </p>
-
-                  <h5 className="mt-4 text-sm font-semibold text-slate-900">
-                    What It Includes:
-                  </h5>
-                  <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-slate-600">
-                    <li>Market and opportunity assessments</li>
-                    <li>Consumer and shopper research</li>
-                    <li>Brand and performance tracking</li>
-                    <li>Market entry and competitive analysis</li>
-                  </ul>
-                </>
-              ),
-            },
-            {
-              title: "Methodological & Analytical Strengths",
-              img: "/images/expertise/expersite_4.jpeg",
-              content: (
-                <>
-                  <p className="text-sm text-slate-600 mb-4">
-                    Our expertise is underpinned by strong methodological
-                    capability across quantitative, qualitative, and
-                    mixed-method approaches. Each study is designed to align
-                    closely with the decision it is intended to inform, ensuring
-                    methodological fit, reliability, and clarity.
-                  </p>
-
-                  <h5 className="mt-4 text-sm font-semibold text-slate-900">
-                    What It Includes:
-                  </h5>
-                  <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-slate-600">
-                    <li>Large-scale quantitative surveys</li>
-                    <li>Qualitative interviews and focus groups</li>
-                    <li>Longitudinal tracking frameworks</li>
-                    <li>Integrated analysis across multiple data sources</li>
-                  </ul>
-                </>
-              ),
-            },
-            {
-              title: "Use of AI in the Research Process",
-              img: "/images/expertise/expersite_1.jpeg",
-              content: (
-                <>
-                  <p className="text-sm text-slate-600 mb-4">
-                    We incorporate AI-enabled tools within our research and
-                    analytical processes to enhance efficiency, consistency, and
-                    insight generation, while maintaining full methodological
-                    oversight and human judgement.
-                  </p>
-
-                  <h5 className="mt-4 text-sm font-semibold text-slate-900">
-                    What It Includes:
-                  </h5>
-                  <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-slate-600">
-                    <li>AI-supported data preparation and cleaning</li>
-                    <li>Pattern identification and trend analysis</li>
-                    <li>Text & qualitative data processing</li>
-                    <li>AI-assisted analytical modelling with human review</li>
-                  </ul>
-                </>
-              ),
-            },
-            {
-              title: "Decision-Focused Application",
-              img: "/images/expertise/expersite_5.jpeg",
-              content: (
-                <>
-                  <p className="text-sm text-slate-600 mb-4">
-                    Across all areas of expertise, our work is guided by a clear
-                    focus on decision-making. We prioritise clarity, relevance,
-                    and practical application, ensuring outputs are accessible
-                    to senior stakeholders and aligned with organisational
-                    objectives.
-                  </p>
-
-                  <h5 className="mt-4 text-sm font-semibold text-slate-900">
-                    What It Includes:
-                  </h5>
-                  <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-slate-600">
-                    <li>Policy development and programme evaluation support</li>
-                    <li>Strategic prioritisation and investment planning</li>
-                    <li>Executive-ready reporting and recommendations</li>
-                  </ul>
-                </>
-              ),
-            },
-            {
-              title: "Closing Statement",
-              img: "/images/expertise/expersite_6.jpeg",
-              content: (
-                <>
-                  <p className="text-sm text-slate-600">
-                    Our expertise reflects a balance of sector knowledge,
-                    methodological rigour, and analytical innovation. By
-                    combining experience across governmental and corporate
-                    projects with advanced research capabilities, we support
-                    organisations in making informed, confident, and defensible
-                    decisions.
-                  </p>
-
-                  <h5 className="mt-4 text-sm font-semibold text-slate-900">
-                    What It Includes:
-                  </h5>
-                  <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-slate-600">
-                    <li>Sector knowledge and methodological rigour</li>
-                    <li>Analytical innovation and integrated insight</li>
-                    <li>Decision-ready delivery for senior stakeholders</li>
-                  </ul>
-                </>
-              ),
-            },
-          ].map((item, i) => (
+          {expertiseItems.map((item, i) => (
             <div
               key={i}
               className="grid gap-8 md:grid-cols-2 md:items-center md:gap-12"
             >
-              {/* for odd indexes show text left, image right (i%2===0) */}
               {i % 2 === 0 ? (
                 <>
                   <div className="md:order-1 md:max-w-xl">
@@ -302,18 +297,13 @@ export default function ServicesPage() {
 
         <div className="mx-auto max-w-4xl px-4 text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans">
-            Let’s explore how we can support your goals
+            {t("expertise.final.title")}
           </h2>
-
-          <p className="mx-auto mt-4 max-w-2xl text-sm  text-white/80">
-            Whether it’s a new product, a brand shift, or market entry — we’re
-            here to guide with clarity.
-          </p>
 
           <div className="mt-8">
             <Link href="/services">
               <Button className="bg-emerald-500 px-6 py-3 text-sm font-semibold hover:bg-emerald-600">
-                Explore our services »
+                {t("expertise.final.cta")} »
               </Button>
             </Link>
           </div>

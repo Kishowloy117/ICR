@@ -1,7 +1,45 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function CareerPage() {
+  const { t } = useLanguage();
+
+  const benefits = [
+    {
+      title: t("careers.purpose.title"),
+      desc: t("careers.purpose.desc"),
+      highlighted: false,
+    },
+    {
+      title: t("careers.collaborative.title"),
+      desc: t("careers.collaborative.desc"),
+      highlighted: true,
+    },
+    {
+      title: t("careers.learning.title"),
+      desc: t("careers.learning.desc"),
+      highlighted: false,
+    },
+    {
+      title: t("careers.regional.title"),
+      desc: t("careers.regional.desc"),
+      highlighted: false,
+    },
+    {
+      title: t("careers.flexible.title"),
+      desc: t("careers.flexible.desc"),
+      highlighted: false,
+    },
+    {
+      title: t("careers.impact.title"),
+      desc: t("careers.impact.desc"),
+      highlighted: false,
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-white">
       <section className="w-full relative bg-linear-to-br from-[#041a2e] via-[#062944] to-[#041a2e] text-white py-6">
@@ -41,16 +79,14 @@ export default function CareerPage() {
             Careers at ICR
           </div>
           <h1 className="mx-auto max-w-3xl text-3xl font-sans leading-tight text-white md:text-5xl">
-            Join a team turning
+            {t("careers.hero.title")}
             <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-emerald-600">
-              data into decisions
+              {t("careers.hero.subtitle")}
             </span>
           </h1>
           <p className="mx-auto mt-2 max-w-xl text-base text-slate-200">
-            At ICR, we believe insight starts with people. We're always looking
-            for thoughtful, curious professionals who want to do work that
-            matters.
+            {t("careers.hero.description")}
           </p>
         </div>
       </section>
@@ -63,158 +99,42 @@ export default function CareerPage() {
               Why Work With Us
             </div>
             <h3 className="mt-4 text-3xl font-sans font-semibold text-slate-900 sm:text-4xl">
-              Real projects. Smart people.
-              <br /> Growth that matters
+              {t("careers.why.title")}
             </h3>
             <p className="text-slate-500 text-base max-w-2xl mx-auto mt-2">
-              At ICR, you won't just do a job — you'll contribute to work that
-              informs real decisions across industries and regions. We offer a
-              culture built on purpose, collaboration, learning, and impact.
+              {t("careers.why.description")}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {/* Row 1 */}
-            <div className="bg-white rounded-2xl shadow-md p-7 flex flex-col items-start h-full">
-              <div className="mb-4">
-                {/* Icon: Purpose-Driven Work */}
-                <svg
-                  width="40"
-                  height="40"
-                  fill="none"
-                  stroke="#1cc6a6"
-                  strokeWidth="2.2"
-                  viewBox="0 0 24 24"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 8v4l3 2" />
-                </svg>
+            {benefits.map((benefit, i) => (
+              <div
+                key={i}
+                className={`rounded-2xl shadow-md p-7 flex flex-col items-start h-full ${
+                  benefit.highlighted
+                    ? "bg-[#e6f6f3] border border-emerald-200"
+                    : "bg-white"
+                }`}
+              >
+                <div className="mb-4">
+                  {/* Icon: Purpose-Driven Work */}
+                  <svg
+                    width="40"
+                    height="40"
+                    fill="none"
+                    stroke="#1cc6a6"
+                    strokeWidth="2.2"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 8v4l3 2" />
+                  </svg>
+                </div>
+                <h3 className="font-bold text-lg text-slate-900 mb-2">
+                  {benefit.title}
+                </h3>
+                <p className="text-slate-500 text-sm">{benefit.desc}</p>
               </div>
-              <h3 className="font-bold text-lg text-slate-900 mb-2">
-                Purpose-Driven Work
-              </h3>
-              <p className="text-slate-500 text-sm">
-                Help leading brands solve real business challenges through
-                research, insight, and strategy that make a difference.
-              </p>
-            </div>
-            <div className="bg-[#e6f6f3] border border-emerald-200 rounded-2xl shadow-md p-7 flex flex-col items-start h-full">
-              <div className="mb-4">
-                {/* Icon: Collaborative Environment */}
-                <svg
-                  width="40"
-                  height="40"
-                  fill="none"
-                  stroke="#1cc6a6"
-                  strokeWidth="2.2"
-                  viewBox="0 0 24 24"
-                >
-                  <circle cx="8" cy="8" r="3" />
-                  <circle cx="16" cy="8" r="3" />
-                  <circle cx="12" cy="16" r="3" />
-                  <path d="M8 11v1a4 4 0 004 4v0a4 4 0 004-4v-1" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-lg text-slate-900 mb-2">
-                Collaborative Environment
-              </h3>
-              <p className="text-slate-500 text-sm">
-                Work closely with a regional team of researchers, consultants,
-                and analysts who share ideas, not just tasks.
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl shadow-md p-7 flex flex-col items-start h-full">
-              <div className="mb-4">
-                {/* Icon: Continuous Learning */}
-                <svg
-                  width="40"
-                  height="40"
-                  fill="none"
-                  stroke="#1cc6a6"
-                  strokeWidth="2.2"
-                  viewBox="0 0 24 24"
-                >
-                  <rect x="3" y="5" width="18" height="14" rx="2" />
-                  <path d="M16 3v4M8 3v4M3 10h18" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-lg text-slate-900 mb-2">
-                Continuous Learning
-              </h3>
-              <p className="text-slate-500 text-sm">
-                Grow through hands-on experience, mentorship, and structured
-                development designed to sharpen your skills.
-              </p>
-            </div>
-            {/* Row 2 */}
-            <div className="bg-white rounded-2xl shadow-md p-7 flex flex-col items-start h-full">
-              <div className="mb-4">
-                {/* Icon: Regional Exposure */}
-                <svg
-                  width="40"
-                  height="40"
-                  fill="none"
-                  stroke="#1cc6a6"
-                  strokeWidth="2.2"
-                  viewBox="0 0 24 24"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M2 12h20M12 2a10 10 0 010 20" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-lg text-slate-900 mb-2">
-                Regional Exposure
-              </h3>
-              <p className="text-slate-500 text-sm">
-                Gain experience across projects in Saudi Arabia, GCC, and MENA —
-                from local launches to multi-market studies.
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl shadow-md p-7 flex flex-col items-start h-full">
-              <div className="mb-4">
-                {/* Icon: Flexible Culture */}
-                <svg
-                  width="40"
-                  height="40"
-                  fill="none"
-                  stroke="#1cc6a6"
-                  strokeWidth="2.2"
-                  viewBox="0 0 24 24"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M8 12h8M12 8v8" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-lg text-slate-900 mb-2">
-                Flexible Culture
-              </h3>
-              <p className="text-slate-500 text-sm">
-                We focus on results, not rigid rules. Take ownership, share
-                ideas, and work in a space that values adaptability.
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl shadow-md p-7 flex flex-col items-start h-full">
-              <div className="mb-4">
-                {/* Icon: Meaningful Impact */}
-                <svg
-                  width="40"
-                  height="40"
-                  fill="none"
-                  stroke="#1cc6a6"
-                  strokeWidth="2.2"
-                  viewBox="0 0 24 24"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 8v4l3 2" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-lg text-slate-900 mb-2">
-                Meaningful Impact
-              </h3>
-              <p className="text-slate-500 text-sm">
-                Your work shapes real decisions — from product launches to
-                strategy pivots. We don’t collect data, we guide action.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -250,18 +170,17 @@ export default function CareerPage() {
               Submit Your CV
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              We want to hear from you
+              {t("careers.form.title")}
             </h2>
             <p className="text-slate-200 text-base max-w-lg mx-auto">
-              Use the form below to submit your CV. We review every submission
-              and keep qualified profiles for future roles.
+              {t("careers.form.description")}
             </p>
           </div>
           <form className="bg-white/90 border border-slate-200 rounded-3xl shadow-xl p-6 md:p-8 space-y-4">
             <div className="space-y-4">
               <div>
                 <label className="block text-slate-600 text-sm font-medium mb-1">
-                  Full Name
+                  {t("careers.form.name")}
                 </label>
                 <input
                   type="text"
@@ -271,7 +190,7 @@ export default function CareerPage() {
               </div>
               <div>
                 <label className="block text-slate-600 text-sm font-medium mb-1">
-                  Email
+                  {t("careers.form.email")}
                 </label>
                 <input
                   type="email"
@@ -281,7 +200,7 @@ export default function CareerPage() {
               </div>
               <div>
                 <label className="block text-slate-600 text-sm font-medium mb-1">
-                  Phone Number
+                  {t("careers.form.phone")}
                 </label>
                 <input
                   type="text"
@@ -291,7 +210,7 @@ export default function CareerPage() {
               </div>
               <div>
                 <label className="block text-slate-600 text-sm font-medium mb-1">
-                  Area of Interest / Position
+                  {t("careers.form.position")}
                 </label>
                 <input
                   type="text"
@@ -301,7 +220,7 @@ export default function CareerPage() {
               </div>
               <div>
                 <label className="block text-slate-600 text-sm font-medium mb-1">
-                  Upload Resume
+                  {t("careers.form.resume")}
                 </label>
                 <label className="block">
                   <div className="w-full rounded-md border-2 border-dashed border-emerald-200 bg-emerald-50/60 px-4 py-8 text-center cursor-pointer hover:bg-emerald-100 transition">
@@ -337,7 +256,7 @@ export default function CareerPage() {
               </div>
               <div>
                 <label className="block text-slate-600 text-sm font-medium mb-1">
-                  Cover Note / Message (optional)
+                  {t("careers.form.cover")}
                 </label>
                 <input
                   type="text"
@@ -350,7 +269,7 @@ export default function CareerPage() {
               type="submit"
               className="w-full bg-emerald-400 hover:bg-emerald-500 text-white font-semibold py-3 rounded-md transition"
             >
-              Submit
+              {t("careers.form.submit")}
             </button>
           </form>
         </div>
@@ -364,12 +283,10 @@ export default function CareerPage() {
               Process
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-2">
-              How We Process Your
-              <br />
-              Application
+              {t("careers.process.title")}
             </h2>
             <p className="text-slate-300 text-base max-w-xl mx-auto">
-              Clear steps from submission to selection.
+              {t("careers.process.description")}
             </p>
           </div>
           <div className="relative flex flex-col items-center">
@@ -436,50 +353,46 @@ export default function CareerPage() {
               {/* Step 1 */}
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl shadow-md flex flex-col justify-center items-center w-full max-w-[320px] min-h-[160px] text-center p-7">
                 <h3 className="font-bold text-lg text-white mb-2">
-                  Resume Review
+                  {t("careers.process.review")}
                 </h3>
                 <p className="text-slate-300 text-sm">
-                  We evaluate your resume for role fit and experience.
+                  {t("careers.process.review.desc")}
                 </p>
               </div>
               {/* Step 2 */}
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl shadow-md flex flex-col justify-center items-center w-full max-w-[320px] min-h-[160px] text-center p-7">
                 <h3 className="font-bold text-lg text-white mb-2">
-                  Initial Screening
+                  {t("careers.process.screening")}
                 </h3>
                 <p className="text-slate-300 text-sm">
-                  Shortlisted candidates are contacted for a quick phone or
-                  video screen.
+                  {t("careers.process.screening.desc")}
                 </p>
               </div>
               {/* Step 3 */}
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl shadow-md flex flex-col justify-center items-center w-full max-w-[320px] min-h-[160px] text-center p-7">
                 <h3 className="font-bold text-lg text-white mb-2">
-                  Interviews
+                  {t("careers.process.interviews")}
                 </h3>
                 <p className="text-slate-300 text-sm">
-                  You'll meet with relevant team leads and managers (1–2
-                  rounds).
+                  {t("careers.process.interviews.desc")}
                 </p>
               </div>
               {/* Step 4 */}
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl shadow-md flex flex-col justify-center items-center w-full max-w-[320px] min-h-[160px] text-center p-7">
                 <h3 className="font-bold text-lg text-white mb-2">
-                  Final Review
+                  {t("careers.process.final")}
                 </h3>
                 <p className="text-slate-300 text-sm">
-                  We assess skills, fit, and culture alignment before making an
-                  offer.
+                  {t("careers.process.final.desc")}
                 </p>
               </div>
               {/* Step 5 (centered below) */}
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl shadow-md flex flex-col justify-center items-center w-full max-w-[320px] min-h-[160px] text-center col-span-1 md:col-span-2 mx-auto p-7">
                 <h3 className="font-bold text-lg text-white mb-2">
-                  Offer & Onboarding
+                  {t("careers.process.offer")}
                 </h3>
                 <p className="text-slate-300 text-sm">
-                  Selected candidates receive a formal offer and onboarding
-                  plan.
+                  {t("careers.process.offer.desc")}
                 </p>
               </div>
             </div>

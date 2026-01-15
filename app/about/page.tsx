@@ -1,6 +1,78 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function AboutPage() {
+  const { t } = useLanguage();
+
+  const sections = [
+    {
+      title: t("about.positioning.title"),
+      img: "/images/expertise/expersite_2.jpeg",
+      content: (
+        <>
+          <p className="text-sm text-slate-600 mb-3">
+            {t("about.positioning.desc1")}
+          </p>
+          <p className="text-sm text-slate-600">
+            {t("about.positioning.desc2")}
+          </p>
+          <p className="text-sm text-slate-600 mt-3">
+            {t("about.positioning.desc3")}
+          </p>
+          <p className="text-sm text-slate-600 mt-3">
+            {t("about.positioning.desc4")}
+          </p>
+        </>
+      ),
+    },
+    {
+      title: t("about.integrity.title"),
+      img: "/images/expertise/expersite_3.jpeg",
+      content: (
+        <>
+          <p className="text-sm text-slate-600 mb-3">
+            {t("about.integrity.desc1")}
+          </p>
+          <p className="text-sm text-slate-600">{t("about.integrity.desc2")}</p>
+        </>
+      ),
+    },
+    {
+      title: t("about.experience.title"),
+      img: "/images/expertise/expersite_4.jpeg",
+      content: (
+        <>
+          <p className="text-sm text-slate-600 mb-3">
+            {t("about.experience.desc1")}
+          </p>
+          <p className="text-sm text-slate-600 mb-3">
+            {t("about.experience.desc2")}
+          </p>
+          <p className="text-sm text-slate-600">
+            {t("about.experience.desc3")}
+          </p>
+        </>
+      ),
+    },
+    {
+      title: t("about.future.title"),
+      img: "/images/expertise/expersite_1.jpeg",
+      content: (
+        <>
+          <p className="text-sm text-slate-600 mb-3">
+            {t("about.future.desc1")}
+          </p>
+          <p className="text-sm text-slate-600 mb-3">
+            {t("about.future.desc2")}
+          </p>
+          <p className="text-sm text-slate-600">{t("about.future.desc3")}</p>
+        </>
+      ),
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-white">
       <section className="w-full relative bg-linear-to-br from-[#041a2e] via-[#062944] to-[#041a2e] text-white py-6">
@@ -41,28 +113,26 @@ export default function AboutPage() {
           </div>
 
           <h1 className="mx-auto max-w-4xl text-3xl font-sans leading-tight text-white md:text-5xl">
-            About Insight Consultancy & Research
+            {t("about.hero.title")}
             <br />
-            <span className="text-emerald-400">Who We Are</span>
+            <span className="text-emerald-400">{t("about.hero.subtitle")}</span>
           </h1>
 
           <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            Insight Consultancy & Research (ICR) is an independent consultancy
-            specialising in research-led advisory and evidence-based decision
-            support. We work with organisations that operate in complex
-            environments and require clear, defensible insight to inform policy,
-            strategy, and implementation.
+            {t("about.hero.description1")}
+          </p>
+
+          <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
+            {t("about.hero.description2")}
           </p>
 
           <p className="mx-auto mt-4 max-w-2xl text-sm font-semibold leading-relaxed text-slate-200 md:text-base">
-            Our role is not to advocate predetermined solutions, but to help
-            decision-makers understand realities on the ground, assess options
-            objectively, and move forward with confidence.
+            {t("about.hero.description3")}
           </p>
 
           <div className="mt-8">
             <Button className="bg-emerald-500 px-6 py-3 text-sm font-semibold hover:bg-emerald-600 rounded-md">
-              Discuss Your Requirements »
+              {t("about.cta.discuss")} »
             </Button>
           </div>
         </div>
@@ -71,95 +141,7 @@ export default function AboutPage() {
       {/* Positioning / Principles Zig-Zag */}
       <section className="py-20 bg-slate-50">
         <div className="mx-auto max-w-5xl px-4 space-y-16">
-          {[
-            {
-              title: "Our Positioning",
-              img: "/images/expertise/expersite_2.jpeg",
-              content: (
-                <>
-                  <p className="text-sm text-slate-600 mb-3">
-                    ICR is positioned at the intersection of rigorous research
-                    and practical decision-making. We operate as a trusted
-                    analytical partner, supporting leaders who must balance
-                    evidence, context, and constraints when making high-stakes
-                    decisions.
-                  </p>
-
-                  <p className="text-sm text-slate-600">
-                    We deliberately maintain a focused scope: research,
-                    analysis, and advisory support that translate evidence into
-                    clarity. This allows us to remain independent,
-                    methodologically sound, and outcome-oriented across all
-                    engagements.
-                  </p>
-                </>
-              ),
-            },
-            {
-              title: "Integrity and Independence",
-              img: "/images/expertise/expersite_3.jpeg",
-              content: (
-                <>
-                  <p className="text-sm text-slate-600 mb-3">
-                    Integrity underpins all of ICR’s work. We maintain
-                    independence in our analysis and recommendations, ensuring
-                    that findings are guided by evidence rather than assumptions
-                    or external pressures.
-                  </p>
-
-                  <p className="text-sm text-slate-600">
-                    Our governance and quality assurance practices are designed
-                    to safeguard objectivity, protect data confidentiality, and
-                    ensure methodological robustness across all projects.
-                  </p>
-                </>
-              ),
-            },
-            {
-              title: "Experience Across Contexts",
-              img: "/images/expertise/expersite_4.jpeg",
-              content: (
-                <>
-                  <p className="text-sm text-slate-600 mb-3">
-                    ICR has supported organisations operating across diverse
-                    sectors and institutional contexts, including public sector
-                    bodies, private enterprises, and international stakeholders.
-                    While each engagement is unique, our work is consistently
-                    grounded in an understanding of local realities, stakeholder
-                    dynamics, and decision environments.
-                  </p>
-
-                  <p className="text-sm text-slate-600">
-                    Rather than promoting generic frameworks, we adapt our
-                    thinking to the specific context in which decisions are
-                    being made.
-                  </p>
-                </>
-              ),
-            },
-            {
-              title: "Looking Ahead",
-              img: "/images/expertise/expersite_1.jpeg",
-              content: (
-                <>
-                  <p className="text-sm text-slate-600 mb-3">
-                    As decision environments become more complex and data
-                    availability increases, the need for structured,
-                    responsible, and transparent analysis continues to grow. ICR
-                    remains committed to evolving its tools and approaches while
-                    maintaining its core principles of independence, rigour, and
-                    clarity.
-                  </p>
-
-                  <p className="text-sm text-slate-600">
-                    Our focus remains on supporting organizations as they
-                    navigate uncertainty and make informed decisions with
-                    confidence.
-                  </p>
-                </>
-              ),
-            },
-          ].map((item, i) => (
+          {sections.map((item, i) => (
             <div
               key={i}
               className="grid gap-8 md:grid-cols-2 md:items-center md:gap-12"
@@ -217,18 +199,15 @@ export default function AboutPage() {
               </div>
 
               <h3 className="text-3xl font-extrabold text-white mb-4">
-                How We Work with Clients
+                {t("about.clients.title")}
               </h3>
 
               <p className="text-md text-slate-300">
-                We engage closely with clients throughout the lifecycle of an
-                assignment, beginning with a clear understanding of decision
-                needs and ending with outputs designed for real-world use.
+                {t("about.clients.description")}
               </p>
               <br />
               <p className="text-md text-slate-300">
-                We value long-term partnerships built on trust, transparency,
-                and consistent delivery.
+                {t("about.clients.subtitle")}
               </p>
 
               <div className="mt-6 flex items-center space-x-3">
@@ -253,7 +232,7 @@ export default function AboutPage() {
 
                   <div>
                     <h4 className="text-lg font-semibold text-white">
-                      Careful framing of questions before data collection begins
+                      {t("about.clients.approach1")}
                     </h4>
                   </div>
                 </div>
@@ -267,7 +246,7 @@ export default function AboutPage() {
 
                   <div>
                     <h4 className="text-lg font-semibold text-white">
-                      Ongoing dialogue to ensure relevance and alignment
+                      {t("about.clients.approach2")}
                     </h4>
                   </div>
                 </div>
@@ -281,8 +260,7 @@ export default function AboutPage() {
 
                   <div>
                     <h4 className="text-lg font-semibold text-white">
-                      Structured outputs that support decision-making, not just
-                      reporting
+                      {t("about.clients.approach3")}
                     </h4>
                   </div>
                 </div>
