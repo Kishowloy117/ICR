@@ -17,7 +17,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
-  const { language, setLanguage } = useLanguage();
+  const { language, changeLanguage } = useLanguage();
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -94,7 +94,7 @@ export default function Navbar() {
                     key={lang.code}
                     className="w-full flex items-center justify-between px-4 py-3 text-sm text-slate-700 hover:bg-emerald-50 transition-colors"
                     onClick={() => {
-                      setLanguage(lang.code);
+                      changeLanguage(lang.code);
                       setLangMenuOpen(false);
                     }}
                   >
@@ -184,7 +184,7 @@ export default function Navbar() {
                             : "bg-white/5 border border-white/10 hover:bg-white/10"
                         }`}
                         onClick={() => {
-                          setLanguage(lang.code);
+                          changeLanguage(lang.code);
                         }}
                       >
                         <span

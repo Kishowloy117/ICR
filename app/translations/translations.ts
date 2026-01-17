@@ -1,4 +1,8 @@
-export const translations = {
+type TranslationKeys = {
+  [key: string]: string;
+};
+
+export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
   en: {
     // Header
     "nav.home": "Home",
@@ -272,6 +276,9 @@ export const translations = {
     "about.clients.approach3":
       "Structured outputs that support decision-making, not just reporting",
 
+    "about.research.insight":
+      "RESEARCH · INSIGHT · STRATEGIC CLARITY深研 · 洞察 · 战略明晰",
+
     // Expertise Page
     "expertise.hero.title": "Our Expertise",
     "expertise.hero.description1":
@@ -352,6 +359,81 @@ export const translations = {
 
     "expertise.final.title": "Let's explore how we can support your goals",
     "expertise.final.cta": "Explore our services",
+
+    // Why ICR Page
+    "whyicr.hero.title": "Turning Research Into Strategic Growth",
+    "whyicr.hero.description":
+      "ICR goes beyond data — we partner with you to drive better business outcomes through focused research, practical insights, and strategic recommendations.",
+    "whyicr.cta.discuss": "Discuss Your Requirements",
+    "whyicr.cta.services": "Explore Our Services",
+
+    "whyicr.partnerships.title": "Strategic Partnerships",
+    "whyicr.partnerships.desc":
+      "We go beyond one-time projects — ICR acts as a strategic ally. We manage research relationships, streamline vendor communication, and ensure insights are tied to your business KPIs.",
+
+    "whyicr.marketing.title": "Marketing Strategy Support",
+    "whyicr.marketing.desc":
+      "We help shape your strategy by turning insights into action. From brand positioning to market entry planning, we focus on measurable tactics that deliver results.",
+
+    "whyicr.retail.title": "Retail Audit Expertise",
+    "whyicr.retail.desc":
+      "We help you get the most out of your retail audit programs by improving quality, speed, and actionability at every stage.",
+
+    "whyicr.agency.title": "Agency Coordination",
+    "whyicr.agency.desc":
+      "We act as your liaison — managing agency communications directly to speed up response times and ensure swift issue resolution.",
+
+    "whyicr.accuracy.title": "Data Accuracy",
+    "whyicr.accuracy.desc":
+      "Our experts validate and enhance data coverage and consistency, helping you trust what the numbers say — every time.",
+
+    "whyicr.analytics.title": "Advanced Analytics",
+    "whyicr.analytics.desc":
+      "We apply statistical and modelling techniques to uncover patterns and insights hidden within your retail data.",
+
+    "whyicr.reporting.title": "Actionable Reporting",
+    "whyicr.reporting.desc":
+      "No fluff. Just focused, decision-ready outputs that help your teams move fast and execute better.",
+
+    "whyicr.process.title": "How We Work",
+    "whyicr.process.description":
+      "We follow a simple, proven process to turn insight into action — from scoping and research to strategy and implementation support.",
+
+    "whyicr.process.step1": "01 Understand",
+    "whyicr.process.step1.desc":
+      "Clarifying decisions, objectives, and evidence requirements.",
+
+    "whyicr.process.step2": "02 Research",
+    "whyicr.process.step2.desc":
+      "Structured field management and quality assurance.",
+
+    "whyicr.process.step3": "03 Strategize",
+    "whyicr.process.step3.desc":
+      "Continuous monitoring and validation for data integrity.",
+
+    "whyicr.process.step4": "04 Support",
+    "whyicr.process.step4.desc":
+      "Decision-ready reporting focused on implications and next steps.",
+
+    "whyicr.industries.title": "Industries We Serve",
+    "whyicr.industries.description": "We support clients across:",
+
+    "whyicr.industry.consumer": "Consumer Goods",
+    "whyicr.industry.healthcare": "Healthcare & Pharma",
+    "whyicr.industry.telecom": "Telecom & Tech",
+    "whyicr.industry.automotive": "Automotive",
+    "whyicr.industry.media": "Media & Entertainment",
+
+    "whyicr.success.title": "Why We Succeed",
+    "whyicr.success.description":
+      "ICR delivers consistent value through six key strengths — built on trust, insight, and innovation.",
+
+    "whyicr.success.relationships": "Strong Client Relationships",
+    "whyicr.success.expertise": "Local Market Expertise",
+    "whyicr.success.innovation": "Continuous Innovation",
+    "whyicr.success.tools": "Smart Analytical Tools",
+    "whyicr.success.process": "Insight-Led Process",
+    "whyicr.success.talent": "Senior Research Talent",
 
     // Add more translations as needed
   },
@@ -706,6 +788,77 @@ export const translations = {
     "expertise.final.title": "让我们共同探讨如何助力您的目标",
     "expertise.final.cta": "探索我们的服务",
 
+    // Why ICR Page
+    "whyicr.hero.title": "将研究转化为战略增长",
+    "whyicr.hero.description":
+      "ICR 不止于数据。 我们通过精准的研究、实操性的洞察以及战略建议，与您深度协作，共同驱动卓越的商业成果。",
+    "whyicr.cta.discuss": "垂询您的战略议程",
+    "whyicr.cta.services": "探索我们的专业服务",
+
+    "whyicr.partnerships.title": "战略合作伙伴关系",
+    "whyicr.partnerships.desc":
+      "我们不只是执行单次项目，更是您的战略盟友。ICR 负责管理研究合作关系，优化供应商沟通，并确保所有洞察均与您的企业 KPI 深度挂钩。",
+
+    "whyicr.marketing.title": "营销战略支持",
+    "whyicr.marketing.desc":
+      "我们协助您将洞察转化为行动，赋能战略决策。从品牌定位到市场准入规划，我们专注于可衡量的战术落地，确保成果产出。",
+
+    "whyicr.retail.title": "零售审计专长",
+    "whyicr.retail.desc":
+      "我们助力您最大化零售审计项目的价值。在每一个阶段，我们都致力于提升研究质量、响应速度以及结论的可执行性。",
+
+    "whyicr.agency.title": "代理机构协调",
+    "whyicr.agency.desc":
+      "我们作为您的官方联络人，直接管理各类代理机构的沟通，旨在缩短响应时间并确保问题得到快速解决。",
+
+    "whyicr.accuracy.title": "数据精准性",
+    "whyicr.accuracy.desc":
+      "我们的专家负责验证并强化数据的覆盖面与一致性。让您在每一次决策时，都能完全信赖数据背后的事实。",
+
+    "whyicr.analytics.title": "高级分析",
+    "whyicr.analytics.desc":
+      "我们运用统计学方法与建模技术，深挖隐藏在零售数据背后的模式与核心洞察。",
+
+    "whyicr.reporting.title": "实效性报告",
+    "whyicr.reporting.desc":
+      "拒绝繁文缛节。我们仅提供聚焦重点、面向决策的成果产出，协助您的团队快速反应并高效执行。",
+
+    "whyicr.process.title": "工作流程：从洞察到行动",
+    "whyicr.process.description":
+      "我们遵循化繁为简、行之有效的工作方法，确保研究成果能够无缝对接战略执行：",
+
+    "whyicr.process.step1": "01 深度理解",
+    "whyicr.process.step1.desc": "明晰决策背景、业务目标及证据需求。",
+
+    "whyicr.process.step2": "02 严谨研究",
+    "whyicr.process.step2.desc": "开展结构化的实地管理与质量保证。",
+
+    "whyicr.process.step3": "03 策略研判",
+    "whyicr.process.step3.desc": "通过持续监测与验证，确保数据完整性。",
+
+    "whyicr.process.step4": "04 决策支持",
+    "whyicr.process.step4.desc":
+      "提供聚焦于业务启示与行动建议的决策就绪型报告。",
+
+    "whyicr.industries.title": "我们服务的行业与领域：",
+    "whyicr.industries.description": "",
+
+    "whyicr.industry.consumer": "消费品 (FMCG/Consumer Goods)",
+    "whyicr.industry.healthcare": "医疗与制药 (Healthcare & Pharma)",
+    "whyicr.industry.telecom": "电信与科技 (Telecom & Tech)",
+    "whyicr.industry.automotive": "汽车 (Automotive)",
+    "whyicr.industry.media": "媒体与娱乐 (Media & Entertainment)",
+
+    "whyicr.success.title": "我们的成功基石",
+    "whyicr.success.description": "ICR 的价值源自于以下六大核心优势：",
+
+    "whyicr.success.relationships": "深厚的客户伙伴关系",
+    "whyicr.success.expertise": "本土市场专长",
+    "whyicr.success.innovation": "持续的创新能力",
+    "whyicr.success.tools": "智能分析工具",
+    "whyicr.success.process": "洞察引领的专业流程",
+    "whyicr.success.talent": "资深的研究专家人才",
+
     // Add more translations as needed
   },
   ar: {
@@ -861,69 +1014,282 @@ export const translations = {
     "careers.hero.title": "انضم إلى فريق يحول",
     "careers.hero.subtitle": "البيانات إلى قرارات",
     "careers.hero.description":
-      "في ICR، نؤمن بأن الرؤى التحليلية تبدأ من الأشخاص. نبحث دائماً عن محترفين متأملين وفضوليين يرغبون في القيام بعمل ذي معنى.",
+      "في ICR، نؤمن بأن الرؤى تبدأ بالإنسان. نبحث دائماً عن مهنيين متميزين  يسعون إلى أداء عمل ذي قيمة وتأثير حقيقي.",
 
-    "careers.why.title": "مشاريع حقيقية. أشخاص أذكياء. نمو له أهمية.",
+    "careers.why.title": "مشاريع حقيقية. كفاءات متميزة. نمو مهني له قيمة.",
     "careers.why.description":
-      "في ICR، لن تقوم بوظيفة فقط — بل ستساهم في عمل يوجه قرارات حقيقية عبر الصناعات والمناطق.",
+      "في ICR، لن تؤدي وظيفة تقلدبة، بل ستسهم في أعمال تؤثر في قرارات حقيقية عبر مختلف القطاعات والمناطق.",
 
-    "careers.purpose.title": "عمل مدفوع بالهدف",
+    "careers.purpose.title": "عمل قائم على الهدف",
     "careers.purpose.desc":
-      "ساعد العلامات التجارية الرائدة في حل تحديات الأعمال من خلال البحث والرؤى والاستراتيجيات التي تحدث فرقاً.",
+      "المساهمة في مساعدة علامات تجارية رائدة على مواجهة تحديات الأعمال من خلال البحث والرؤى والاستراتيجيات المؤثرة.",
 
-    "careers.collaborative.title": "بيئة تعاونية",
+    "careers.collaborative.title": "بيئة عمل تعاونية",
     "careers.collaborative.desc":
-      "اعمل عن كثب مع فريق إقليمي من الباحثين والمستشارين والمحللين الذين يتبادلون الأفكار، وليس المهام فقط.",
+      "العمل عن قرب مع فريق إقليمي من الباحثين والاستشاريين والمحللين الذين يتشاركون الأفكار، وليس فقط المهام.",
 
-    "careers.learning.title": "التعلم المستمر",
+    "careers.learning.title": "تعلّم مستمر",
     "careers.learning.desc":
-      "انمُ من خلال الخبرة العملية والإرشاد والتطوير المنظم المصمم لصقل مهاراتك.",
+      "التطور من خلال الخبرة العملية، والتوجيه المهني، وبرامج تطوير منظمة تهدف إلى صقل مهاراتك.",
 
-    "careers.regional.title": "التعرض الإقليمي",
+    "careers.regional.title": "خبرة إقليمية",
     "careers.regional.desc":
-      "اكتسب خبرة عبر مشاريع في المملكة العربية السعودية ومجلس التعاون الخليجي ومنطقة الشرق الأوسط وشمال إفريقيا — من الإطلاقات المحلية إلى الدراسات متعددة الأسواق.",
+      "اكتساب خبرة عبر مشاريع في المملكة العربية السعودية ودول الخليج والشرق الأوسط وشمال أفريقيا، من الانطلاقات المحلية إلى الدراسات متعددة الأسواق.",
 
-    "careers.flexible.title": "ثقافة مرنة",
+    "careers.flexible.title": "ثقافة عمل مرنة",
     "careers.flexible.desc":
-      "نركز على النتائج، وليس القواعد الصارمة. تحمل المسؤولية، وشارك الأفكار، واعمل في مساحة تقدر القدرة على التكيف.",
+      "نركز على النتائج لا على القواعد الجامدة، مع تشجيع المبادرة، ومشاركة الأفكار، والعمل في بيئة تقدّر المرونة.",
 
-    "careers.impact.title": "تأثير ذو معنى",
+    "careers.impact.title": "نتائج ملموسة",
     "careers.impact.desc":
-      "يشكل عملك قرارات حقيقية — من إطلاق المنتجات إلى تحولات الاستراتيجية. نحن لا نجمع البيانات فقط، بل نوجه العمل.",
+      "يسهم عملك في توجيه قرارات حقيقية، من إطلاق المنتجات إلى التحولات الاستراتيجية. نحن لا نجمع البيانات فقط، بل نوجّه العمل.",
 
-    "careers.form.title": "نريد أن نسمع منك",
+    "careers.form.title": "نود الاستماع إليك",
     "careers.form.description":
-      "استخدم النموذج أدناه لتقديم سيرتك الذاتية. نراجع كل طلب ونحتفظ بالملفات المؤهلة للأدوار المستقبلية.",
+      "استخدم النموذج أدناه لتقديم سيرتك الذاتية. نقوم بمراجعة جميع الطلبات والاحتفاظ بالملفات المؤهلة للفرص المستقبلية.",
 
     "careers.form.name": "الاسم الكامل",
     "careers.form.email": "البريد الإلكتروني",
     "careers.form.phone": "رقم الهاتف",
     "careers.form.position": "مجال الاهتمام / الوظيفة",
     "careers.form.resume": "تحميل السيرة الذاتية",
-    "careers.form.cover": "رسالة تغطية / رسالة (اختياري)",
+    "careers.form.cover": "رسالة تعريفية / ملاحظات (اختياري)",
     "careers.form.submit": "إرسال",
 
-    "careers.process.title": "كيف نعالج طلبك",
-    "careers.process.description": "خطوات واضحة من التقديم إلى الاختيار.",
+    "careers.process.title": "كيف نعالج طلب التوظيف",
+    "careers.process.description": "خطوات واضحة من بدء التقديم حتى الاختيار.",
 
     "careers.process.review": "مراجعة السيرة الذاتية",
     "careers.process.review.desc":
-      "نقوم بتقييم سيرتك الذاتية لمدى ملاءمتها للدور والخبرة.",
+      "نقوم بتقييم سيرتك الذاتية من حيث مدى ملاءمتها للوظيفة والخبرة.",
 
-    "careers.process.screening": "الفحص الأولي",
+    "careers.process.screening": "الفرز المبدئي",
     "careers.process.screening.desc":
-      "يتم الاتصال بالمرشحين المختارين لإجراء فحص هاتفي أو فيديو سريع.",
+      "يتم التواصل مع المرشحين المدرجين في القائمة المختصرة لإجراء مقابلة هاتفية أو مرئية مبدئية.",
 
     "careers.process.interviews": "المقابلات",
     "careers.process.interviews.desc":
-      "ستلتقي بقادة الفريق والمديرين ذوي الصلة عبر جولة أو جولتين.",
+      "ستُجرى مقابلات مع مشرفي الفرق والمديرين المعنيين",
 
     "careers.process.final": "المراجعة النهائية",
     "careers.process.final.desc":
-      "نقوم بتقييم المهارات والتوافق والمواءمة الثقافية قبل تقديم عرض.",
+      "نقيّم المهارات ومدى الملاءمة والتوافق الثقافي قبل تقديم العرض.",
 
-    "careers.process.offer": "العرض والتوظيف",
+    "careers.process.offer": "العرض والتهيئة",
     "careers.process.offer.desc":
-      "يتلقى المرشحون المختارون عرضاً رسمياً وخطة توظيف.",
+      "يحصل المرشحون المختارون على عرض رسمي وخطة تهيئة للانضمام.",
+
+    // About Page
+    "about.hero.title": "نبذة عن شركة Insight للاستشارات والبحوث",
+    "about.hero.subtitle": "من نحن",
+    "about.hero.description1":
+      "شركة Insight للاستشارات والبحوث (ICR) هي شركة استشارية مستقلة متخصصة في الاستشارات القائمة على البحوث ودعم اتخاذ القرار المبني على الأدلة.",
+    "about.hero.description2":
+      "نعمل مع مؤسسات تعمل في بيئات معقدة وتتطلب رؤى واضحة لدعم السياسات والاستراتيجيات والتنفيذ.",
+    "about.hero.description3":
+      "لا يتمثل دورنا في الترويج لحلول جاهزة مسبقاً، بل نعمل على تمكين متخذي القرار من فهم الواقع العملي، وتقييم البدائل بموضوعية، والمضي قدماً بثقة.",
+    "about.cta.discuss": "دعونا نطلع كيف يمكننا دعم أهدافكم",
+
+    "about.positioning.title": "موقعنا الاستراتيجي",
+    "about.positioning.desc1":
+      "تتمركز ICR عند نقطة التقاء البحث الرصين مع متطلبات اتخاذ القرار العملي.",
+    "about.positioning.desc2":
+      "نعمل كشريك تحليلي موثوق لدعم القيادات التي يتعين عليها الموازنة بين الأدلة التناسق والقيود عند اتخاذ قرارات مصيرية.",
+    "about.positioning.desc3":
+      "نحرص على الحفاظ على نطاق عمل مركز يشمل البحث والتحليل والدعم الاستشاري الذي يحول الأدلة إلى نتائج واضحة قابلة للتنفيذ.",
+    "about.positioning.desc4":
+      "يتيح لنا ذلك الحفاظ على الاستقلالية والالتزام المنهجي المنهجية والتركيز على تحقيق النتائج في جميع مهامنا.",
+
+    "about.integrity.title": "النزاهة والاستقلالية",
+    "about.integrity.desc1":
+      "تشكل النزاهة الأساس لجميع أعمال ICR، حيث نحافظ على الاستقلالية في التحليل والتوصيات، ونضمن أن تكون النتائج مبنية على الأدلة وليس على الافتراضات أو الضغوط الخارجية.",
+    "about.integrity.desc2":
+      "تم تصميم أطر الإدارة وإجراءات ضمان الجودة لدينا لحماية الموضوعية، والحفاظ على سرية البيانات، وضمان قوة المنهجية في جميع المشاريع.",
+
+    "about.experience.title": "خبرة عبر سياقات متعددة",
+    "about.experience.desc1":
+      "قدمت ICR الدعم لمؤسسات تعمل في قطاعات وسياقات مؤسسية متنوعة، بما في ذلك الجهات الحكومية، والشركات الخاصة، وأصحاب المصلحة.",
+    "about.experience.desc2":
+      "ورغم اختلاف كل مهمة عن الأخرى، فإن أعمالنا تستند دائماً إلى فهم عميق للواقع المحلي، وديناميكيات أصحاب المصلحة، وبيئات اتخاذ القرار.",
+    "about.experience.desc3":
+      "وبدلاً من الترويج لأطر عامة، نقوم بتكييف منهجياتنا وتحليلاتنا وفق السياق المحدد الذي تُتخذ فيه القرارات.",
+
+    "about.future.title": "نظرة إلى المستقبل",
+    "about.future.desc1":
+      "مع تزايد تعقيد بيئات اتخاذ القرار وتوفر البيانات بشكل أكبر، تكثر الحاجة إلى تحليلات منظمة ومسؤولة وشفافة.",
+    "about.future.desc2":
+      "تواصل ICR التزامها بتطوير أدواتها ونهجها، مع الحفاظ على مبادئها الأساسية المتمثلة في الاستقلالية الشفافية والوضوح.",
+    "about.future.desc3":
+      "ويظل تركيزنا منصباً على دعم المؤسسات في مواجهة حالات عدم اليقين واتخاذ قرارات مدروسة بثقة.",
+
+    "about.clients.title": "كيف نعمل مع عملائنا",
+    "about.clients.description":
+      "نعمل عن قرب مع عملائنا طوال دورة حياة المهمة، بدءاً من الفهم الدقيق لاحتياجات القرار، وانتهاءً بمخرجات مصممة للاستخدام العملي.",
+    "about.clients.subtitle":
+      "نولي أهمية كبيرة للشراكة طويلة الأمد المبنية على الثقة والشفافية والالتزام بالتنفيذ المتسق.",
+
+    "about.clients.approach1": "صياغة دقيقة للأسئلة قبل بدء جمع البيانات",
+    "about.clients.approach2": "حوار مستمر لضمان الملاءمة والتوافق",
+    "about.clients.approach3":
+      "مخرجات منظمة تدعم اتخاذ القرار وليس مجرد إعداد التقارير",
+
+    "about.research.insight": "البحوث • الرؤى التحليلية • الوضوح الاستراتيجي",
+
+    // Expertise Page
+    "expertise.hero.title": "خبراتنا",
+    "expertise.hero.description1":
+      "في شركة Insight للاستشارات والبحوث (ICR)، ترتكز خبراتنا على تقديم أبحاث وتحليلات دقيقة لدعم عمليات اتخاذ القرارات المعقدة في القطاعات الحكومية، والخاصة، والدولية.",
+    "expertise.hero.description2":
+      "نجمع بين المعرفة القطاعية، والانضباط المنهجي، والقدرات التحليلية المتقدمة لمعالجة التحديات الاستراتيجية والتشغيلية وتحديات السياسات العامة.",
+    "expertise.hero.description3":
+      "يعتمد منهج عملنا على دمج ممارسات البحث المعتمدة مع أدوات تحليل حديثة، بما في ذلك الاستخدام المسؤول للتقنيات المدعومة بالذكاء الاصطناعي، لتعزيز الدقة والكفاءة واستخلاص الرؤى التحليلية.",
+    "expertise.cta.discuss": "ناقش متطلباتكم",
+
+    "expertise.government.title": "مشاريع القطاع الحكومي والعام",
+    "expertise.government.desc1":
+      "نمتلك خبرة واسعة في دعم الجهات الحكومية وقطاع الخدمة العامة من خلال مهام بحثية وتقييمية واستشارية متخصصة.",
+    "expertise.government.desc2":
+      "تعكس أعمالنا فهماً عميقاً لأطر الإداره، ومتطلبات الشفافية والمحاسبة ، والحاجة إلى أدلة قادرة على الثبات أمام التدقيق العام والتنظيمي.",
+    "expertise.government.includes": "يشمل ذلك:",
+    "expertise.government.item1": "سياسة البحوث ومتابعة البرامج",
+    "expertise.government.item2": "تقييم أداء الخدمات العامة",
+    "expertise.government.item3": "أبحاث أصحاب المصلحة والمستفيدين",
+    "expertise.government.item4": "دراسة النتائج لدعم تحسين السياسات والبرامج",
+
+    "expertise.corporate.title": "الخبرة في مجال الشركات والاسوق",
+    "expertise.corporate.desc1":
+      "إلى جانب عملنا مع القطاع العام، ندعم المؤسسات والشركات العاملة في بيئات تنافسية ومعقدة.",
+    "expertise.corporate.desc2":
+      "تساعد خبراتنا المؤسسات على فهم ديناميكيات الأسواق، وسلوك المستهلكين، والأداء التشغيلي، بما يدعم التخطيط الاستراتيجي وقرارات الاستثمار.",
+    "expertise.corporate.includes": "يشمل ذلك:",
+    "expertise.corporate.item1": "تقييم الأسواق والفرص",
+    "expertise.corporate.item2": "أبحاث تسوقية عن المستهلكين والمتسوقين",
+    "expertise.corporate.item3": "تتبع العلامات التجارية والأداء",
+    "expertise.corporate.item4":
+      "تحليل استراتيجيات دخول السوق وتقيم القدرة التنافسية",
+
+    "expertise.methodological.title": "نقاط القوة في المنهجية والتحليلية",
+    "expertise.methodological.desc1":
+      "ترتكز خبراتنا على قدرات منهجية قوية تشمل الأساليب الكمية، والنوعية، والمختلطة.",
+    "expertise.methodological.desc2":
+      "يتم تصميم كل دراسة بما يتلاءم مع سياق القرار المستهدف، بما يضمن الملاءمة المنهجية، والموثوقية، والوضوح.",
+    "expertise.methodological.includes": "يشمل ذلك:",
+    "expertise.methodological.item1": "مسح البيانات بشكل واسع النطاق",
+    "expertise.methodological.item2": "مقابلات نوعية ومجموعات التركيز",
+    "expertise.methodological.item3": "أطر تتبع طويلة المدى",
+    "expertise.methodological.item4": "تحليل متكامل عبر مصادر بيانات متعددة",
+
+    "expertise.ai.title": "استخدام الذكاء الاصطناعي في العملية البحثية",
+    "expertise.ai.desc1":
+      "نُدرج أدوات مدعومة بالذكاء الاصطناعي ضمن عمليات البحث والتحليل لتعزيز الكفاءة والاتساق واستخلاص  النتائج.",
+    "expertise.ai.desc2":
+      "يتم تطبيق هذه الأدوات ضمن أطر منهجية واضحة وبإشراف بشري كامل.",
+    "expertise.ai.includes": "يشمل ذلك:",
+    "expertise.ai.item1": "إعداد وتنقيح البيانات بدعم من الذكاء الاصطناعي",
+    "expertise.ai.item2": "تحديد الأنماط وتحليل الاتجاهات",
+    "expertise.ai.item3": "معالجة النصوص والبيانات النوعية",
+    "expertise.ai.item4":
+      "نمذجة تحليلية مدعومة بالذكاء الاصطناعي مع مراجعة بشرية",
+
+    "expertise.decision.title": "منصات رقمية لدعم أتخاذ القرار",
+    "expertise.decision.desc1":
+      "في جميع مجالات خبراتنا، يرتكز عملنا على تركيز واضح على دعم عملية اتخاذ القرار.",
+    "expertise.decision.desc2":
+      "نُعطي الأولوية للوضوح والتوافق والتطبيق العملي، بما يضمن أن تكون المخرجات مفهومة لكبار أصحاب المصلحة ومتوافقة مع الأهداف المؤسسية.",
+    "expertise.decision.includes": "يشمل ذلك:",
+    "expertise.decision.item1": "دعم تطوير السياسات وتقييم البرامج",
+    "expertise.decision.item2":
+      "تحديد الأولويات الاستراتيجية وتخطيط الاستثمارات",
+    "expertise.decision.item3":
+      "تقارير وتوصيات جاهزة للعرض على القيادات التنفيذية",
+
+    "expertise.closing.title": "البيان الختامي",
+    "expertise.closing.desc1":
+      "تعكس خبراتنا توازناً بين المعرفة القطاعية، والدقة المنهجية، والابتكار التحليلي.",
+    "expertise.closing.desc2":
+      "ومن خلال الجمع بين الخبرة في المشاريع الحكومية والشركات الخاصة والقدرات البحثية المتقدمة، ندعم المؤسسات في اتخاذ قرارات مدروسة وواثقة.",
+    "expertise.closing.item1": "معرفة قطاعية مقرونة بصرامة منهجية",
+    "expertise.closing.item2": "ابتكار تحليلي ورؤى متكاملة",
+    "expertise.closing.item3": "نتأئج جاهزة لدعم قرارات كبار أصحاب المصلحة",
+
+    "expertise.final.title": "دعونا نطلع كيف يمكننا دعم أهدافكم",
+    "expertise.final.cta": "تعرف على خدماتنا",
+
+    // Why ICR Page
+    "whyicr.hero.title": "توظيف البحاث لدعم النمو استراتيجي",
+    "whyicr.hero.description":
+      "تتجاوز ICR حدود جمع البيانات، حيث نعمل كشريك استراتيجي لدعم تحقيق نتائج أعمال أفضل من خلال أبحاث مركزة، ورؤى عملية، وتوصيات استراتيجية مدروسة.",
+    "whyicr.cta.discuss": "دعونا نطلع كيف يمكننا دعم أهدافكم",
+    "whyicr.cta.services": "تعرف على خدماتنا",
+
+    "whyicr.partnerships.title": "شراكة استراتيجية",
+    "whyicr.partnerships.desc":
+      "نحن لا نعمل وفق منهجية المشاريع المؤقتة فقط، بل تعمل ICR كشريك استراتيجي طويل الأمد، حيث ندير البحوت وننسق مع الجهات المنفذة، ونضمن ارتباط الرؤى البحثية بمؤشرات الأداء الرئيسية لأعمالكم.",
+
+    "whyicr.marketing.title": "دعم الاستراتيجية التسويقية",
+    "whyicr.marketing.desc":
+      "نساعد في صياغة الاستراتيجيات التسويقية من خلال تحويل الرؤى إلى خطوات عملية، بدءاً من تحدد موقع العلامة التجارية وصولاً إلى تخطيط دخول الأسواق، مع التركيز على مبادرات قابلة للقياس تحقق نتائج ملموسة.",
+
+    "whyicr.retail.title": "خبرات تدقيق قطاع التجزئة",
+    "whyicr.retail.desc":
+      "نساعدكم على الاستفادة من برامج تدقيق قطاع التجزئة من خلال تحسين الجودة، وتسريع التنفيذ، وتعزيز قابلية تطبيق النتائج في كل مرحلة.",
+
+    "whyicr.agency.title": "التنسيق بين الجهات المنفذة",
+    "whyicr.agency.desc":
+      "نقوم بدور حلقة الوصل مع الجهات المنفذة، وندير التواصل المباشر لتسريع الاستجابات وضمان معالجة التحديات بكفاءة.",
+
+    "whyicr.accuracy.title": "دقة البيانات",
+    "whyicr.accuracy.desc":
+      "يتولى خبراؤنا التحقق من دقة البيانات وتعزيز شموليتها واتساقها، بما يضمن دقة النتائج في جميع الأوقات.",
+
+    "whyicr.analytics.title": "تحليلات متطورة",
+    "whyicr.analytics.desc":
+      "نطبق تقنيات إحصائية ونماذج تحليلية متطورة لاستخلاص الأنماط والرؤى الكامنة في بيانات قطاع التجزئة.",
+
+    "whyicr.reporting.title": "تقارير قابلة للتنفيذ",
+    "whyicr.reporting.desc":
+      "نقدم تقارير مركزة وجاهزة لاتخاذ القرار، دون تعقيد، بما يساعد فرقكم على سرعة التنفيذ وتحسين الأداء.",
+
+    "whyicr.process.title": "كيف نعمل",
+    "whyicr.process.description":
+      "نتبع منهجية واضحة ومجربة لتحويل الرؤى إلى أفعال، بدءاً من تحديد النطاق والبحث، وصولاً إلى الاستراتيجية ودعم التنفيذ.",
+
+    "whyicr.process.step1": "01 الفهم",
+    "whyicr.process.step1.desc":
+      "تحديد القرارات، والأهداف، ومتطلبات الأدلة بوضوح.",
+
+    "whyicr.process.step2": "02 البحث",
+    "whyicr.process.step2.desc":
+      "إدارة ميدانية منظمة مدعومة بإجراءات منضبطة لضمان الجودة.",
+
+    "whyicr.process.step3": "03 التخطيط الاستراتيجي",
+    "whyicr.process.step3.desc": "متابعة مستمرة والتحقق من دقة البيانات.",
+
+    "whyicr.process.step4": "04 الدعم",
+    "whyicr.process.step4.desc":
+      "تقارير جاهزة لاتخاذ القرار تركز على النتائج والخطوات التالية.",
+
+    "whyicr.industries.title": "القطاعات التي نخدمها",
+    "whyicr.industries.description":
+      "نقدم خدماتنا لعملائنا في القطاعات التالية:",
+
+    "whyicr.industry.consumer": "السلع الاستهلاكية",
+    "whyicr.industry.healthcare": "الرعاية الصحية والصناعات الدوائية",
+    "whyicr.industry.telecom": "الاتصالات والتقنية",
+    "whyicr.industry.automotive": "قطاع السيارات",
+    "whyicr.industry.media": "الإعلام والترفيه",
+
+    "whyicr.success.title": "سبب نجحنا",
+    "whyicr.success.description":
+      "تقدم ICR قيمة مستدامة من خلال ست ركائز أساسية تقوم على الثقة، والرؤى التحليلية، والابتكار.",
+
+    "whyicr.success.relationships": "علاقات قوية مع العملاء",
+    "whyicr.success.expertise": "خبرة عميقة في الأسواق المحلية",
+    "whyicr.success.innovation": "ابتكارات مستمرة",
+    "whyicr.success.tools": "أدوات تحليلية تقنية متطورة",
+    "whyicr.success.process": "منهجية قائمة على النتائج",
+    "whyicr.success.talent": "كفاءات بحثية رفيعة المستوى",
+
+    // Add more translations as needed
   },
 };

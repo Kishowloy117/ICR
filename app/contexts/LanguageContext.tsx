@@ -1,36 +1,94 @@
 "use client";
 
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
+import { translations } from "../translations/translations";
+import { detectLanguageFromGeolocation } from "../utils/detectLanguage";
 
 type Language = "en" | "zh" | "ar";
 
 interface LanguageContextType {
   language: Language;
-  setLanguage: (lang: Language) => void;
+  changeLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  isDetecting: boolean;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined
 );
 
-interface LanguageProviderProps {
-  children: ReactNode;
-  translations: Record<Language, Record<string, string>>;
-}
-
-export function LanguageProvider({
-  children,
-  translations,
-}: LanguageProviderProps) {
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("en");
+  const [isDetecting, setIsDetecting] = useState(true);
+
+  useEffect(() => {
+    async function initializeLanguage() {
+      try {
+        // Check if user has manually set a language before
+        const savedLanguage = localStorage.getItem(
+          "language"
+        ) as Language | null;
+        const manuallySet =
+          localStorage.getItem("languageManuallySet") === "true";
+
+        if (savedLanguage && manuallySet) {
+          // User has manually chosen a language, respect that choice
+          setLanguage(savedLanguage);
+          setIsDetecting(false);
+          return;
+        }
+
+        // Check if we've already detected location before
+        const cachedLanguage = localStorage.getItem(
+          "detectedLanguage"
+        ) as Language | null;
+        const locationGranted =
+          localStorage.getItem("locationPermissionGranted") === "true";
+
+        if (cachedLanguage && locationGranted) {
+          // Use cached detection result
+          setLanguage(cachedLanguage);
+          localStorage.setItem("language", cachedLanguage);
+          setIsDetecting(false);
+          return;
+        }
+
+        // Detect language from user's geolocation (will ask permission)
+        const detectedLang = await detectLanguageFromGeolocation();
+        console.log("Language detected from geolocation:", detectedLang);
+        setLanguage(detectedLang);
+        localStorage.setItem("language", detectedLang);
+        localStorage.setItem("detectedLanguage", detectedLang);
+      } catch (error) {
+        console.error("Error initializing language:", error);
+        setLanguage("en");
+      } finally {
+        setIsDetecting(false);
+      }
+    }
+
+    initializeLanguage();
+  }, []);
+
+  const changeLanguage = (lang: Language) => {
+    setLanguage(lang);
+    localStorage.setItem("language", lang);
+    // Mark that user manually changed the language
+    localStorage.setItem("languageManuallySet", "true");
+  };
 
   const t = (key: string): string => {
-    return translations[language]?.[key] || key;
+    const languageTranslations = translations[language] as Record<
+      string,
+      string
+    >;
+    return languageTranslations[key] || key;
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider
+      value={{ language, changeLanguage, t, isDetecting }}
+    >
       {children}
     </LanguageContext.Provider>
   );

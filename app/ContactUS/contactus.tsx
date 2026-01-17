@@ -1,21 +1,122 @@
 "use client";
 
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useRef, useState, ChangeEvent } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Mail, Facebook, Linkedin, X } from "lucide-react";
+import { Mail, Facebook, Linkedin, X, Upload, FileText } from "lucide-react";
 
 export default function ContactUs() {
   const formRef = useRef<HTMLFormElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [showIndicator, setShowIndicator] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Check file size (max 10MB)
+      if (file.size > 10 * 1024 * 1024) {
+        alert("File size must be less than 10MB");
+        e.target.value = "";
+        return;
+      }
+      // Check file type
+      const allowedTypes = [
+        "application/pdf",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "application/msword",
+      ];
+      if (!allowedTypes.includes(file.type)) {
+        alert("Only PDF and DOCX files are allowed");
+        e.target.value = "";
+        return;
+      }
+      setSelectedFile(file);
+    }
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
     const form = e.currentTarget as HTMLFormElement;
-    const data = Object.fromEntries(new FormData(form).entries());
-    console.log(data);
-    alert("Thanks — message sent (demo).");
-    form.reset();
+    const formData = new FormData(form);
+
+    // Get Power Automate URL from environment variable
+    const powerAutomateUrl = process.env.NEXT_PUBLIC_POWER_AUTOMATE_URL;
+
+    if (!powerAutomateUrl) {
+      alert(
+        "Form submission is not configured. Please contact the administrator."
+      );
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      // Convert file to base64 if exists
+      let fileBase64 = "";
+      let fileName = "";
+      let fileType = "";
+
+      if (selectedFile) {
+        const reader = new FileReader();
+        fileBase64 = await new Promise<string>((resolve, reject) => {
+          reader.onload = () => {
+            const base64 = reader.result as string;
+            // Remove data URL prefix (e.g., "data:application/pdf;base64,")
+            resolve(base64.split(",")[1]);
+          };
+          reader.onerror = reject;
+          reader.readAsDataURL(selectedFile);
+        });
+        fileName = selectedFile.name;
+        fileType = selectedFile.type;
+      }
+
+      // Prepare data for Power Automate
+      const submitData = {
+        name: formData.get("name") as string,
+        email: formData.get("email") as string,
+        company: formData.get("company") as string,
+        message: formData.get("message") as string,
+        file: fileBase64
+          ? {
+              name: fileName,
+              content: fileBase64,
+              contentType: fileType,
+            }
+          : null,
+        submittedAt: new Date().toISOString(),
+      };
+
+      // Submit to Power Automate
+      const response = await fetch(powerAutomateUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(submitData),
+      });
+
+      if (response.ok) {
+        alert(
+          "Thank you for your enquiry! We will review your submission and respond within 24-48 hours."
+        );
+        form.reset();
+        setSelectedFile(null);
+      } else {
+        throw new Error("Submission failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert(
+        "There was an error submitting your form. Please try again or contact us directly at info@icr-me.com"
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const scrollToForm = () => {
@@ -174,21 +275,25 @@ export default function ContactUs() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm text-slate-300">
-                    Full Name
+                    Full Name <span className="text-red-400">*</span>
                   </label>
                   <input
                     name="name"
                     required
-                    className="mt-2 w-full rounded-md border border-slate-700 bg-transparent px-3 py-2 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                    disabled={isSubmitting}
+                    className="mt-2 w-full rounded-md border border-slate-700 bg-transparent px-3 py-2 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 disabled:opacity-50"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-slate-300">Email</label>
+                  <label className="block text-sm text-slate-300">
+                    Email <span className="text-red-400">*</span>
+                  </label>
                   <input
                     name="email"
                     type="email"
                     required
-                    className="mt-2 w-full rounded-md border border-slate-700 bg-transparent px-3 py-2 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                    disabled={isSubmitting}
+                    className="mt-2 w-full rounded-md border border-slate-700 bg-transparent px-3 py-2 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 disabled:opacity-50"
                   />
                 </div>
                 <div className="sm:col-span-2">
@@ -197,66 +302,123 @@ export default function ContactUs() {
                   </label>
                   <input
                     name="company"
-                    className="mt-2 w-full rounded-md border border-slate-700 bg-transparent px-3 py-2 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                    disabled={isSubmitting}
+                    className="mt-2 w-full rounded-md border border-slate-700 bg-transparent px-3 py-2 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 disabled:opacity-50"
                   />
                 </div>
               </div>
 
               <div className="mt-4">
-                <label className="block text-sm text-slate-300">Message</label>
+                <label className="block text-sm text-slate-300">
+                  Message <span className="text-red-400">*</span>
+                </label>
                 <textarea
                   name="message"
                   rows={6}
                   required
-                  className="mt-2 w-full rounded-md border border-slate-700 bg-transparent px-3 py-2 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                  disabled={isSubmitting}
+                  className="mt-2 w-full rounded-md border border-slate-700 bg-transparent px-3 py-2 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 disabled:opacity-50"
                 ></textarea>
               </div>
+
+              {/* File Upload */}
               <div className="mt-4">
-                <label className="block text-sm text-slate-300">
+                <label className="block text-sm text-slate-300 mb-2">
                   Upload a brief (optional)
                 </label>
-                <label className="block mt-2">
-                  <div className="w-full rounded-md border-2 border-dashed border-slate-700 bg-transparent px-4 py-8 text-center cursor-pointer hover:border-emerald-400 transition-colors">
-                    <input
-                      type="file"
-                      name="document"
-                      accept=".pdf,.docx"
-                      className="hidden"
-                    />
-                    <div className="flex flex-col items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-8 w-8 text-emerald-400 mb-2"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                        />
-                      </svg>
-                      <span className="text-slate-400 text-sm">
-                        Click to upload or drag and drop
-                      </span>
-                      <span className="text-slate-500 text-xs mt-1">
-                        You may upload a brief, TOR, or background document to
-                        support your enquiry.
-                      </span>
-                      <span className="text-slate-500 text-xs mt-1">
-                        PDF or DOCX (Max 10MB)
-                      </span>
-                    </div>
+                <div
+                  onClick={() => !isSubmitting && fileInputRef.current?.click()}
+                  className={`w-full rounded-md border-2 border-dashed ${
+                    selectedFile
+                      ? "border-emerald-400 bg-emerald-400/5"
+                      : "border-slate-700 bg-transparent"
+                  } px-4 py-8 text-center cursor-pointer hover:border-emerald-400 transition-colors ${
+                    isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
+                >
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    name="document"
+                    accept=".pdf,.docx,.doc"
+                    onChange={handleFileChange}
+                    disabled={isSubmitting}
+                    className="hidden"
+                  />
+                  <div className="flex flex-col items-center justify-center">
+                    {selectedFile ? (
+                      <>
+                        <FileText className="h-8 w-8 text-emerald-400 mb-2" />
+                        <span className="text-emerald-400 text-sm font-medium">
+                          {selectedFile.name}
+                        </span>
+                        <span className="text-slate-500 text-xs mt-1">
+                          {(selectedFile.size / 1024 / 1024).toFixed(2)} MB
+                        </span>
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedFile(null);
+                            if (fileInputRef.current) {
+                              fileInputRef.current.value = "";
+                            }
+                          }}
+                          className="mt-2 text-xs text-red-400 hover:text-red-300"
+                        >
+                          Remove file
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <Upload className="h-8 w-8 text-emerald-400 mb-2" />
+                        <span className="text-slate-400 text-sm">
+                          Click to upload or drag and drop
+                        </span>
+                        <span className="text-slate-500 text-xs mt-1">
+                          You may upload a brief, TOR, or background document
+                        </span>
+                        <span className="text-slate-500 text-xs mt-1">
+                          PDF or DOCX (Max 10MB)
+                        </span>
+                      </>
+                    )}
                   </div>
-                </label>
+                </div>
               </div>
+
               <button
                 type="submit"
-                className="mt-6 w-full rounded-md bg-emerald-500 py-3 text-sm font-semibold hover:bg-emerald-600"
+                disabled={isSubmitting}
+                className="mt-6 w-full rounded-md bg-emerald-500 py-3 text-sm font-semibold hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2"
               >
-                Submit
+                {isSubmitting ? (
+                  <>
+                    <svg
+                      className="animate-spin h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
+                    </svg>
+                    Submitting...
+                  </>
+                ) : (
+                  "Submit Enquiry"
+                )}
               </button>
 
               {/* Confidentiality Notice */}

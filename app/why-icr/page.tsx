@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -9,8 +11,11 @@ import {
   Zap,
   Wrench,
 } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Page() {
+  const { t } = useLanguage();
+
   return (
     <main>
       <section className="relative bg-linear-to-br from-[#041a2e] via-[#062944] to-[#041a2e] py-8">
@@ -43,17 +48,11 @@ export default function Page() {
           </div>
 
           <h1 className="mx-auto max-w-3xl text-3xl font-sans leading-tight text-white md:text-5xl">
-            Turning Research Into
-            <br />
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-emerald-200">
-              Strategic Growth
-            </span>
+            {t("whyicr.hero.title")}
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm text-slate-300">
-            ICR goes beyond data — we partner with you to drive better business
-            outcomes through focused research, practical insights, and strategic
-            recommendations.
+            {t("whyicr.hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -61,14 +60,14 @@ export default function Page() {
               href="/ContactUS"
               className="inline-block rounded-md bg-emerald-500 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-600"
             >
-              Discuss Your Requirements »
+              {t("whyicr.cta.discuss")} »
             </Link>
 
             <Link
               href="/services"
               className="inline-block rounded-md border border-emerald-400 px-6 py-3 text-sm font-medium text-emerald-200 hover:bg-emerald-600/10"
             >
-              Explore Our Services
+              {t("whyicr.cta.services")}
             </Link>
           </div>
         </div>
@@ -82,20 +81,17 @@ export default function Page() {
                 Consulting
               </div>
               <h3 className="text-3xl font-semibold text-slate-900">
-                Strategic Partnerships
+                {t("whyicr.partnerships.title")}
               </h3>
               <p className="mt-4 text-slate-600">
-                We go beyond one-time projects — ICR acts as a strategic ally.
-                We manage research relationships, streamline vendor
-                communication, and ensure insights are tied to your business
-                KPIs.
+                {t("whyicr.partnerships.desc")}
               </p>
             </div>
 
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/images/WhatsApp Image 2025-12-20 at 8.39.42 PM.jpeg"
-                alt="Strategic Partnerships"
+                alt={t("whyicr.partnerships.title")}
                 width={860}
                 height={520}
                 className="w-full h-auto object-cover"
@@ -107,7 +103,7 @@ export default function Page() {
             <div className="order-2 lg:order-1 rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/images/WhatsApp Image 2025-12-20 at 8.39.39 PM (1).jpeg"
-                alt="Marketing Strategy Support"
+                alt={t("whyicr.marketing.title")}
                 width={860}
                 height={520}
                 className="w-full h-auto object-cover"
@@ -119,12 +115,10 @@ export default function Page() {
                 Consulting
               </div>
               <h3 className="text-3xl font-semibold text-slate-900">
-                Marketing Strategy Support
+                {t("whyicr.marketing.title")}
               </h3>
               <p className="mt-4 text-slate-600">
-                We help shape your strategy by turning insights into action.
-                From brand positioning to market entry planning, we focus on
-                measurable tactics that deliver results.
+                {t("whyicr.marketing.desc")}
               </p>
             </div>
           </div>
@@ -137,11 +131,10 @@ export default function Page() {
             Retail-Audit
           </div>
           <h3 className="mt-6 text-3xl font-sans text-slate-900 sm:text-4xl">
-            Retail Audit Expertise
+            {t("whyicr.retail.title")}
           </h3>
           <p className="mx-auto mt-4 max-w-2xl text-slate-600">
-            We help you get the most out of your retail audit programs by
-            improving quality, speed, and actionability at every stage.
+            {t("whyicr.retail.desc")}
           </p>
 
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 text-left">
@@ -150,11 +143,10 @@ export default function Page() {
                 <Users className="h-6 w-6" />
               </div>
               <h4 className="text-lg font-semibold text-slate-900">
-                Agency Coordination
+                {t("whyicr.agency.title")}
               </h4>
               <p className="text-sm text-slate-600">
-                We act as your liaison — managing agency communication directly
-                to speed up response times and ensure swift issue resolution.
+                {t("whyicr.agency.desc")}
               </p>
             </div>
 
@@ -163,11 +155,10 @@ export default function Page() {
                 <Database className="h-6 w-6" />
               </div>
               <h4 className="text-lg font-semibold text-slate-900">
-                Data Accuracy
+                {t("whyicr.accuracy.title")}
               </h4>
               <p className="text-sm text-slate-600">
-                Our experts validate and enhance data coverage and consistency,
-                helping you trust what the numbers say — every time.
+                {t("whyicr.accuracy.desc")}
               </p>
             </div>
 
@@ -176,11 +167,10 @@ export default function Page() {
                 <BarChart2 className="h-6 w-6" />
               </div>
               <h4 className="text-lg font-semibold text-slate-900">
-                Advanced Analytics
+                {t("whyicr.analytics.title")}
               </h4>
               <p className="text-sm text-slate-600">
-                We apply statistical and modeling techniques to uncover patterns
-                and insights hidden in your retail data.
+                {t("whyicr.analytics.desc")}
               </p>
             </div>
 
@@ -189,11 +179,10 @@ export default function Page() {
                 <FileText className="h-6 w-6" />
               </div>
               <h4 className="text-lg font-semibold text-slate-900">
-                Actionable Reporting
+                {t("whyicr.reporting.title")}
               </h4>
               <p className="text-sm text-slate-600">
-                No fluff, no overload — just focused, decision-ready outputs
-                that help your teams move fast and execute better.
+                {t("whyicr.reporting.desc")}
               </p>
             </div>
           </div>
@@ -206,11 +195,10 @@ export default function Page() {
             Process
           </div>
           <h3 className="mt-6 text-3xl font-sans text-slate-900 sm:text-4xl">
-            How We Work
+            {t("whyicr.process.title")}
           </h3>
           <p className="mx-auto mt-3 max-w-2xl text-slate-600">
-            We follow a simple, proven process to turn insight into action —
-            from scoping and research to strategy and implementation support.
+            {t("whyicr.process.description")}
           </p>
 
           <div className="relative mt-16">
@@ -224,10 +212,10 @@ export default function Page() {
                   <span className="text-3xl font-bold text-white">01</span>
                 </div>
                 <h4 className="text-lg font-semibold text-slate-900 mb-2">
-                  Understand
+                  {t("whyicr.process.step1").replace("01 ", "")}
                 </h4>
                 <p className="text-sm text-slate-600">
-                  Clarifying decisions, objectives, and evidence requirements
+                  {t("whyicr.process.step1.desc")}
                 </p>
               </div>
 
@@ -237,10 +225,10 @@ export default function Page() {
                   <span className="text-3xl font-bold text-white">02</span>
                 </div>
                 <h4 className="text-lg font-semibold text-slate-900 mb-2">
-                  Research
+                  {t("whyicr.process.step2").replace("02 ", "")}
                 </h4>
                 <p className="text-sm text-slate-600">
-                  Structured field management and quality assurance
+                  {t("whyicr.process.step2.desc")}
                 </p>
               </div>
 
@@ -250,10 +238,10 @@ export default function Page() {
                   <span className="text-3xl font-bold text-white">03</span>
                 </div>
                 <h4 className="text-lg font-semibold text-slate-900 mb-2">
-                  Strategize
+                  {t("whyicr.process.step3").replace("03 ", "")}
                 </h4>
                 <p className="text-sm text-slate-600">
-                  Continuous monitoring and validation for data integrity
+                  {t("whyicr.process.step3.desc")}
                 </p>
               </div>
 
@@ -263,11 +251,10 @@ export default function Page() {
                   <span className="text-3xl font-bold text-white">04</span>
                 </div>
                 <h4 className="text-lg font-semibold text-slate-900 mb-2">
-                  Support
+                  {t("whyicr.process.step4").replace("04 ", "")}
                 </h4>
                 <p className="text-sm text-slate-600">
-                  Decision-ready reporting focused on implications and next
-                  steps
+                  {t("whyicr.process.step4.desc")}
                 </p>
               </div>
             </div>
@@ -303,10 +290,10 @@ export default function Page() {
             Industries
           </div>
           <h2 className="text-3xl md:text-4xl font-bold">
-            Industries We Serve
+            {t("whyicr.industries.title")}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-slate-300">
-            We support clients across:
+            {t("whyicr.industries.description")}
           </p>
 
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 justify-center max-w-4xl mx-auto">
@@ -333,7 +320,7 @@ export default function Page() {
                 </svg>
               </div>
               <div className="text-sm font-medium text-slate-900">
-                Consumer Goods
+                {t("whyicr.industry.consumer")}
               </div>
             </div>
 
@@ -355,7 +342,7 @@ export default function Page() {
                 </svg>
               </div>
               <div className="text-sm font-medium text-slate-900">
-                Healthcare &amp; Pharma
+                {t("whyicr.industry.healthcare")}
               </div>
             </div>
 
@@ -408,7 +395,7 @@ export default function Page() {
                 </svg>
               </div>
               <div className="text-sm font-medium text-slate-900">
-                Telecom &amp; Tech
+                {t("whyicr.industry.telecom")}
               </div>
             </div>
 
@@ -444,7 +431,7 @@ export default function Page() {
                 </svg>
               </div>
               <div className="text-sm font-medium text-slate-900">
-                Automotive
+                {t("whyicr.industry.automotive")}
               </div>
             </div>
 
@@ -476,7 +463,7 @@ export default function Page() {
                 </svg>
               </div>
               <div className="text-sm font-medium text-slate-900">
-                Media &amp; Entertainment
+                {t("whyicr.industry.media")}
               </div>
             </div>
           </div>
@@ -486,7 +473,7 @@ export default function Page() {
               href="/ContactUS"
               className="inline-block rounded-md bg-emerald-500 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-600"
             >
-              Discuss Your Requirements »
+              {t("whyicr.cta.discuss")} »
             </Link>
           </div>
         </div>
@@ -498,11 +485,10 @@ export default function Page() {
             Success
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-            Why We Succeed
+            {t("whyicr.success.title")}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-slate-600">
-            ICR delivers consistent value through six key strengths — built on
-            trust, insight, and innovation.
+            {t("whyicr.success.description")}
           </p>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -511,7 +497,7 @@ export default function Page() {
                 <Users className="h-5 w-5" />
               </div>
               <h4 className="text-lg font-semibold text-slate-900">
-                Strong Client Relationships
+                {t("whyicr.success.relationships")}
               </h4>
               <p className="mt-2 text-sm text-slate-600">
                 We collaborate closely with clients and regional partners —
@@ -524,7 +510,7 @@ export default function Page() {
                 <Award className="h-5 w-5" />
               </div>
               <h4 className="text-lg font-semibold text-slate-900">
-                Local Market Expertise
+                {t("whyicr.success.expertise")}
               </h4>
               <p className="mt-2 text-sm text-slate-600">
                 We translate broad strategies into local execution, ensuring
@@ -537,7 +523,7 @@ export default function Page() {
                 <Zap className="h-5 w-5" />
               </div>
               <h4 className="text-lg font-semibold text-slate-900">
-                Continuous Innovation
+                {t("whyicr.success.innovation")}
               </h4>
               <p className="mt-2 text-sm text-slate-600">
                 We bring fresh thinking and introduce new methodologies, tools,
@@ -550,7 +536,7 @@ export default function Page() {
                 <BarChart2 className="h-5 w-5" />
               </div>
               <h4 className="text-lg font-semibold text-slate-900">
-                Smart Analytical Tools
+                {t("whyicr.success.tools")}
               </h4>
               <p className="mt-2 text-sm text-slate-600">
                 Our wide range of analytical capabilities uncovers patterns and
@@ -563,7 +549,7 @@ export default function Page() {
                 <Wrench className="h-5 w-5" />
               </div>
               <h4 className="text-lg font-semibold text-slate-900">
-                Insight-Led Process
+                {t("whyicr.success.process")}
               </h4>
               <p className="mt-2 text-sm text-slate-600">
                 Our research is designed for real-world action — from survey to
@@ -576,7 +562,7 @@ export default function Page() {
                 <FileText className="h-5 w-5" />
               </div>
               <h4 className="text-lg font-semibold text-slate-900">
-                Senior Research Talent
+                {t("whyicr.success.talent")}
               </h4>
               <p className="mt-2 text-sm text-slate-600">
                 ICR teams blend marketing experience with core research skill —
