@@ -56,13 +56,13 @@ export default function LocationPermissionBanner() {
             Enable Location for Better Experience
           </h4>
           <p className="text-xs text-slate-300">
-            We'll automatically set your preferred language based on your
+            We&apos;ll automatically set your preferred language based on your
             location
           </p>
         </div>
         <button
           onClick={handleDismiss}
-          className="flex-shrink-0 text-slate-400 hover:text-white"
+          className="shrink-0 text-slate-400 hover:text-white"
         >
           <svg
             className="w-5 h-5"

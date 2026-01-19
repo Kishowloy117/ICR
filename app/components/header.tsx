@@ -17,22 +17,22 @@ import { useLanguage } from "../contexts/LanguageContext";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
-  const { language, changeLanguage } = useLanguage();
+  const { language, changeLanguage, t } = useLanguage();
 
   const navItems = [
-    { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "Expertise", href: "/expertise" },
-    { label: "Why ICR", href: "/why-icr" },
-    { label: "About", href: "/about" },
-    { label: "Careers", href: "/careers" },
-    { label: "Contact", href: "/ContactUS" },
+    { label: "nav.home", href: "/" },
+    { label: "nav.services", href: "/services" },
+    { label: "nav.expertise", href: "/expertise" },
+    { label: "nav.whyicr", href: "/why-icr" },
+    { label: "nav.about", href: "/about" },
+    { label: "nav.careers", href: "/careers" },
+    { label: "nav.contact", href: "/ContactUS" },
   ];
 
   const languages = [
-    { code: "en" as const, name: "English" },
-    { code: "zh" as const, name: "中文" },
-    { code: "ar" as const, name: "العربية" },
+    { code: "en" as const, name: "lang.english" },
+    { code: "zh" as const, name: "lang.chinese" },
+    { code: "ar" as const, name: "lang.arabic" },
   ];
 
   return (
@@ -72,7 +72,7 @@ export default function Navbar() {
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-200/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
 
                 {/* Text */}
-                <span className="relative z-10">{item.label}</span>
+                <span className="relative z-10">{t(item.label)}</span>
               </Link>
             ))}
           </nav>
@@ -98,7 +98,7 @@ export default function Navbar() {
                       setLangMenuOpen(false);
                     }}
                   >
-                    <span className="font-medium">{lang.name}</span>
+                    <span className="font-medium">{t(lang.name)}</span>
                     {language === lang.code && (
                       <Check className="h-4 w-4 text-emerald-600" />
                     )}
@@ -127,7 +127,7 @@ export default function Navbar() {
                 {/* Header with Close Button Only */}
                 <div className="flex items-center justify-between p-6 border-b border-white/10">
                   <SheetTitle className="text-lg font-semibold text-white">
-                    Menu
+                    {t("nav.menu")}
                   </SheetTitle>
                   <SheetClose asChild>
                     <Button
@@ -159,7 +159,7 @@ export default function Navbar() {
                         {/* Content */}
                         <span className="relative z-10 flex items-center gap-3 group-hover:text-white transition-colors">
                           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                          {item.label}
+                          {t(item.label)}
                         </span>
                       </Link>
                     </SheetClose>
@@ -171,7 +171,7 @@ export default function Navbar() {
                   <div className="flex items-center gap-2 mb-4">
                     <Globe className="h-4 w-4 text-emerald-400" />
                     <span className="text-xs font-semibold text-slate-300 uppercase tracking-wide">
-                      Language
+                      {t("nav.language")}
                     </span>
                   </div>
                   <div className="space-y-2">
@@ -194,7 +194,7 @@ export default function Navbar() {
                               : "text-slate-300"
                           }`}
                         >
-                          {lang.name}
+                          {t(lang.name)}
                         </span>
                         {language === lang.code && (
                           <div className="flex items-center justify-center h-5 w-5 rounded-full bg-emerald-500">

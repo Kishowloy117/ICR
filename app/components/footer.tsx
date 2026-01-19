@@ -37,7 +37,7 @@ export default function Footer() {
           {/* Middle - Quick Links */}
           <div>
             <h4 className="text-lg font-semibold text-slate-900 mb-4">
-              Quick Links
+              {t("footer.quicklinks")}
             </h4>
             <ul className="grid grid-cols-2 gap-2 text-sm text-slate-700">
               <li>
@@ -45,7 +45,7 @@ export default function Footer() {
                   href="/services"
                   className="hover:text-emerald-600 transition-colors block"
                 >
-                  Services
+                  {t("nav.services")}
                 </Link>
               </li>
               <li>
@@ -53,7 +53,7 @@ export default function Footer() {
                   href="/expertise"
                   className="hover:text-emerald-600 transition-colors block"
                 >
-                  Expertise
+                  {t("nav.expertise")}
                 </Link>
               </li>
               <li>
@@ -61,7 +61,7 @@ export default function Footer() {
                   href="/why-icr"
                   className="hover:text-emerald-600 transition-colors block"
                 >
-                  Why ICR
+                  {t("nav.whyicr")}
                 </Link>
               </li>
               <li>
@@ -69,7 +69,7 @@ export default function Footer() {
                   href="/about"
                   className="hover:text-emerald-600 transition-colors block"
                 >
-                  About
+                  {t("nav.about")}
                 </Link>
               </li>
               <li>
@@ -77,7 +77,7 @@ export default function Footer() {
                   href="/careers"
                   className="hover:text-emerald-600 transition-colors block"
                 >
-                  Careers
+                  {t("nav.careers")}
                 </Link>
               </li>
               <li>
@@ -85,7 +85,7 @@ export default function Footer() {
                   href="/ContactUS"
                   className="hover:text-emerald-600 transition-colors block"
                 >
-                  Contact
+                  {t("nav.contact")}
                 </Link>
               </li>
             </ul>
@@ -94,7 +94,7 @@ export default function Footer() {
           {/* Right - Contact */}
           <div>
             <h4 className="text-lg font-semibold text-slate-900 mb-4">
-              Contact
+              {t("nav.contact")}
             </h4>
             <div className="text-sm text-slate-700">
               <a
@@ -106,8 +106,7 @@ export default function Footer() {
             </div>
 
             <p className="mt-3 text-sm text-slate-600">
-              For general enquiries, project discussions, and partnership
-              opportunities.
+              {t("contact.email.desc")}
             </p>
           </div>
         </div>
@@ -124,19 +123,19 @@ export default function Footer() {
               href="/privacy"
               className="hover:text-emerald-600 transition-colors mr-4"
             >
-              Privacy Policy
+              {t("footer.privacy")}
             </Link>
             <Link
               href="/terms"
               className="hover:text-emerald-600 transition-colors mr-4"
             >
-              Terms of Service
+              {t("footer.terms")}
             </Link>
             <Link
               href="/cookies"
               className="hover:text-emerald-600 transition-colors"
             >
-              Cookie Settings
+              {t("footer.cookies")}
             </Link>
           </div>
         </div>

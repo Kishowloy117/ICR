@@ -92,6 +92,10 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
 
     // Footer
     "footer.tagline": "Research • Insight • Strategic Clarity",
+    "footer.quicklinks": "Quick Links",
+    "footer.privacy": "Privacy Policy",
+    "footer.terms": "Terms of Service",
+    "footer.cookies": "Cookie Settings",
 
     // Services Page
     "services.hero.title": "Explore Our",
@@ -435,6 +439,54 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "whyicr.success.process": "Insight-Led Process",
     "whyicr.success.talent": "Senior Research Talent",
 
+    // Contact Page
+    "contact.hero.title": "Let’s discuss",
+    "contact.hero.subtitle": "your requirements",
+    "contact.hero.description1":
+      "Whether you are planning a study, assessing a market, or seeking research or advisory support, our team is available to discuss your requirements and how we can support informed decision-making.",
+    "contact.hero.description2":
+      "We work with public sector bodies, corporate organisations, and international stakeholders.",
+    "contact.cta.discuss": "Discuss Your Requirements",
+    "contact.cta.services": "Explore Our Services",
+
+    "contact.getintouch.title": "Get in Touch",
+    "contact.email.title": "Email",
+    "contact.email.desc":
+      "For general enquiries, project discussions, and partnership opportunities, please email:",
+    "contact.social.title": "Follow Us",
+
+    "contact.form.name": "Full Name",
+    "contact.form.email": "Email",
+    "contact.form.company": "Company Name",
+    "contact.form.message": "Message",
+    "contact.form.upload": "Upload a brief (optional)",
+    "contact.form.upload.instruction": "Click to upload or drag and drop",
+    "contact.form.upload.note":
+      "You may upload a project brief, TOR, or background document to support your enquiry.",
+    "contact.form.upload.format": "PDF or DOCX (max 10MB)",
+    "contact.form.submit": "Submit",
+    "contact.form.submitting": "Submitting...",
+    "contact.form.confidentiality": "All enquiries are treated confidentially.",
+
+    "contact.next.badge": "Next Steps",
+    "contact.next.title": "What Happens Next",
+    "contact.next.description":
+      "Our consulting team will review all enquiries and respond if there is a clear match with our specialist areas.",
+
+    "contact.next.step1": "Review",
+    "contact.next.step1.desc":
+      "Our team will review your enquiry within 24-48 hours to understand your needs and requirements.",
+
+    "contact.next.step2": "Initial Contact",
+    "contact.next.step2.desc":
+      "If there is a clear match, we will contact you to arrange an initial consultation and discuss your goals.",
+
+    "contact.next.step3": "Proposal",
+    "contact.next.step3.desc":
+      "We will prepare a tailored proposal outlining our approach, schedule, and how we can support your objectives.",
+
+    "contact.urgent": "Need urgent assistance? Please contact us directly",
+
     // Add more translations as needed
   },
   zh: {
@@ -524,6 +576,10 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
 
     // Footer
     "footer.tagline": "深研 · 洞察 · 战略明晰",
+    "footer.quicklinks": "快速链接",
+    "footer.privacy": "隐私政策",
+    "footer.terms": "服务条款",
+    "footer.cookies": "Cookie 设置",
 
     // Services Page
     "services.hero.title": "探索我们的",
@@ -608,7 +664,7 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "careers.learning.desc":
       "通过实战经验、导师指导和系统化的职业发展规划，不断精进您的专业技能。",
 
-    "careers.regional.title": "区域视野，全球高度",
+    "careers.regional.title": "区域视野",
     "careers.regional.desc":
       "深度参与沙特阿拉伯、海湾阿拉伯国家合作委员会 (GCC) 及中东和北非 (MENA) 地区的项目——从本土品牌发布到跨市场研究。",
 
@@ -859,17 +915,64 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "whyicr.success.process": "洞察引领的专业流程",
     "whyicr.success.talent": "资深的研究专家人才",
 
+    // Contact Page
+    "contact.hero.title": "让我们讨论",
+    "contact.hero.subtitle": "您的需求",
+    "contact.hero.description1":
+      "无论您是在规划研究、评估市场，还是寻求研究或顾问支持，我们的团队随时准备与您讨论需求，并协助您做出明智的决策。",
+    "contact.hero.description2":
+      "我们与公共部门机构、企业组织和国际利益相关方合作。",
+    "contact.cta.discuss": "讨论您的需求",
+    "contact.cta.services": "探索我们的服务",
+
+    "contact.getintouch.title": "立即开启专业咨询",
+    "contact.email.title": "电子邮箱",
+    "contact.email.desc": "通用查询、项目讨论及合作伙伴意向请发送邮件至：",
+    "contact.social.title": "关注我们",
+
+    "contact.form.name": "姓名",
+    "contact.form.email": "电子邮箱",
+    "contact.form.company": "公司名称",
+    "contact.form.message": "留言内容",
+    "contact.form.upload": "上传简介（选填）",
+    "contact.form.upload.instruction": "点击上传或将文件拖拽至此",
+    "contact.form.upload.note":
+      "您可以上传项目简介、职责范围 (TOR) 或背景文档以支持您的咨询。",
+    "contact.form.upload.format": "PDF 或 DOCX（最大 10MB）",
+    "contact.form.submit": "提交",
+    "contact.form.submitting": "提交中...",
+    "contact.form.confidentiality": "所有咨询内容将严格保密。",
+
+    "contact.next.badge": "后续步骤",
+    "contact.next.title": "后续流程",
+    "contact.next.description":
+      "我们的咨询团队会审核所有咨询，并在与我们的专业领域明确匹配时予以回复。",
+
+    "contact.next.step1": "评估审核",
+    "contact.next.step1.desc":
+      "我们的团队会在 24-48 小时内审核您的咨询，以了解您的需求和要求。",
+
+    "contact.next.step2": "初步对接",
+    "contact.next.step2.desc":
+      "如果明确匹配，我们会联系您安排初步咨询，讨论您的目标。",
+
+    "contact.next.step3": "方案建议",
+    "contact.next.step3.desc":
+      "我们会准备量身定制的提案，概述我们的方法、时间表以及如何支持您的目标。",
+
+    "contact.urgent": "需要紧急协助？请直接联系",
+
     // Add more translations as needed
   },
   ar: {
     // Header
     "nav.home": "الرئيسية",
     "nav.services": "الخدمات",
-    "nav.expertise": "الخبرة",
+    "nav.expertise": "مجالات الخبرة",
     "nav.whyicr": "لماذا ICR",
-    "nav.about": "معلومات عنا",
+    "nav.about": "من نحن",
     "nav.careers": "الوظائف",
-    "nav.contact": "اتصل بنا",
+    "nav.contact": "تواصل معنا",
     "nav.menu": "القائمة",
     "nav.language": "اللغة",
 
@@ -951,6 +1054,10 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
 
     // Footer
     "footer.tagline": "البحوث • الرؤى التحليلية • الوضوح الاستراتيجي",
+    "footer.quicklinks": "روابط سريعة",
+    "footer.privacy": "سياسة الخصوصية",
+    "footer.terms": "شروط الخدمة",
+    "footer.cookies": "إعدادات ملفات تعريف الارتباط",
 
     // Services Page
     "services.hero.title": "استكشف",
@@ -1024,7 +1131,7 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "careers.purpose.desc":
       "المساهمة في مساعدة علامات تجارية رائدة على مواجهة تحديات الأعمال من خلال البحث والرؤى والاستراتيجيات المؤثرة.",
 
-    "careers.collaborative.title": "بيئة عمل تعاونية",
+    "careers.collaborative.title": "بيئة عمل مرنة",
     "careers.collaborative.desc":
       "العمل عن قرب مع فريق إقليمي من الباحثين والاستشاريين والمحللين الذين يتشاركون الأفكار، وليس فقط المهام.",
 
@@ -1143,7 +1250,7 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
       "نجمع بين المعرفة القطاعية، والانضباط المنهجي، والقدرات التحليلية المتقدمة لمعالجة التحديات الاستراتيجية والتشغيلية وتحديات السياسات العامة.",
     "expertise.hero.description3":
       "يعتمد منهج عملنا على دمج ممارسات البحث المعتمدة مع أدوات تحليل حديثة، بما في ذلك الاستخدام المسؤول للتقنيات المدعومة بالذكاء الاصطناعي، لتعزيز الدقة والكفاءة واستخلاص الرؤى التحليلية.",
-    "expertise.cta.discuss": "ناقش متطلباتكم",
+    "expertise.cta.discuss": "ناقش متطلباتك",
 
     "expertise.government.title": "مشاريع القطاع الحكومي والعام",
     "expertise.government.desc1":
@@ -1289,6 +1396,53 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "whyicr.success.tools": "أدوات تحليلية تقنية متطورة",
     "whyicr.success.process": "منهجية قائمة على النتائج",
     "whyicr.success.talent": "كفاءات بحثية رفيعة المستوى",
+
+    // Contact Page
+    "contact.hero.title": "دعنا نناقش",
+    "contact.hero.subtitle": "متطلباتك",
+    "contact.hero.description1":
+      "سواء كنت تخطط لدراسة، أو تقيم سوقاً، أو تبحث عن دعم بحثي أو استشاري، فإن فريقنا جاهز لمناقشة متطلباتك وكيف يمكننا دعم اتخاذ القرار المبني على المعرفة.",
+    "contact.hero.description2":
+      "نعمل مع الجهات الحكومية، والمؤسسات الخاصة، وأصحاب المصلحة الدوليين.",
+    "contact.cta.discuss": "ناقش متطلباتك",
+    "contact.cta.services": "اطّلع على خدماتنا",
+
+    "contact.getintouch.title": "تواصل معنا",
+    "contact.email.title": "البريد الإلكتروني",
+    "contact.email.desc": "للاستفسارات العامة، مناقشة المشاريع، وفرص الشراكة:",
+    "contact.social.title": "تابعنا",
+
+    "contact.form.name": "الاسم الكامل",
+    "contact.form.email": "البريد الإلكتروني",
+    "contact.form.company": "الشركة",
+    "contact.form.message": "الرسالة",
+    "contact.form.upload": "ارفع ملخص المشروع (اختياري)",
+    "contact.form.upload.instruction": "اضغط للرفع أو اسحب وأفلت الملف",
+    "contact.form.upload.note":
+      "يمكنك رفع ملخص، أو نطاق العمل (TOR)، أو مستند خلفية لدعم استفسارك.",
+    "contact.form.upload.format": "PDF أو DOCX (حد أقصى 10 ميجابايت)",
+    "contact.form.submit": "إرسال",
+    "contact.form.submitting": "جارٍ الإرسال...",
+    "contact.form.confidentiality": "جميع الاستفسارات تُعامل بسرية تامة.",
+
+    "contact.next.badge": "الخطوات التالية",
+    "contact.next.title": "ماذا يحدث بعد ذلك",
+    "contact.next.description":
+      "تتم مراجعة جميع الاستفسارات من قبل فريقنا الاستشاري، ونقوم بالرد عندما يكون هناك توافق واضح مع خبراتنا.",
+
+    "contact.next.step1": "المراجعة",
+    "contact.next.step1.desc":
+      "يقوم فريقنا بمراجعة استفسارك خلال 24-48 ساعة لفهم احتياجاتك ومتطلباتك.",
+
+    "contact.next.step2": "التواصل الأولي",
+    "contact.next.step2.desc":
+      "إذا كان هناك توافق واضح، سنتواصل معك لجدولة استشارة أولية لمناقشة أهدافك.",
+
+    "contact.next.step3": "المقترح",
+    "contact.next.step3.desc":
+      "نقوم بإعداد مقترح مخصص يوضح منهجيتنا، والجدول الزمني، وكيف يمكننا دعم أهدافك.",
+
+    "contact.urgent": "هل تحتاج مساعدة عاجلة؟ تواصل معنا مباشرة على",
 
     // Add more translations as needed
   },

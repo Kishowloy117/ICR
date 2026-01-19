@@ -4,8 +4,10 @@ import { FormEvent, useRef, useState, ChangeEvent } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Mail, Facebook, Linkedin, X, Upload, FileText } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function ContactUs() {
+  const { t } = useLanguage();
   const formRef = useRef<HTMLFormElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [showIndicator, setShowIndicator] = useState(false);
@@ -161,25 +163,22 @@ export default function ContactUs() {
 
         <div className="mx-auto max-w-4xl px-4 text-center">
           <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-4">
-            Contact
+            {t("nav.contact")}
           </div>
 
           <h1 className="mx-auto max-w-4xl text-3xl font-sans leading-tight text-white md:text-5xl">
-            Let’s discuss
+            {t("contact.hero.title")}
             <br />
             <span className="bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-emerald-200">
-              your requirements
+              {t("contact.hero.subtitle")}
             </span>
           </h1>
 
           <p className="mx-auto mt-4 max-w-2xl text-sm text-white/80">
-            Whether you are planning a study, assessing a market, or seeking
-            research or advisory support, our team is available to discuss your
-            requirements and how we can support informed decision-making.
+            {t("contact.hero.description1")}
           </p>
           <p className="mx-auto mt-2 max-w-2xl text-sm text-white/80">
-            We work with public sector bodies, corporate organisations, and
-            international stakeholders.
+            {t("contact.hero.description2")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -187,11 +186,11 @@ export default function ContactUs() {
               onClick={scrollToForm}
               className="bg-emerald-500 px-6 py-3 text-sm font-semibold hover:bg-emerald-600"
             >
-              Discuss Your Requirements »
+              {t("contact.cta.discuss")} »
             </Button>
             <Link href="/services">
               <Button className="bg-transparent border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black">
-                View Our Services
+                {t("contact.cta.services")}
               </Button>
             </Link>
           </div>
@@ -202,7 +201,9 @@ export default function ContactUs() {
         <div className="mx-auto max-w-7xl px-4 grid gap-12 lg:grid-cols-2 items-start">
           {/* Left: Contact info */}
           <div className="space-y-8">
-            <h2 className="text-3xl font-bold text-slate-900">Get in Touch</h2>
+            <h2 className="text-3xl font-bold text-slate-900">
+              {t("contact.getintouch.title")}
+            </h2>
 
             <div className="divide-y divide-slate-200 bg-white rounded-lg p-6 shadow-sm">
               <div className="flex gap-4 py-6 items-center">
@@ -211,11 +212,10 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-slate-900">
-                    Email
+                    {t("contact.email.title")}
                   </h3>
                   <p className="mt-2 text-sm text-slate-600">
-                    Email For general enquiries, project discussions, and
-                    partnership opportunities::{" "}
+                    {t("contact.email.desc")}{" "}
                     <a
                       href="mailto:info@icr-me.com"
                       className="text-emerald-600 font-medium"
@@ -228,7 +228,7 @@ export default function ContactUs() {
 
               <div className="pt-6">
                 <h3 className="text-sm font-semibold text-slate-900">
-                  Follow Us :
+                  {t("contact.social.title")}
                 </h3>
                 <div className="mt-4 flex items-center gap-3">
                   <a
@@ -275,7 +275,8 @@ export default function ContactUs() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm text-slate-300">
-                    Full Name <span className="text-red-400">*</span>
+                    {t("contact.form.name")}{" "}
+                    <span className="text-red-400">*</span>
                   </label>
                   <input
                     name="name"
@@ -286,7 +287,8 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <label className="block text-sm text-slate-300">
-                    Email <span className="text-red-400">*</span>
+                    {t("contact.form.email")}{" "}
+                    <span className="text-red-400">*</span>
                   </label>
                   <input
                     name="email"
@@ -298,7 +300,7 @@ export default function ContactUs() {
                 </div>
                 <div className="sm:col-span-2">
                   <label className="block text-sm text-slate-300">
-                    Company
+                    {t("contact.form.company")}
                   </label>
                   <input
                     name="company"
@@ -310,7 +312,8 @@ export default function ContactUs() {
 
               <div className="mt-4">
                 <label className="block text-sm text-slate-300">
-                  Message <span className="text-red-400">*</span>
+                  {t("contact.form.message")}{" "}
+                  <span className="text-red-400">*</span>
                 </label>
                 <textarea
                   name="message"
@@ -324,7 +327,7 @@ export default function ContactUs() {
               {/* File Upload */}
               <div className="mt-4">
                 <label className="block text-sm text-slate-300 mb-2">
-                  Upload a brief (optional)
+                  {t("contact.form.upload")}
                 </label>
                 <div
                   onClick={() => !isSubmitting && fileInputRef.current?.click()}
@@ -373,13 +376,13 @@ export default function ContactUs() {
                       <>
                         <Upload className="h-8 w-8 text-emerald-400 mb-2" />
                         <span className="text-slate-400 text-sm">
-                          Click to upload or drag and drop
+                          {t("contact.form.upload.instruction")}
                         </span>
                         <span className="text-slate-500 text-xs mt-1">
-                          You may upload a brief, TOR, or background document
+                          {t("contact.form.upload.note")}
                         </span>
                         <span className="text-slate-500 text-xs mt-1">
-                          PDF or DOCX (Max 10MB)
+                          {t("contact.form.upload.format")}
                         </span>
                       </>
                     )}
@@ -414,10 +417,10 @@ export default function ContactUs() {
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                       ></path>
                     </svg>
-                    Submitting...
+                    {t("contact.form.submitting")}
                   </>
                 ) : (
-                  "Submit Enquiry"
+                  t("contact.form.submit")
                 )}
               </button>
 
@@ -438,7 +441,7 @@ export default function ContactUs() {
                   />
                 </svg>
                 <p className="text-xs text-slate-300">
-                  All enquiries are treated confidentially.
+                  {t("contact.form.confidentiality")}
                 </p>
               </div>
             </form>
@@ -451,14 +454,13 @@ export default function ContactUs() {
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-12">
             <div className="inline-block rounded-full bg-emerald-500/20 border border-emerald-400/30 px-4 py-1 text-sm text-emerald-400 font-semibold mb-4 shadow-sm">
-              Next Steps
+              {t("contact.next.badge")}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What Happens Next
+              {t("contact.next.title")}
             </h2>
             <p className="text-base text-slate-300 max-w-2xl mx-auto">
-              All enquiries are reviewed by our consulting team, and we respond
-              where there is a clear fit with our expertise.
+              {t("contact.next.description")}
             </p>
           </div>
 
@@ -477,11 +479,10 @@ export default function ContactUs() {
                 </div>
                 <div className="ml-6 md:ml-0 md:mt-6">
                   <h3 className="text-lg font-semibold text-white mb-2">
-                    Review
+                    {t("contact.next.step1")}
                   </h3>
                   <p className="text-sm text-slate-300">
-                    Our team reviews your enquiry within 24-48 hours to
-                    understand your needs and requirements.
+                    {t("contact.next.step1.desc")}
                   </p>
                 </div>
               </div>
@@ -493,11 +494,10 @@ export default function ContactUs() {
                 </div>
                 <div className="ml-6 md:ml-0 md:mt-6">
                   <h3 className="text-lg font-semibold text-white mb-2">
-                    Initial Contact
+                    {t("contact.next.step2")}
                   </h3>
                   <p className="text-sm text-slate-300">
-                    If there&apos;s a clear fit, we&apos;ll reach out to
-                    schedule an initial consultation to discuss your objectives.
+                    {t("contact.next.step2.desc")}
                   </p>
                 </div>
               </div>
@@ -509,11 +509,10 @@ export default function ContactUs() {
                 </div>
                 <div className="ml-6 md:ml-0 md:mt-6">
                   <h3 className="text-lg font-semibold text-white mb-2">
-                    Proposal
+                    {t("contact.next.step3")}
                   </h3>
                   <p className="text-sm text-slate-300">
-                    We prepare a tailored proposal outlining our approach,
-                    timeline, and how we can support your goals.
+                    {t("contact.next.step3.desc")}
                   </p>
                 </div>
               </div>
@@ -523,7 +522,7 @@ export default function ContactUs() {
           {/* CTA */}
           <div className="mt-12 text-center">
             <p className="text-sm text-slate-400 mb-4">
-              Need urgent assistance? Reach out directly at{" "}
+              {t("contact.urgent")}{" "}
               <a
                 href="mailto:info@icr-me.com"
                 className="text-emerald-400 font-semibold hover:text-emerald-300 transition-colors"
