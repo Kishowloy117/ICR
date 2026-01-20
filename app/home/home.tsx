@@ -71,7 +71,7 @@ export default function HomePage() {
           {/* Arrow (visible on sm+) */}
           <div className="hidden sm:flex items-center justify-center px-2">
             <svg
-              className="h-6 w-6 text-emerald-300"
+              className="h-6 w-6 text-emerald-300 rtl-flip"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -134,7 +134,7 @@ export default function HomePage() {
           {/* Arrow (visible on sm+) */}
           <div className="hidden sm:flex items-center justify-center px-2">
             <svg
-              className="h-6 w-6 text-emerald-300"
+              className="h-6 w-6 text-emerald-300 rtl-flip"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -451,6 +451,7 @@ export default function HomePage() {
               {[
                 {
                   text: "We listen first and design research around your business questions.",
+                  isEnglish: true,
                   icon: (
                     <svg
                       className="h-5 w-5"
@@ -484,6 +485,7 @@ export default function HomePage() {
                 },
                 {
                   text: "Nationwide field coverage with trained supervisors and quality teams.",
+                  isEnglish: true,
                   icon: (
                     <svg
                       className="h-5 w-5"
@@ -512,6 +514,7 @@ export default function HomePage() {
                 },
                 {
                   text: "Real-time monitoring and strict validation for reliable data.",
+                  isEnglish: true,
                   icon: (
                     <svg
                       className="h-5 w-5"
@@ -538,6 +541,7 @@ export default function HomePage() {
                 },
                 {
                   text: "Clear reporting with insights your teams can use immediately.",
+                  isEnglish: true,
                   icon: (
                     <svg
                       className="h-5 w-5"
@@ -593,6 +597,7 @@ export default function HomePage() {
                 <div
                   key={i}
                   className="rounded-2xl bg-slate-900 p-5 text-white shadow-md"
+                  dir={item.isEnglish ? "ltr" : undefined}
                 >
                   <div className="flex items-center gap-4">
                     <div className="flex h-10 w-10 items-center justify-center rounded-md bg-white/10 text-emerald-400">
@@ -717,13 +722,17 @@ export default function HomePage() {
               <div
                 className="text-5xl md:text-6xl font-sans tracking-tight"
                 style={{ textShadow: "0 8px 20px rgba(0,0,0,0.5)" }}
+                dir="ltr"
               >
                 100,000+
               </div>
               <div className="mt-3 text-sm md:text-base font-medium">
                 {t("home.numbers.interviews")}
               </div>
-              <p className="mt-2 text-xs md:text-sm text-white/80 max-w-[22rem]">
+              <p
+                className="mt-2 text-xs md:text-sm text-white/80 max-w-[22rem]"
+                dir="ltr"
+              >
                 Face-to-face, telephone, and digital data collection — and
                 counting.
               </p>
@@ -733,13 +742,17 @@ export default function HomePage() {
               <div
                 className="text-5xl md:text-6xl font-sans tracking-tight"
                 style={{ textShadow: "0 8px 20px rgba(0,0,0,0.5)" }}
+                dir="ltr"
               >
                 100+
               </div>
               <div className="mt-3 text-sm md:text-base font-medium">
                 {t("home.numbers.projects")}
               </div>
-              <p className="mt-2 text-xs md:text-sm text-white/80 max-w-[22rem]">
+              <p
+                className="mt-2 text-xs md:text-sm text-white/80 max-w-[22rem]"
+                dir="ltr"
+              >
                 Completed across multiple sectors and industries.
               </p>
             </div>
@@ -748,13 +761,17 @@ export default function HomePage() {
               <div
                 className="text-5xl md:text-6xl font-sans  tracking-tight"
                 style={{ textShadow: "0 8px 20px rgba(0,0,0,0.5)" }}
+                dir="ltr"
               >
                 55+
               </div>
               <div className="mt-3 text-sm md:text-base font-medium">
                 {t("home.numbers.experience")}
               </div>
-              <p className="mt-2 text-xs md:text-sm text-white/80 max-w-[22rem]">
+              <p
+                className="mt-2 text-xs md:text-sm text-white/80 max-w-[22rem]"
+                dir="ltr"
+              >
                 Across research, analysis, and strategic advisory roles.
               </p>
             </div>

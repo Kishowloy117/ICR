@@ -122,3 +122,50 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* RTL Support - Smart bidirectional text handling */
+/* Container is RTL for layout, but text direction auto-detects based on content */
+[dir="rtl"] p,
+[dir="rtl"] h1,
+[dir="rtl"] h2, 
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] span:not(.inline-icon),
+[dir="rtl"] li,
+[dir="rtl"] a,
+[dir="rtl"] button {
+  direction: inherit;
+  unicode-bidi: plaintext;
+}
+
+/* Keep center-aligned elements centered */
+[dir="rtl"] .text-center,
+[dir="rtl"] [class*="text-center"] {
+  text-align: center;
+}
+
+/* RTL Specific - Flip arrows horizontally */
+[dir="rtl"] svg.rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* RTL Specific - Border adjustments */
+[dir="rtl"] .border-l-4 {
+  border-left-width: 0;
+  border-right-width: 4px;
+}
+
+/* RTL Specific - Vertical line positioning for numbered lists */
+[dir="rtl"] .left-11 {
+  left: auto;
+  right: 2.75rem;
+}
+
+/* RTL Specific - Padding adjustments for numbered lists */
+[dir="rtl"] .pl-6 {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
