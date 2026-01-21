@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "../contexts/LanguageContext";
+import Link from "next/link";
 
 export default function AboutPage() {
   const { t } = useLanguage();
@@ -9,7 +10,7 @@ export default function AboutPage() {
   const sections = [
     {
       title: t("about.positioning.title"),
-      img: "/images/expertise/expersite_2.jpeg",
+      img: "/images/about1.jpeg",
       content: (
         <>
           <p className="text-sm text-slate-600 mb-3">
@@ -29,7 +30,7 @@ export default function AboutPage() {
     },
     {
       title: t("about.integrity.title"),
-      img: "/images/expertise/expersite_3.jpeg",
+      img: "/images/about2.jpeg",
       content: (
         <>
           <p className="text-sm text-slate-600 mb-3">
@@ -41,7 +42,7 @@ export default function AboutPage() {
     },
     {
       title: t("about.experience.title"),
-      img: "/images/expertise/expersite_4.jpeg",
+      img: "/images/about3.jpeg",
       content: (
         <>
           <p className="text-sm text-slate-600 mb-3">
@@ -58,7 +59,7 @@ export default function AboutPage() {
     },
     {
       title: t("about.future.title"),
-      img: "/images/expertise/expersite_1.jpeg",
+      img: "/images/about4.jpeg",
       content: (
         <>
           <p className="text-sm text-slate-600 mb-3">
@@ -131,9 +132,11 @@ export default function AboutPage() {
           </p>
 
           <div className="mt-8">
-            <Button className="bg-emerald-500 px-6 py-3 text-sm font-semibold hover:bg-emerald-600 rounded-md">
-              {t("about.cta.discuss")} »
-            </Button>
+            <Link href="/ContactUS">
+              <Button className="bg-emerald-500 px-6 py-3 text-sm font-semibold hover:bg-emerald-600 rounded-md">
+                {t("about.cta.discuss")} »
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

@@ -20,8 +20,15 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("en");
   const [isDetecting, setIsDetecting] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+
     async function initializeLanguage() {
       try {
         // Check if user has manually set a language before
@@ -68,13 +75,15 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
 
     initializeLanguage();
-  }, []);
+  }, [isMounted]);
 
   const changeLanguage = (lang: Language) => {
     setLanguage(lang);
-    localStorage.setItem("language", lang);
-    // Mark that user manually changed the language
-    localStorage.setItem("languageManuallySet", "true");
+    if (typeof window !== "undefined") {
+      localStorage.setItem("language", lang);
+      // Mark that user manually changed the language
+      localStorage.setItem("languageManuallySet", "true");
+    }
   };
 
   const t = (key: string): string => {

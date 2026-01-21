@@ -210,9 +210,11 @@ export default function ServicesPage() {
           </p>
 
           <div className="mt-8">
-            <Button className="bg-emerald-500 px-6 py-3 text-sm font-semibold hover:bg-emerald-600 rounded-md">
-              {t("expertise.cta.discuss")} »
-            </Button>
+            <Link href="/ContactUS">
+              <Button className="bg-emerald-500 px-6 py-3 text-sm font-semibold hover:bg-emerald-600 rounded-md">
+                {t("expertise.cta.discuss")} »
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

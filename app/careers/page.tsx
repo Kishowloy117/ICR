@@ -3,9 +3,12 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useLanguage } from "../contexts/LanguageContext";
+import { useState, FormEvent } from "react";
 
 export default function CareerPage() {
   const { t } = useLanguage();
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const benefits = [
     {
@@ -39,6 +42,91 @@ export default function CareerPage() {
       highlighted: false,
     },
   ];
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Check file size (5MB limit)
+      if (file.size > 5 * 1024 * 1024) {
+        alert("File size must be less than 5MB");
+        return;
+      }
+      setSelectedFile(file);
+    }
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+
+      // Convert file to base64 if exists
+      let fileBase64 = "";
+      let fileName = "";
+      let fileType = "";
+
+      if (selectedFile) {
+        const reader = new FileReader();
+        fileBase64 = await new Promise<string>((resolve, reject) => {
+          reader.onload = () => {
+            const base64 = reader.result as string;
+            resolve(base64.split(",")[1]);
+          };
+          reader.onerror = reject;
+          reader.readAsDataURL(selectedFile);
+        });
+        fileName = selectedFile.name;
+        fileType = selectedFile.type;
+      }
+
+      // Prepare data for submission
+      const submitData = {
+        name: formData.get("name") as string,
+        email: formData.get("email") as string,
+        phone: formData.get("phone") as string,
+        position: formData.get("position") as string,
+        coverLetter: formData.get("coverLetter") as string,
+        file: fileBase64
+          ? {
+              name: fileName,
+              content: fileBase64,
+              contentType: fileType,
+            }
+          : null,
+        submittedAt: new Date().toISOString(),
+        formType: "career", // Identify this as a career form
+      };
+
+      // Submit to API
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(submitData),
+      });
+
+      if (response.ok) {
+        alert(
+          "Thank you for your application! We will review your submission and respond within 5-7 business days."
+        );
+        form.reset();
+        setSelectedFile(null);
+      } else {
+        throw new Error("Submission failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert(
+        "There was an error submitting your application. Please try again or contact us directly at careers@icr-me.com"
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <main className="min-h-screen bg-white">
@@ -98,58 +186,41 @@ export default function CareerPage() {
             <div className="inline-block rounded-full bg-[#e6f6f3] px-4 py-1 text-sm text-emerald-600 font-semibold mb-4 shadow-sm">
               Why Work With Us
             </div>
-            <h3 className="mt-4 text-3xl font-sans font-semibold text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-2">
               {t("careers.why.title")}
-            </h3>
-            <p className="text-slate-500 text-base max-w-2xl mx-auto mt-2">
+            </h2>
+            <p className="text-slate-600 text-base max-w-lg mx-auto">
               {t("careers.why.description")}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {benefits.map((benefit, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {benefits.map((benefit, idx) => (
               <div
-                key={i}
-                className={`rounded-2xl shadow-md p-7 flex flex-col items-start h-full ${
+                key={idx}
+                className={`p-6 rounded-xl shadow-sm border ${
                   benefit.highlighted
-                    ? "bg-[#e6f6f3] border border-emerald-200"
-                    : "bg-white"
+                    ? "bg-gradient-to-br from-emerald-50 to-white border-emerald-200"
+                    : "bg-white border-slate-200"
                 }`}
               >
-                <div className="mb-4">
-                  {/* Icon: Purpose-Driven Work */}
-                  <svg
-                    width="40"
-                    height="40"
-                    fill="none"
-                    stroke="#1cc6a6"
-                    strokeWidth="2.2"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 8v4l3 2" />
-                  </svg>
-                </div>
-                <h3 className="font-bold text-lg text-slate-900 mb-2">
+                <h3
+                  className={`text-lg font-semibold mb-2 ${
+                    benefit.highlighted ? "text-emerald-600" : "text-slate-700"
+                  }`}
+                >
                   {benefit.title}
                 </h3>
-                <p className="text-slate-500 text-sm">{benefit.desc}</p>
+                <p className="text-slate-600 text-sm">{benefit.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CV Submission Section */}
-      <section className="w-full py-12 bg-[#071829] relative overflow-hidden">
-        {/* Subtle pattern background */}
-        <div className="absolute inset-0 pointer-events-none -z-10">
-          <svg
-            width="100%"
-            height="100%"
-            className="opacity-20"
-            style={{ minHeight: "100%" }}
-            xmlns="http://www.w3.org/2000/svg"
-          >
+      {/* Submit Your CV Form Section */}
+      <section className="w-full relative bg-linear-to-br from-[#041a2e] via-[#062944] to-[#041a2e] text-white py-12">
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          <svg style={{ minHeight: "100%" }} xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern
                 id="pattern-bg"
@@ -176,7 +247,10 @@ export default function CareerPage() {
               {t("careers.form.description")}
             </p>
           </div>
-          <form className="bg-white/90 border border-slate-200 rounded-3xl shadow-xl p-6 md:p-8 space-y-4">
+          <form
+            onSubmit={handleSubmit}
+            className="bg-white/90 border border-slate-200 rounded-3xl shadow-xl p-6 md:p-8 space-y-4"
+          >
             <div className="space-y-4">
               <div>
                 <label className="block text-slate-600 text-sm font-medium mb-1">
@@ -184,6 +258,8 @@ export default function CareerPage() {
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  required
                   placeholder=""
                   className="w-full rounded-md border border-slate-200 px-4 py-3 text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-300"
                 />
@@ -194,6 +270,8 @@ export default function CareerPage() {
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  required
                   placeholder=""
                   className="w-full rounded-md border border-slate-200 px-4 py-3 text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-300"
                 />
@@ -204,6 +282,8 @@ export default function CareerPage() {
                 </label>
                 <input
                   type="text"
+                  name="phone"
+                  required
                   placeholder=""
                   className="w-full rounded-md border border-slate-200 px-4 py-3 text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-300"
                 />
@@ -214,6 +294,8 @@ export default function CareerPage() {
                 </label>
                 <input
                   type="text"
+                  name="position"
+                  required
                   placeholder=""
                   className="w-full rounded-md border border-slate-200 px-4 py-3 text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-300"
                 />
@@ -227,6 +309,7 @@ export default function CareerPage() {
                     <input
                       type="file"
                       accept=".pdf,.doc,.docx"
+                      onChange={handleFileChange}
                       className="hidden"
                     />
                     <div className="flex flex-col items-center justify-center">
@@ -245,7 +328,9 @@ export default function CareerPage() {
                         />
                       </svg>
                       <span className="text-slate-500 text-base">
-                        Click to select file or drag to upload
+                        {selectedFile
+                          ? selectedFile.name
+                          : "Click to select file or drag to upload"}
                       </span>
                       <span className="text-slate-400 text-xs mt-1">
                         PDF or DOC format, max file size 5MB
@@ -258,8 +343,9 @@ export default function CareerPage() {
                 <label className="block text-slate-600 text-sm font-medium mb-1">
                   {t("careers.form.cover")}
                 </label>
-                <input
-                  type="text"
+                <textarea
+                  name="coverLetter"
+                  rows={4}
                   placeholder=""
                   className="w-full rounded-md border border-slate-200 px-4 py-3 text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-300"
                 />
@@ -267,9 +353,10 @@ export default function CareerPage() {
             </div>
             <button
               type="submit"
-              className="w-full bg-emerald-400 hover:bg-emerald-500 text-white font-semibold py-3 rounded-md transition"
+              disabled={isSubmitting}
+              className="w-full bg-emerald-400 hover:bg-emerald-500 text-white font-semibold py-3 rounded-md transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {t("careers.form.submit")}
+              {isSubmitting ? "Submitting..." : t("careers.form.submit")}
             </button>
           </form>
         </div>

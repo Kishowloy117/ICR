@@ -24,12 +24,110 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    // Email content
+    // Determine if this is a career or contact form
+    const isCareerForm = body.formType === "career";
+
+    // Email content based on form type
     const mailOptions = {
-      from: `"ICR Contact Form" <${process.env.EMAIL_USER}>`,
+      from: `"ICR ${isCareerForm ? "Career" : "Contact"} Form" <${
+        process.env.EMAIL_USER
+      }>`,
       to: process.env.CLIENT_EMAIL,
-      subject: `New Contact Form Submission from ${body.name}`,
-      html: `
+      subject: isCareerForm
+        ? `New Job Application from ${body.name} - ${body.position}`
+        : `New Contact Form Submission from ${body.name}`,
+      html: isCareerForm
+        ? `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+            .header { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 20px; border-radius: 8px 8px 0 0; }
+            .content { background: #f9fafb; padding: 20px; border: 1px solid #e5e7eb; }
+            .field { margin-bottom: 15px; }
+            .label { font-weight: bold; color: #374151; }
+            .value { margin-top: 5px; padding: 10px; background: white; border-radius: 4px; border: 1px solid #e5e7eb; }
+            .footer { text-align: center; padding: 15px; color: #6b7280; font-size: 12px; }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="header">
+              <h2 style="margin: 0;">💼 New Job Application</h2>
+            </div>
+            <div class="content">
+              <div class="field">
+                <div class="label">👤 Name:</div>
+                <div class="value">${body.name}</div>
+              </div>
+              
+              <div class="field">
+                <div class="label">✉️ Email:</div>
+                <div class="value"><a href="mailto:${body.email}">${
+            body.email
+          }</a></div>
+              </div>
+              
+              <div class="field">
+                <div class="label">📞 Phone:</div>
+                <div class="value">${body.phone}</div>
+              </div>
+              
+              <div class="field">
+                <div class="label">💼 Position Applied:</div>
+                <div class="value">${body.position}</div>
+              </div>
+              
+              ${
+                body.coverLetter
+                  ? `
+              <div class="field">
+                <div class="label">📝 Cover Letter:</div>
+                <div class="value">${body.coverLetter.replace(
+                  /\n/g,
+                  "<br>"
+                )}</div>
+              </div>
+              `
+                  : ""
+              }
+              
+              ${
+                body.file
+                  ? `
+              <div class="field">
+                <div class="label">📎 Resume/CV:</div>
+                <div class="value">${body.file.name} (${(
+                      Buffer.from(body.file.content, "base64").length /
+                      1024 /
+                      1024
+                    ).toFixed(2)} MB)</div>
+              </div>
+              `
+                  : ""
+              }
+              
+              <div class="field">
+                <div class="label">🕐 Submitted At:</div>
+                <div class="value">${new Date(body.submittedAt).toLocaleString(
+                  "en-US",
+                  {
+                    dateStyle: "full",
+                    timeStyle: "short",
+                  }
+                )}</div>
+              </div>
+            </div>
+            <div class="footer">
+              This email was sent from the ICR Career Application Form
+            </div>
+          </div>
+        </body>
+        </html>
+      `
+        : `
         <!DOCTYPE html>
         <html>
         <head>
@@ -58,8 +156,8 @@ export async function POST(request: NextRequest) {
               <div class="field">
                 <div class="label">✉️ Email:</div>
                 <div class="value"><a href="mailto:${body.email}">${
-        body.email
-      }</a></div>
+            body.email
+          }</a></div>
               </div>
               
               ${

@@ -19,7 +19,7 @@ export default function Footer() {
             <Link href="/" className="inline-block">
               <div className="relative">
                 {/* Glow effect */}
-                <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/10 to-cyan-400/10 blur-lg rounded-full" />
+                <div className="absolute " />
                 <Image
                   src="/images/logo1.png"
                   alt="ICR Logo"
@@ -115,7 +115,7 @@ export default function Footer() {
       <div className="border-t border-slate-300">
         <div className="mx-auto max-w-7xl px-4 py-4 sm:flex sm:items-center sm:justify-between">
           <div className="text-sm text-slate-600">
-            © 2025 Insight Consultancy & Research. All rights reserved.
+            © 2026 Insight Consultancy & Research. All rights reserved.
           </div>
 
           <div className="mt-3 sm:mt-0 text-sm text-slate-700">
@@ -130,12 +130,6 @@ export default function Footer() {
               className="hover:text-emerald-600 transition-colors mr-4"
             >
               {t("footer.terms")}
-            </Link>
-            <Link
-              href="/cookies"
-              className="hover:text-emerald-600 transition-colors"
-            >
-              {t("footer.cookies")}
             </Link>
           </div>
         </div>
