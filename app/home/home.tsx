@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function HomePage() {
-  const { t } = useLanguage();
-
+  const { t, language } = useLanguage();
+  console.log(language);
   return (
     <main className="relative min-h-screen overflow-hidden bg-linear-to-br from-[#041a2e] via-[#062944] to-[#041a2e]">
       {/* Hero Content */}
@@ -243,7 +243,7 @@ export default function HomePage() {
             {/* Left: Content */}
             <div className="max-w-lg">
               <div className="inline-block rounded-full border border-emerald-200 bg-emerald-50/40 px-3 py-1 text-sm text-emerald-600">
-                Expertise
+                {t("home.expertise.label")}
               </div>
 
               <h2 className="mt-6 text-3xl font-sans leading-tight text-slate-900 sm:text-4xl">
@@ -450,8 +450,7 @@ export default function HomePage() {
             <div className="space-y-4">
               {[
                 {
-                  text: "We listen first and design research around your business questions.",
-                  isEnglish: true,
+                  text: t("home.why.listen"),
                   icon: (
                     <svg
                       className="h-5 w-5"
@@ -484,8 +483,7 @@ export default function HomePage() {
                   ),
                 },
                 {
-                  text: "Nationwide field coverage with trained supervisors and quality teams.",
-                  isEnglish: true,
+                  text: t("home.why.field"),
                   icon: (
                     <svg
                       className="h-5 w-5"
@@ -513,8 +511,7 @@ export default function HomePage() {
                   ),
                 },
                 {
-                  text: "Real-time monitoring and strict validation for reliable data.",
-                  isEnglish: true,
+                  text: t("home.why.realtime"),
                   icon: (
                     <svg
                       className="h-5 w-5"
@@ -540,8 +537,7 @@ export default function HomePage() {
                   ),
                 },
                 {
-                  text: "Clear reporting with insights your teams can use immediately.",
-                  isEnglish: true,
+                  text: t("home.why.reports"),
                   icon: (
                     <svg
                       className="h-5 w-5"
@@ -597,14 +593,20 @@ export default function HomePage() {
                 <div
                   key={i}
                   className="rounded-2xl bg-slate-900 p-5 text-white shadow-md"
-                  dir={item.isEnglish ? "ltr" : undefined}
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-md bg-white/10 text-emerald-400">
+                  <div
+                    className={`flex items-center gap-4 ${
+                      language === "ar" ? "flex-row-reverse" : "flex-row"
+                    }`}
+                  >
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-white/10 text-emerald-400">
                       {item.icon}
                     </div>
 
-                    <div>
+                    <div
+                      className="flex-1"
+                      dir={language === "ar" ? "rtl" : "ltr"}
+                    >
                       <div className="text-sm font-semibold text-slate-100">
                         {item.text}
                       </div>
@@ -622,7 +624,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 py-10">
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-block rounded-full border border-emerald-200 bg-emerald-50/40 px-4 py-1 text-sm text-emerald-600">
-              What We Do
+              {t("home.section.whatwedo")}
             </div>
 
             <h3 className="mt-6 text-3xl font-sans text-slate-900 sm:text-4xl ">
@@ -707,7 +709,7 @@ export default function HomePage() {
         <div className="absolute inset-0 -z-10 bg-black/60" />
         <div className="mx-auto max-w-7xl px-4 text-center">
           <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-4">
-            Our Impact
+            {t("home.section.impact")}
           </div>
           <h3 className="text-4xl font-sans text-white">
             {t("home.numbers.title")}
@@ -783,7 +785,7 @@ export default function HomePage() {
       <section className="w-full bg-white py-10">
         <div className="mx-auto max-w-7xl px-4 text-center">
           <div className="inline-block rounded-full border border-emerald-200 bg-emerald-50/40 px-3 py-1 text-sm text-emerald-600 mb-4">
-            Why ICR
+            {t("home.section.whyicr")}
           </div>
           <h3 className="mt-6 text-3xl font-sans text-slate-900 sm:text-4xl">
             {t("home.trust.title")}

@@ -43,9 +43,9 @@ export default function Page() {
         </div>
 
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <div className="inline-block rounded-full bg-white/5 px-3 py-1 text-xs text-slate-200 mb-6">
+          {/* <div className="inline-block rounded-full bg-white/5 px-3 py-1 text-xs text-slate-200 mb-6">
             Why ICR
-          </div>
+          </div> */}
 
           <h1 className="mx-auto max-w-3xl text-3xl font-sans leading-tight text-white md:text-5xl">
             {t("whyicr.hero.title")}
@@ -78,7 +78,7 @@ export default function Page() {
           <div className="grid lg:grid-cols-2 gap-4 items-center">
             <div>
               <div className="inline-block rounded-full bg-emerald-50 px-3 py-1 text-xs text-emerald-700 mb-4">
-                Consulting
+                {t("whyicr.section.consulting")}
               </div>
               <h3 className="text-3xl font-semibold text-slate-900">
                 {t("whyicr.partnerships.title")}
@@ -112,7 +112,7 @@ export default function Page() {
 
             <div className="order-1 lg:order-2">
               <div className="inline-block rounded-full bg-emerald-50 px-3 py-1 text-xs text-emerald-700 mb-4">
-                Consulting
+                {t("whyicr.section.consulting")}
               </div>
               <h3 className="text-3xl font-semibold text-slate-900">
                 {t("whyicr.marketing.title")}
@@ -128,7 +128,7 @@ export default function Page() {
       <section className="py-10 bg-linear-to-r from-[#f7fbfa] to-[#f1f8f6]">
         <div className="mx-auto max-w-7xl px-4 text-center">
           <div className="inline-block rounded-full bg-white/30 px-3 py-1 text-xs text-emerald-700 mb-4">
-            Retail-Audit
+            {t("whyicr.section.retailaudit")}
           </div>
           <h3 className="mt-6 text-3xl font-sans text-slate-900 sm:text-4xl">
             {t("whyicr.retail.title")}
@@ -192,7 +192,7 @@ export default function Page() {
       <section className="py-10 bg-linear-to-r from-[#f7fbfa] to-[#f1f8f6]">
         <div className="mx-auto max-w-7xl px-4 text-center">
           <div className="inline-block rounded-full bg-white/30 px-3 py-1 text-xs text-emerald-700 mb-6">
-            Process
+            {t("whyicr.section.process")}
           </div>
           <h3 className="mt-6 text-3xl font-sans text-slate-900 sm:text-4xl">
             {t("whyicr.process.title")}
@@ -287,7 +287,7 @@ export default function Page() {
 
         <div className="mx-auto max-w-7xl px-4 text-center text-white">
           <div className="inline-block rounded-full bg-white/5 px-3 py-1 text-xs text-slate-200 mb-4">
-            Industries
+            {t("whyicr.section.industries")}
           </div>
           <h2 className="text-3xl md:text-4xl font-bold">
             {t("whyicr.industries.title")}
@@ -482,7 +482,7 @@ export default function Page() {
       <section className="py-20 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 text-center">
           <div className="inline-block rounded-full bg-emerald-50 px-3 py-1 text-xs text-emerald-700 mb-4">
-            Success
+            {t("whyicr.section.success")}
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
             {t("whyicr.success.title")}
@@ -500,8 +500,7 @@ export default function Page() {
                 {t("whyicr.success.relationships")}
               </h4>
               <p className="mt-2 text-sm text-slate-600">
-                We collaborate closely with clients and regional partners —
-                listening, adapting, and aligning with your goals.
+                {t("whyicr.success.item3")}
               </p>
             </div>
 
@@ -513,8 +512,7 @@ export default function Page() {
                 {t("whyicr.success.expertise")}
               </h4>
               <p className="mt-2 text-sm text-slate-600">
-                We translate broad strategies into local execution, ensuring
-                relevance in every region we operate.
+                {t("whyicr.success.item2")}
               </p>
             </div>
 
@@ -526,8 +524,7 @@ export default function Page() {
                 {t("whyicr.success.innovation")}
               </h4>
               <p className="mt-2 text-sm text-slate-600">
-                We bring fresh thinking and introduce new methodologies, tools,
-                and tech to improve every outcome.
+                {t("whyicr.success.item1")}
               </p>
             </div>
 
@@ -539,8 +536,7 @@ export default function Page() {
                 {t("whyicr.success.tools")}
               </h4>
               <p className="mt-2 text-sm text-slate-600">
-                Our wide range of analytical capabilities uncovers patterns and
-                insights that drive confident decisions.
+                {t("whyicr.success.item5")}
               </p>
             </div>
 
@@ -552,8 +548,7 @@ export default function Page() {
                 {t("whyicr.success.process")}
               </h4>
               <p className="mt-2 text-sm text-slate-600">
-                Our research is designed for real-world action — from survey to
-                strategy, we focus on impact, not just information.
+                {t("whyicr.success.item4")}
               </p>
             </div>
 

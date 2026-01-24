@@ -1,9 +1,13 @@
 "use client";
 
 import { useLanguage } from "../contexts/LanguageContext";
+import { privacyTranslations } from "../translations/privacyTranslations";
 
 export default function PrivacyPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const privacy =
+    privacyTranslations[language as keyof typeof privacyTranslations]
+      ?.privacy || privacyTranslations.en.privacy;
 
   return (
     <main className="min-h-screen bg-white">
@@ -42,17 +46,17 @@ export default function PrivacyPage() {
 
         <div className="mx-auto max-w-3xl px-4 text-center">
           <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-4">
-            Privacy Policy
+            {privacy.title}
           </div>
           <h1 className="mx-auto max-w-3xl text-3xl font-sans leading-tight text-white md:text-5xl">
-            Privacy Policy
+            {privacy.title}
             <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-emerald-600">
-              Your Data, Our Commitment
+              {privacy.tagline}
             </span>
           </h1>
           <p className="mx-auto mt-2 max-w-xl text-base text-slate-200">
-            Last Updated: January 22, 2026
+            {privacy.lastUpdated}
           </p>
         </div>
       </section>
@@ -62,13 +66,7 @@ export default function PrivacyPage() {
         <div className="mx-auto max-w-4xl px-4">
           {/* Introduction */}
           <div className="mb-12">
-            <p className="text-slate-700 leading-relaxed">
-              At ICR (&quot;ICR,&quot; &quot;we,&quot; &quot;us,&quot; or
-              &quot;our&quot;), we are committed to protecting your privacy and
-              ensuring the security of your personal information. This Privacy
-              Policy explains how we collect, use, disclose, and safeguard your
-              information when you visit our website or use our services.
-            </p>
+            <p className="text-slate-700 leading-relaxed">{privacy.intro}</p>
           </div>
 
           {/* Section 1 */}
@@ -78,43 +76,34 @@ export default function PrivacyPage() {
                 <span className="text-emerald-600 font-bold text-lg">1</span>
               </div>
               <h2 className="text-2xl font-bold text-slate-800">
-                Information We Collect
+                {privacy.section1.title}
               </h2>
             </div>
             <div className="ml-13 space-y-4">
               <div>
                 <h3 className="text-lg font-semibold text-slate-700 mb-2">
-                  1.1 Personal Information
+                  {privacy.section1.subtitle1}
                 </h3>
                 <p className="text-slate-600 mb-2">
-                  We may collect personal information that you voluntarily
-                  provide to us, including but not limited to:
+                  {privacy.section1.paragraph1}
                 </p>
                 <ul className="list-disc list-inside text-slate-600 space-y-1 ml-4">
-                  <li>
-                    Name and contact information (email address, phone number,
-                    mailing address)
-                  </li>
-                  <li>Company name and job title</li>
-                  <li>Professional credentials and experience</li>
-                  <li>Resume/CV information when applying for positions</li>
-                  <li>Communication preferences</li>
+                  {privacy.section1.list1.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
                 </ul>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-slate-700 mb-2">
-                  1.2 Automatically Collected Information
+                  {privacy.section1.subtitle2}
                 </h3>
                 <p className="text-slate-600 mb-2">
-                  When you visit our website, we may automatically collect
-                  certain information, including:
+                  {privacy.section1.paragraph2}
                 </p>
                 <ul className="list-disc list-inside text-slate-600 space-y-1 ml-4">
-                  <li>IP address and browser type</li>
-                  <li>Device information and operating system</li>
-                  <li>Pages visited and time spent on our website</li>
-                  <li>Referring website addresses</li>
-                  <li>Cookies and similar tracking technologies</li>
+                  {privacy.section1.list2.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -127,25 +116,15 @@ export default function PrivacyPage() {
                 <span className="text-emerald-600 font-bold text-lg">2</span>
               </div>
               <h2 className="text-2xl font-bold text-slate-800">
-                How We Use Your Information
+                {privacy.section2.title}
               </h2>
             </div>
             <div className="ml-13 space-y-3">
-              <p className="text-slate-600">
-                We use the information we collect for various purposes,
-                including:
-              </p>
+              <p className="text-slate-600">{privacy.section2.paragraph}</p>
               <ul className="list-disc list-inside text-slate-600 space-y-2 ml-4">
-                <li>Providing, maintaining, and improving our services</li>
-                <li>Responding to your inquiries and requests</li>
-                <li>Processing job applications and recruitment activities</li>
-                <li>Sending administrative information and updates</li>
-                <li>Conducting business operations and analysis</li>
-                <li>Complying with legal obligations and regulations</li>
-                <li>Preventing fraud and enhancing security</li>
-                <li>
-                  Marketing and promotional communications (with your consent)
-                </li>
+                {privacy.section2.list.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
               </ul>
             </div>
           </div>
@@ -157,34 +136,18 @@ export default function PrivacyPage() {
                 <span className="text-emerald-600 font-bold text-lg">3</span>
               </div>
               <h2 className="text-2xl font-bold text-slate-800">
-                Information Sharing and Disclosure
+                {privacy.section3.title}
               </h2>
             </div>
             <div className="ml-13 space-y-3">
               <p className="text-slate-600 mb-2">
-                We may share your information in the following circumstances:
+                {privacy.section3.paragraph}
               </p>
               <ul className="list-disc list-inside text-slate-600 space-y-2 ml-4">
-                <li>
-                  <strong>Service Providers:</strong> With third-party vendors
-                  who perform services on our behalf
-                </li>
-                <li>
-                  <strong>Business Transfers:</strong> In connection with
-                  mergers, acquisitions, or asset sales
-                </li>
-                <li>
-                  <strong>Legal Requirements:</strong> When required by law or
-                  to protect our rights and interests
-                </li>
-                <li>
-                  <strong>With Your Consent:</strong> When you explicitly
-                  authorize us to share your information
-                </li>
+                {privacy.section3.list.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
               </ul>
-              <p className="text-slate-600 mt-3">
-                We do not sell your personal information to third parties.
-              </p>
             </div>
           </div>
 
@@ -195,26 +158,20 @@ export default function PrivacyPage() {
                 <span className="text-emerald-600 font-bold text-lg">4</span>
               </div>
               <h2 className="text-2xl font-bold text-slate-800">
-                Data Security
+                {privacy.section4.title}
               </h2>
             </div>
             <div className="ml-13 space-y-3">
-              <p className="text-slate-600">
-                We implement appropriate technical and organizational security
-                measures to protect your personal information against
-                unauthorized access, alteration, disclosure, or destruction.
-                These measures include:
+              <p className="text-slate-600 mb-2">
+                {privacy.section4.paragraph1}
               </p>
               <ul className="list-disc list-inside text-slate-600 space-y-2 ml-4">
-                <li>Encryption of data in transit and at rest</li>
-                <li>Regular security assessments and audits</li>
-                <li>Access controls and authentication procedures</li>
-                <li>Employee training on data protection</li>
+                {privacy.section4.list.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
               </ul>
               <p className="text-slate-600 mt-3">
-                However, no method of transmission over the internet or
-                electronic storage is 100% secure. While we strive to protect
-                your information, we cannot guarantee absolute security.
+                {privacy.section4.paragraph2}
               </p>
             </div>
           </div>
@@ -226,48 +183,20 @@ export default function PrivacyPage() {
                 <span className="text-emerald-600 font-bold text-lg">5</span>
               </div>
               <h2 className="text-2xl font-bold text-slate-800">
-                Your Rights and Choices
+                {privacy.section5.title}
               </h2>
             </div>
             <div className="ml-13 space-y-3">
               <p className="text-slate-600 mb-2">
-                You have certain rights regarding your personal information,
-                including:
+                {privacy.section5.paragraph1}
               </p>
               <ul className="list-disc list-inside text-slate-600 space-y-2 ml-4">
-                <li>
-                  <strong>Access:</strong> Request access to your personal
-                  information
-                </li>
-                <li>
-                  <strong>Correction:</strong> Request correction of inaccurate
-                  information
-                </li>
-                <li>
-                  <strong>Deletion:</strong> Request deletion of your personal
-                  information
-                </li>
-                <li>
-                  <strong>Objection:</strong> Object to certain processing of
-                  your information
-                </li>
-                <li>
-                  <strong>Portability:</strong> Request transfer of your data to
-                  another service
-                </li>
-                <li>
-                  <strong>Withdraw Consent:</strong> Withdraw consent for
-                  processing where applicable
-                </li>
+                {privacy.section5.list.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
               </ul>
               <p className="text-slate-600 mt-3">
-                To exercise these rights, please contact us at{" "}
-                <a
-                  href="mailto:privacy@icr-me.com"
-                  className="text-emerald-600 hover:text-emerald-700 font-medium"
-                >
-                  privacy@icr-me.com
-                </a>
+                {privacy.section5.paragraph2}
               </p>
             </div>
           </div>
@@ -279,16 +208,12 @@ export default function PrivacyPage() {
                 <span className="text-emerald-600 font-bold text-lg">6</span>
               </div>
               <h2 className="text-2xl font-bold text-slate-800">
-                Cookies and Tracking Technologies
+                {privacy.section6.title}
               </h2>
             </div>
             <div className="ml-13 space-y-3">
-              <p className="text-slate-600">
-                We use cookies and similar tracking technologies to enhance your
-                browsing experience and analyze website usage. You can control
-                cookie preferences through your browser settings. Note that
-                disabling cookies may affect website functionality.
-              </p>
+              <p className="text-slate-600">{privacy.section6.paragraph1}</p>
+              <p className="text-slate-600">{privacy.section6.paragraph2}</p>
             </div>
           </div>
 
@@ -299,16 +224,11 @@ export default function PrivacyPage() {
                 <span className="text-emerald-600 font-bold text-lg">7</span>
               </div>
               <h2 className="text-2xl font-bold text-slate-800">
-                Data Retention
+                {privacy.section7.title}
               </h2>
             </div>
             <div className="ml-13 space-y-3">
-              <p className="text-slate-600">
-                We retain your personal information for as long as necessary to
-                fulfill the purposes outlined in this Privacy Policy, unless a
-                longer retention period is required by law or legitimate
-                business purposes.
-              </p>
+              <p className="text-slate-600">{privacy.section7.paragraph}</p>
             </div>
           </div>
 
@@ -319,16 +239,11 @@ export default function PrivacyPage() {
                 <span className="text-emerald-600 font-bold text-lg">8</span>
               </div>
               <h2 className="text-2xl font-bold text-slate-800">
-                International Data Transfers
+                {privacy.section8.title}
               </h2>
             </div>
             <div className="ml-13 space-y-3">
-              <p className="text-slate-600">
-                Your information may be transferred to and processed in
-                countries other than your country of residence. We ensure
-                appropriate safeguards are in place to protect your information
-                in accordance with applicable data protection laws.
-              </p>
+              <p className="text-slate-600">{privacy.section8.paragraph}</p>
             </div>
           </div>
 
@@ -339,16 +254,11 @@ export default function PrivacyPage() {
                 <span className="text-emerald-600 font-bold text-lg">9</span>
               </div>
               <h2 className="text-2xl font-bold text-slate-800">
-                Children&apos;s Privacy
+                {privacy.section9.title}
               </h2>
             </div>
             <div className="ml-13 space-y-3">
-              <p className="text-slate-600">
-                Our services are not directed to individuals under the age of
-                18. We do not knowingly collect personal information from
-                children. If you believe we have collected information from a
-                child, please contact us immediately.
-              </p>
+              <p className="text-slate-600">{privacy.section9.paragraph}</p>
             </div>
           </div>
 
@@ -359,41 +269,48 @@ export default function PrivacyPage() {
                 <span className="text-emerald-600 font-bold text-lg">10</span>
               </div>
               <h2 className="text-2xl font-bold text-slate-800">
-                Changes to This Privacy Policy
+                {privacy.section10.title}
               </h2>
             </div>
             <div className="ml-13 space-y-3">
-              <p className="text-slate-600">
-                We may update this Privacy Policy from time to time. We will
-                notify you of any material changes by posting the new Privacy
-                Policy on this page and updating the &quot;Last Updated&quot;
-                date. We encourage you to review this Privacy Policy
-                periodically.
-              </p>
+              <p className="text-slate-600">{privacy.section10.paragraph}</p>
+            </div>
+          </div>
+
+          {/* Section 11 */}
+          <div className="mb-10">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                <span className="text-emerald-600 font-bold text-lg">11</span>
+              </div>
+              <h2 className="text-2xl font-bold text-slate-800">
+                {privacy.section11.title}
+              </h2>
+            </div>
+            <div className="ml-13 space-y-3">
+              <p className="text-slate-600">{privacy.section11.paragraph}</p>
             </div>
           </div>
 
           {/* Contact Section */}
           <div className="mt-12 p-6 bg-emerald-50 rounded-xl border border-emerald-100">
             <h2 className="text-2xl font-bold text-slate-800 mb-4">
-              Contact Us
+              {privacy.section12.title}
             </h2>
-            <p className="text-slate-700 mb-4">
-              If you have any questions, concerns, or requests regarding this
-              Privacy Policy or our data practices, please contact us:
-            </p>
             <div className="space-y-2 text-slate-700">
               <p>
-                <strong>ICR</strong>
+                <strong>{privacy.section12.company}</strong>
               </p>
               <p>
-                General Inquiries:{" "}
                 <a
                   href="mailto:info@icr-me.com"
                   className="text-emerald-600 hover:text-emerald-700 font-medium"
                 >
-                  info@icr-me.com
+                  {privacy.section12.email}
                 </a>
+              </p>
+              <p className="text-sm text-slate-600 mt-2">
+                {privacy.section12.note}
               </p>
             </div>
           </div>

@@ -110,7 +110,7 @@ export default function AboutPage() {
 
         <div className="mx-auto max-w-4xl px-4 text-center">
           <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-4">
-            About
+            {t("about.section.about")}
           </div>
 
           <h1 className="mx-auto max-w-4xl text-3xl font-sans leading-tight text-white md:text-5xl">
@@ -198,7 +198,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="max-w-md">
               <div className="inline-block rounded-full bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 text-xs text-emerald-400 mb-4">
-                How we work
+                {t("about.section.howwework")}
               </div>
 
               <h3 className="text-3xl font-extrabold text-white mb-4">
@@ -223,7 +223,7 @@ export default function AboutPage() {
 
             <div className="relative">
               <div className="inline-block rounded-full bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 text-xs text-emerald-400 mb-4">
-                Our approach emphasises:
+                {t("about.approach.emphasises")}
               </div>
               <div className="space-y-8 pl-6">
                 <div className="flex items-start gap-8">

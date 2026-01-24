@@ -140,7 +140,7 @@ export default function ServicesPage() {
           </p>
 
           <h5 className="mt-4 text-sm font-semibold text-slate-900">
-            What It Includes:
+            {t("expertise.section.whatitincludes")}
           </h5>
           <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-slate-600">
             <li>{t("expertise.closing.item1")}</li>
@@ -187,9 +187,9 @@ export default function ServicesPage() {
         </div>
 
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-4">
+          {/* <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-4">
             Expertise
-          </div>
+          </div> */}
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-sans leading-tight text-white">
             {/* Our */}

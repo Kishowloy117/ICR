@@ -59,6 +59,14 @@ export default function CareerPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const powerAutomateUrl = process.env.NEXT_PUBLIC_POWER_AUTOMATE_URL;
+
+    if (!powerAutomateUrl) {
+      alert("Configuration error. Please contact support.");
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       const form = e.currentTarget;
       const formData = new FormData(form);
@@ -101,7 +109,7 @@ export default function CareerPage() {
       };
 
       // Submit to API
-      const response = await fetch("/api/contact", {
+      const response = await fetch(powerAutomateUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -164,7 +172,7 @@ export default function CareerPage() {
 
         <div className="mx-auto max-w-3xl px-4 text-center">
           <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-4">
-            Careers at ICR
+            {t("careers.section.careers")}
           </div>
           <h1 className="mx-auto max-w-3xl text-3xl font-sans leading-tight text-white md:text-5xl">
             {t("careers.hero.title")}
@@ -184,7 +192,7 @@ export default function CareerPage() {
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-8">
             <div className="inline-block rounded-full bg-[#e6f6f3] px-4 py-1 text-sm text-emerald-600 font-semibold mb-4 shadow-sm">
-              Why Work With Us
+              {t("careers.section.whyworkwithus")}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-2">
               {t("careers.why.title")}
@@ -238,7 +246,7 @@ export default function CareerPage() {
         <div className="mx-auto max-w-2xl px-2">
           <div className="text-center mb-6">
             <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-3">
-              Submit Your CV
+              {t("careers.section.submitcv")}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
               {t("careers.form.title")}
@@ -330,10 +338,10 @@ export default function CareerPage() {
                       <span className="text-slate-500 text-base">
                         {selectedFile
                           ? selectedFile.name
-                          : "Click to select file or drag to upload"}
+                          : t("careers.upload.instruction")}
                       </span>
                       <span className="text-slate-400 text-xs mt-1">
-                        PDF or DOC format, max file size 5MB
+                        {t("careers.upload.format")}
                       </span>
                     </div>
                   </div>
@@ -367,7 +375,7 @@ export default function CareerPage() {
         <div className="mx-auto max-w-3xl px-4">
           <div className="text-center mb-8">
             <div className="inline-block rounded-full bg-emerald-500/20 border border-emerald-400/30 px-4 py-1 text-sm text-emerald-400 font-semibold mb-4 shadow-sm">
-              Process
+              {t("careers.section.process")}
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-2">
               {t("careers.process.title")}

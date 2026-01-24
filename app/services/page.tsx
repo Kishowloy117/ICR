@@ -70,9 +70,9 @@ export default function ServicesPage() {
         </div>
 
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-4">
+          {/* <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-4">
             Services
-          </div>
+          </div> */}
 
           <h1 className="mx-auto max-w-3xl text-3xl font-sans leading-tight text-white md:text-5xl">
             {t("services.hero.title")}
@@ -92,7 +92,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-4 py-8">
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-block rounded-full border border-emerald-200 bg-emerald-50/40 px-4 py-1 text-sm text-emerald-600">
-              What We Do
+              {t("services.section.whatwedo")}
             </div>
 
             <h3 className="mt-6 text-3xl font-sans text-slate-900 sm:text-4xl ">
@@ -149,7 +149,7 @@ export default function ServicesPage() {
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="max-w-md">
                 <div className="inline-block rounded-full bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 text-xs text-emerald-400 mb-4">
-                  How we work
+                  {t("services.section.howwework")}
                 </div>
 
                 <h3 className="text-4xl font-extrabold text-white mb-4">

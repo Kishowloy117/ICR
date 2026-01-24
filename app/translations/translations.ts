@@ -44,6 +44,7 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "home.cta.services": "Explore Our Services",
 
     // Home page - Expertise Section
+    "home.expertise.label": "Expertise",
     "home.expertise.title": "Our Expertise",
     "home.expertise.description":
       "At Insight Consultancy & Research (ICR), we provide tailored research and advisory services designed to support strategic planning, policy development, and organisational growth.",
@@ -64,12 +65,26 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "home.why.title": "Why Choose Insight Consultancy & Research",
     "home.why.description":
       "We support organisations to move from evidence to insight — and from insight to clear, defensible decisions.",
+    "home.why.listen":
+      "We listen first and tailor research to your business needs.",
+    "home.why.field": "Nationwide field coverage with trained teams.",
+    "home.why.realtime": "Real-time monitoring ensures reliable data.",
+    "home.why.reports": "Clear reports with actionable insights.",
     "home.why.evidence": "Evidence-Driven Decisions",
     "home.why.contextual": "Contextual Insights",
     "home.why.monitoring": "Continuous Monitoring",
     "home.why.practical": "Practical Market Insights",
     "home.why.strategic": "Strategic Market Clarity",
     "home.why.actionable": "Actionable Strategies",
+
+    // Home page - Section Headers
+    "home.section.whatwedo": "What We Do",
+    "home.section.impact": "Our Impact",
+    "home.section.whyicr": "Why ICR",
+    "home.section.expertise": "Expertise in research, analysis, and strategy.",
+    "home.section.projects": "Projects delivered across multiple industries.",
+    "home.section.multichannel":
+      "Multi-channel data collection locally and globally.",
 
     // Home page - ICR in Numbers
     "home.numbers.title": "ICR in Numbers",
@@ -92,6 +107,8 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
 
     // Footer
     "footer.tagline": "Research • Insight • Strategic Clarity",
+    "footer.company": "Insight Consultancy & Research",
+    "footer.rights": "All rights reserved.",
     "footer.quicklinks": "Quick Links",
     "footer.privacy": "Privacy Policy",
     "footer.terms": "Terms of Service",
@@ -102,6 +119,10 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "services.hero.subtitle": "Services",
     "services.hero.description":
       "Our services are designed to support complex decisions through rigorous research, structured analysis, and clear, decision-ready outputs.",
+
+    // Services Page - Section Headers
+    "services.section.whatwedo": "What We Do",
+    "services.section.howwework": "How we work",
 
     "services.why.title": "Why Choose Insight Consultancy & Research",
     "services.why.description":
@@ -156,6 +177,13 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "services.cta.request": "Request an Initial Discussion",
 
     // Careers Page
+    "careers.section.careers": "Careers at ICR",
+    "careers.section.whyworkwithus": "Why Work With Us",
+    "careers.section.submitcv": "Submit Your CV",
+    "careers.section.process": "Process",
+    "careers.upload.instruction": "Click to select file or drag to upload",
+    "careers.upload.format": "PDF or DOC format, max file size 5MB",
+
     "careers.hero.title": "Join a team turning",
     "careers.hero.subtitle": "data into decisions",
     "careers.hero.description":
@@ -225,6 +253,10 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
       "Selected candidates receive a formal offer and onboarding plan.",
 
     // About Page
+    "about.section.about": "About",
+    "about.section.howwework": "How we work",
+    "about.approach.emphasises": "Our approach emphasises",
+
     "about.hero.title": "About Insight Consultancy & Research",
     "about.hero.subtitle": "Who We Are",
     "about.hero.description1":
@@ -291,6 +323,11 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
       "We combine sector knowledge, methodological rigour, and advanced analytical capabilities to address strategic, operational, and policy challenges.",
     "expertise.hero.description3":
       "Our approach integrates established research practices with modern analytical tools, including the responsible use of AI-enabled techniques to enhance accuracy, efficiency, and insight generation.",
+
+    // Expertise Page - Section Headers
+    "expertise.section.expertise": "Expertise",
+    "expertise.section.whatitincludes": "What It Includes",
+
     "expertise.cta.discuss": "Discuss Your Requirements",
 
     "expertise.government.title": "Governmental & Public Sector Projects",
@@ -428,9 +465,26 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "whyicr.industry.automotive": "Automotive",
     "whyicr.industry.media": "Media & Entertainment",
 
+    "whyicr.section.consulting": "Consulting",
+    "whyicr.section.retailaudit": "Retail Audit",
+    "whyicr.section.process": "Process",
+    "whyicr.section.industries": "Industries",
+    "whyicr.section.success": "Success",
+
     "whyicr.success.title": "Why We Succeed",
     "whyicr.success.description":
       "ICR delivers consistent value through six key strengths — built on trust, insight, and innovation.",
+
+    "whyicr.success.item1":
+      "We bring fresh thinking and introduce new methodologies, tools, and tech to improve every outcome.",
+    "whyicr.success.item2":
+      "We translate broad strategies into local execution, ensuring relevance in every region we operate.",
+    "whyicr.success.item3":
+      "We collaborate closely with clients and regional partners — listening, adapting, and aligning with your goals.",
+    "whyicr.success.item4":
+      "Our research is designed for real-world action — from survey to strategy, we focus on impact, not just information.",
+    "whyicr.success.item5":
+      "Our wide range of analytical capabilities uncovers patterns and insights that drive confident decisions.",
 
     "whyicr.success.relationships": "Strong Client Relationships",
     "whyicr.success.expertise": "Local Market Expertise",
@@ -460,10 +514,10 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "contact.form.company": "Company Name",
     "contact.form.message": "Message",
     "contact.form.upload": "Upload a brief (optional)",
-    "contact.form.upload.instruction": "Click to upload or drag and drop",
+    "contact.form.upload.instruction": "Click to select file or drag to upload",
     "contact.form.upload.note":
       "You may upload a project brief, TOR, or background document to support your enquiry.",
-    "contact.form.upload.format": "PDF or DOCX (max 10MB)",
+    "contact.form.upload.format": "PDF or DOC format, max file size 10MB",
     "contact.form.submit": "Submit",
     "contact.form.submitting": "Submitting...",
     "contact.form.confidentiality": "All enquiries are treated confidentially.",
@@ -510,7 +564,7 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "home.hero.title": "将证据转化为",
     "home.hero.subtitle": "自信决策",
     "home.hero.description":
-      "Insight Consultancy & Research（ICR）是一家独立的智库咨询机构，专注于以研究为基础的咨询服务与循证决策支持。",
+      "Insight 咨询与研究（ICR）是一家独立的智库咨询机构，专注于以研究为基础的咨询服务与循证决策支持。",
     "home.hero.description2":
       "我们在复杂环境中设计并交付严谨的证据与清晰的分析，为战略、运营及政策决策提供有力支持。",
 
@@ -530,6 +584,7 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "home.cta.services": "探索我们的服务",
 
     // Home page - Expertise Section
+    "home.expertise.label": "专业领域",
     "home.expertise.title": "我们的专业领域",
     "home.expertise.description":
       "我们提供量身定制的研究与咨询服务，旨在支持战略规划、政策制定以及组织发展。",
@@ -548,12 +603,24 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "home.why.title": "为什么选择洞察咨询与研究",
     "home.why.description":
       "我们帮助组织实现从证据到洞察，再从洞察到清晰、可论证的决策的转变。",
+    "home.why.listen": "我们先倾听，并为您的业务需求定制研究。",
+    "home.why.field": "全国范围实地覆盖，由专业团队执行。",
+    "home.why.realtime": "实时监控，确保数据可靠。",
+    "home.why.reports": "清晰报告，提供可执行洞察。",
     "home.why.evidence": "以证据为基础的决策",
     "home.why.contextual": "情境化洞察",
     "home.why.monitoring": "持续监测",
     "home.why.practical": "实用的市场洞察",
     "home.why.strategic": "清晰的战略市场认知",
     "home.why.actionable": "可执行的战略方案",
+
+    // Home page - Section Headers
+    "home.section.whatwedo": "我们的服务",
+    "home.section.impact": "成果与影响",
+    "home.section.whyicr": "为什么选择 ICR",
+    "home.section.expertise": "覆盖研究、分析与战略领域。",
+    "home.section.projects": "项目覆盖多个行业。",
+    "home.section.multichannel": "本地及国际多渠道数据采集。",
 
     // Home page - ICR in Numbers
     "home.numbers.title": "ICR 数据概览",
@@ -576,6 +643,8 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
 
     // Footer
     "footer.tagline": "深研 · 洞察 · 战略明晰",
+    "footer.company": "Insight 咨询与研究",
+    "footer.rights": "版权所有。",
     "footer.quicklinks": "快速链接",
     "footer.privacy": "隐私政策",
     "footer.terms": "服务条款",
@@ -587,7 +656,11 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "services.hero.description":
       "我们的服务旨在通过严谨的研究、结构化分析以及面向决策的清晰成果，支持复杂环境下的关键决策。",
 
-    "services.why.title": "为什么选择 Insight Consultancy & Research (ICR)",
+    // Services Page - Section Headers
+    "services.section.whatwedo": "我们的服务",
+    "services.section.howwework": "我们的工作方式",
+
+    "services.why.title": "为什么选择 Insight 咨询与研究 (ICR)",
     "services.why.description":
       "在 ICR，我们致力于协助组织实现从 ''证据''走向''洞察''，并将洞察转化为清晰、经得起推敲的决策方案。",
 
@@ -643,6 +716,13 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "services.cta.request": "开启专业咨询",
 
     // Careers Page
+    "careers.section.careers": "加入 ICR",
+    "careers.section.whyworkwithus": "为什么加入我们",
+    "careers.section.submitcv": "提交您的简历",
+    "careers.section.process": "招聘流程",
+    "careers.upload.instruction": "点击选择文件或拖拽上传",
+    "careers.upload.format": "PDF 或 DOC 格式，最大 5MB",
+
     "careers.hero.title": "加入 ICR：",
     "careers.hero.subtitle": "共筑明策",
     "careers.hero.description":
@@ -712,10 +792,14 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
       "获选候选人将收到正式的录用通知及详细的入职计划。",
 
     // About Page
+    "about.section.about": "关于",
+    "about.section.howwework": "我们的工作方式",
+    "about.approach.emphasises": "我们的方法强调",
+
     "about.hero.title": "关于Insight Consultancy Research",
     "about.hero.subtitle": "我们是谁",
     "about.hero.description1":
-      "Insight Consultancy & Research（ICR）是一家独立的智库咨询机构，专注于以研究为基础的咨询服务与循证决策支持。",
+      "Insight 咨询与研究（ICR）是一家独立的智库咨询机构，专注于以研究为基础的咨询服务与循证决策支持。",
     "about.hero.description2":
       "在面对复杂环境中的决策时，我们提供及时的、可验证的专业分析，服务于政策制定、战略决策与执行评估。",
     "about.hero.description3":
@@ -771,11 +855,16 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     // Expertise Page
     "expertise.hero.title": "我们的专业领域",
     "expertise.hero.description1":
-      "在 Insight Consultancy & Research (ICR)，我们的专业核心在于通过严谨的研究与分析，支持公共、企业及国际领域的复杂决策。",
+      "在 Insight 咨询与研究 (ICR)，我们的专业核心在于通过严谨的研究与分析，支持公共、企业及国际领域的复杂决策。",
     "expertise.hero.description2":
       "我们将深厚的行业知识、严密的方法论以及前沿的分析能力相结合，致力于解决战略、运营及政策层面的核心挑战。",
     "expertise.hero.description3":
       "我们的方法论将成熟的研究实践与现代分析工具（包括负责任地应用 AI 技术）深度融合，以提升研究的精准度、执行效率及洞察深度。",
+
+    // Expertise Page - Section Headers
+    "expertise.section.expertise": "专业领域",
+    "expertise.section.whatitincludes": "包含内容",
+
     "expertise.cta.discuss": "垂询您的具体需求",
 
     "expertise.government.title": "政府与公共部门项目",
@@ -905,8 +994,23 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "whyicr.industry.automotive": "汽车 (Automotive)",
     "whyicr.industry.media": "媒体与娱乐 (Media & Entertainment)",
 
+    "whyicr.section.consulting": "咨询",
+    "whyicr.section.retailaudit": "零售审计",
+    "whyicr.section.process": "工作流程",
+    "whyicr.section.industries": "行业",
+    "whyicr.section.success": "成功因素",
+
     "whyicr.success.title": "我们的成功基石",
     "whyicr.success.description": "ICR 的价值源自于以下六大核心优势：",
+
+    "whyicr.success.item1":
+      "我们引入创新思维、新方法、工具和技术，以提升成果。",
+    "whyicr.success.item2": "我们将宏观战略转化为本地执行，确保各地区相关性。",
+    "whyicr.success.item3":
+      "我们与客户及区域伙伴紧密合作，倾听、调整并对齐目标。",
+    "whyicr.success.item4":
+      "我们的研究以实际行动为导向，从调研到战略，专注影响而非信息。",
+    "whyicr.success.item5": "我们的分析能力揭示趋势与洞察，助力自信决策。",
 
     "whyicr.success.relationships": "深厚的客户伙伴关系",
     "whyicr.success.expertise": "本土市场专长",
@@ -916,6 +1020,8 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "whyicr.success.talent": "资深的研究专家人才",
 
     // Contact Page
+    "contact.section.contactus": "联系我们",
+
     "contact.hero.title": "让我们讨论",
     "contact.hero.subtitle": "您的需求",
     "contact.hero.description1":
@@ -935,13 +1041,13 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "contact.form.company": "公司名称",
     "contact.form.message": "留言内容",
     "contact.form.upload": "上传简介（选填）",
-    "contact.form.upload.instruction": "点击上传或将文件拖拽至此",
+    "contact.form.upload.instruction": "点击选择文件或拖拽上传",
     "contact.form.upload.note":
       "您可以上传项目简介、职责范围 (TOR) 或背景文档以支持您的咨询。",
-    "contact.form.upload.format": "PDF 或 DOCX（最大 10MB）",
+    "contact.form.upload.format": "PDF 或 DOC 格式，最大 10MB",
     "contact.form.submit": "提交",
     "contact.form.submitting": "提交中...",
-    "contact.form.confidentiality": "所有咨询内容将严格保密。",
+    "contact.form.confidentiality": "所有咨询均会保密处理。",
 
     "contact.next.badge": "后续步骤",
     "contact.next.title": "后续流程",
@@ -985,7 +1091,7 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "home.hero.title": "تحويل الأدلة إلى",
     "home.hero.subtitle": "قرارات استراجية واثقة",
     "home.hero.description":
-      "شركة Insight للاستشارات والبحوث (ICR) هي شركة مستقلة متخصصة في الأبحاث والاستشارات، تقدم الدعم للجهات الحكومية، والقطاع الخاص، والمنظمات الدولية من خلال أبحاث وتقييمات ورؤى تحليلية موجهة لدعم عملية اتخاذ القرار.",
+      "إنسايت للاستشارات والبحوث (ICR) هي شركة مستقلة متخصصة في الأبحاث والاستشارات، تقدم الدعم للجهات الحكومية، والقطاع الخاص، والمنظمات الدولية من خلال أبحاث وتقييمات ورؤى تحليلية موجهة لدعم عملية اتخاذ القرار.",
     "home.hero.description2":
       "نقوم بتصميم وتنفيذ دراسات وأدلة بحثية محكمة وتحليلات دقيقة لدعم القرارات الاستراتيجية والتشغيلية وصنع السياسات العامة في بيئات عمل معقدة ومتغيرة.",
 
@@ -1005,9 +1111,10 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "home.cta.services": "استعرض خدماتنا",
 
     // Home page - Expertise Section
+    "home.expertise.label": "مجالات الخبرة",
     "home.expertise.title": "خبراتنا",
     "home.expertise.description":
-      "في شركة Insight للاستشارات والبحوث (ICR)، نقدم خدمات بحثية واستشارية متخصصة ومصممة وفق احتياجات كل عميل، بما يدعم التخطيط الاستراتيجي، وتطوير السياسات، وتعزيز النمو المؤسسي المستدام.",
+      "في إنسايت للاستشارات والبحوث (ICR)، نقدم خدمات بحثية واستشارية متخصصة ومصممة وفق احتياجات كل عميل، بما يدعم التخطيط الاستراتيجي، وتطوير السياسات، وتعزيز النمو المؤسسي المستدام.",
     "home.expertise.market": "أبحاث السوق والأبحاث الاجتماعية",
     "home.expertise.market.desc":
       "إنتاج وتحليل البيانات لفهم الأسواق والمجتمعاتوالطراف المعنية، بما يسهم في صياغة قرارات قائمة على أسس علمية راسخة.",
@@ -1025,12 +1132,24 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "home.why.title": "لماذا تختار Insight للاستشارات والبحوث",
     "home.why.description":
       "نُمكّن المؤسسات من الانتقال المنهجي من الأدلة إلى الرؤى التحليلية، ومن ثم إلى قرارات واضحة ومدعومة وقابلة للتوثيق والمراجعة.",
+    "home.why.listen": "نستمع أولًا ونخصص الأبحاث وفق احتياجات أعمالك.",
+    "home.why.field": "تغطية ميدانية على مستوى الدولة بفرق مدرَّبة.",
+    "home.why.realtime": "مراقبة فورية لضمان بيانات موثوقة.",
+    "home.why.reports": "تقارير واضحة برؤى قابلة للتنفيذ.",
     "home.why.evidence": "قرارات مبنية على الأدلة",
     "home.why.contextual": "رؤى تحليلية قائمة على قراءة السياق العام",
     "home.why.monitoring": "متابعة وتقييم على نحو مستمر و منهجي.",
     "home.why.practical": "رؤى تسوقية و تطبيقية.",
     "home.why.strategic": "وضوح استراتيجي للأسواق",
     "home.why.actionable": "استراتيجيات عملية قابلة للتنفيذ",
+
+    // Home page - Section Headers
+    "home.section.whatwedo": "ماذا نقدم",
+    "home.section.impact": "نتائجنا",
+    "home.section.whyicr": "لماذا ICR",
+    "home.section.expertise": "خبرة في البحث والتحليل والاستراتيجية.",
+    "home.section.projects": "مشاريع منفذة عبر عدة قطاعات.",
+    "home.section.multichannel": "جمع بيانات متعدد القنوات محليًا ودوليًا.",
 
     // Home page - ICR in Numbers
     "home.numbers.title": "ICR بالأرقام",
@@ -1054,6 +1173,8 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
 
     // Footer
     "footer.tagline": "البحوث • الرؤى التحليلية • الوضوح الاستراتيجي",
+    "footer.company": "إنسايت للاستشارات والبحوث",
+    "footer.rights": "جميع الحقوق محفوظة.",
     "footer.quicklinks": "روابط سريعة",
     "footer.privacy": "سياسة الخصوصية",
     "footer.terms": "شروط الخدمة",
@@ -1065,9 +1186,9 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "services.hero.description":
       "تم تصميم خدماتنا لدعم القرارات المعقدة من خلال بحوث دقيقة، وتحليل منظم، ومخرجات واضحة وجاهزة لاتخاذ القرار.",
 
-    "services.why.title": "لماذا تختار Insight للاستشارات والبحوث",
+    "services.why.title": "لماذا تختار إنسايت للاستشارات والبحوث",
     "services.why.description":
-      "في شركة Insight للاستشارات والبحوث (ICR)، نُمكّن المؤسسات من الانتقال من الأدلة إلى الرؤى التحليلية، ومن ثم إلى قرارات واضحة ومدعومة وقابلة للتبرير المؤسسي.",
+      "في إنسايت للاستشارات والبحوث (ICR)، نُمكّن المؤسسات من الانتقال من الأدلة إلى الرؤى التحليلية، ومن ثم إلى قرارات واضحة ومدعومة وقابلة للتبرير المؤسسي.",
 
     "services.quantitative.title": "البحوث الكمية",
     "services.quantitative.desc":
@@ -1118,6 +1239,13 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "services.cta.request": "اطلب مناقشة مبدئية",
 
     // Careers Page
+    "careers.section.careers": "الوظائف في ICR",
+    "careers.section.whyworkwithus": "لماذا تعمل معنا",
+    "careers.section.submitcv": "أرسل سيرتك الذاتية",
+    "careers.section.process": "آلية التوظيف",
+    "careers.upload.instruction": "اضغط لاختيار ملف أو اسحب للتحميل",
+    "careers.upload.format": "صيغة PDF أو DOC، الحد الأقصى 5 ميغابايت",
+
     "careers.hero.title": "انضم إلى فريق يحول",
     "careers.hero.subtitle": "البيانات إلى قرارات",
     "careers.hero.description":
@@ -1187,10 +1315,14 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
       "يحصل المرشحون المختارون على عرض رسمي وخطة تهيئة للانضمام.",
 
     // About Page
-    "about.hero.title": "نبذة عن شركة Insight للاستشارات والبحوث",
+    "about.section.about": "نبذة",
+    "about.section.howwework": "كيف نعمل",
+    "about.approach.emphasises": "يركز نهجنا على",
+
+    "about.hero.title": "نبذة عن إنسايت للاستشارات والبحوث",
     "about.hero.subtitle": "من نحن",
     "about.hero.description1":
-      "شركة Insight للاستشارات والبحوث (ICR) هي شركة استشارية مستقلة متخصصة في الاستشارات القائمة على البحوث ودعم اتخاذ القرار المبني على الأدلة.",
+      "إنسايت للاستشارات والبحوث (ICR) هي شركة استشارية مستقلة متخصصة في الاستشارات القائمة على البحوث ودعم اتخاذ القرار المبني على الأدلة.",
     "about.hero.description2":
       "نعمل مع مؤسسات تعمل في بيئات معقدة وتتطلب رؤى واضحة لدعم السياسات والاستراتيجيات والتنفيذ.",
     "about.hero.description3":
@@ -1243,9 +1375,11 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "about.research.insight": "البحوث • الرؤى التحليلية • الوضوح الاستراتيجي",
 
     // Expertise Page
+    "expertise.section.expertise": "خبرة",
+    "expertise.section.whatitincludes": "يشمل ذلك",
     "expertise.hero.title": "خبراتنا",
     "expertise.hero.description1":
-      "في شركة Insight للاستشارات والبحوث (ICR)، ترتكز خبراتنا على تقديم أبحاث وتحليلات دقيقة لدعم عمليات اتخاذ القرارات المعقدة في القطاعات الحكومية، والخاصة، والدولية.",
+      "في إنسايت للاستشارات والبحوث (ICR)، ترتكز خبراتنا على تقديم أبحاث وتحليلات دقيقة لدعم عمليات اتخاذ القرارات المعقدة في القطاعات الحكومية، والخاصة، والدولية.",
     "expertise.hero.description2":
       "نجمع بين المعرفة القطاعية، والانضباط المنهجي، والقدرات التحليلية المتقدمة لمعالجة التحديات الاستراتيجية والتشغيلية وتحديات السياسات العامة.",
     "expertise.hero.description3":
@@ -1386,9 +1520,26 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "whyicr.industry.automotive": "قطاع السيارات",
     "whyicr.industry.media": "الإعلام والترفيه",
 
+    "whyicr.section.consulting": "الاستشارات",
+    "whyicr.section.retailaudit": "قطاع التجزئة",
+    "whyicr.section.process": "آلية العمل",
+    "whyicr.section.industries": "القطاعات",
+    "whyicr.section.success": "أسباب نجاحنا",
+
     "whyicr.success.title": "سبب نجحنا",
     "whyicr.success.description":
       "تقدم ICR قيمة مستدامة من خلال ست ركائز أساسية تقوم على الثقة، والرؤى التحليلية، والابتكار.",
+
+    "whyicr.success.item1":
+      "نقدم أفكارًا مبتكرة ومنهجيات وأدوات وتقنيات حديثة لتحسين النتائج.",
+    "whyicr.success.item2":
+      "نحول الاستراتيجيات العامة إلى تنفيذ محلي فعّال لضمان الملاءمة في كل سوق نعمل فيه.",
+    "whyicr.success.item3":
+      "نتعاون عن قرب مع العملاء والشركاء الإقليميين لضمان تحقيق أهدافكم.",
+    "whyicr.success.item4":
+      "نركز على أبحاث عملية قابلة للتطبيق من الاستبيانات إلى الاستراتيجية لتحقيق تأثير حقيقي.",
+    "whyicr.success.item5":
+      "توفر قدراتنا التحليلية المتقدمة رؤى تدعم اتخاذ قرارات واثقة.",
 
     "whyicr.success.relationships": "علاقات قوية مع العملاء",
     "whyicr.success.expertise": "خبرة عميقة في الأسواق المحلية",
@@ -1398,6 +1549,8 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "whyicr.success.talent": "كفاءات بحثية رفيعة المستوى",
 
     // Contact Page
+    "contact.section.contactus": "اتصل بنا",
+
     "contact.hero.title": "دعنا نناقش",
     "contact.hero.subtitle": "متطلباتك",
     "contact.hero.description1":
@@ -1417,13 +1570,13 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "contact.form.company": "الشركة",
     "contact.form.message": "الرسالة",
     "contact.form.upload": "ارفع ملخص المشروع (اختياري)",
-    "contact.form.upload.instruction": "اضغط للرفع أو اسحب وأفلت الملف",
+    "contact.form.upload.instruction": "اضغط لاختيار ملف أو اسحب للتحميل",
     "contact.form.upload.note":
       "يمكنك رفع ملخص، أو نطاق العمل (TOR)، أو مستند خلفية لدعم استفسارك.",
-    "contact.form.upload.format": "PDF أو DOCX (حد أقصى 10 ميجابايت)",
+    "contact.form.upload.format": "صيغة PDF أو DOC، الحد الأقصى 10 ميغابايت",
     "contact.form.submit": "إرسال",
     "contact.form.submitting": "جارٍ الإرسال...",
-    "contact.form.confidentiality": "جميع الاستفسارات تُعامل بسرية تامة.",
+    "contact.form.confidentiality": "جميع المعلومات تُعامل بسرية تامة.",
 
     "contact.next.badge": "الخطوات التالية",
     "contact.next.title": "ماذا يحدث بعد ذلك",
