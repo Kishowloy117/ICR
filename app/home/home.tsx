@@ -29,7 +29,7 @@ export default function HomePage() {
         </p>
 
         {/* Feature Row */}
-        <div className="mt-6 mx-auto flex w-full max-w-3xl flex-col items-stretch gap-3 text-left text-slate-200 sm:flex-row sm:items-center">
+        <div className={`mt-6 mx-auto flex w-full max-w-3xl flex-col items-stretch gap-3 text-slate-200 sm:flex-row sm:items-center ${language === "ar" ? "text-right" : "text-left"}`}>
           {/* Card 1 */}
           <div className="w-full sm:flex-1 rounded-lg p-4 sm:p-5 border-l-4 border-emerald-400/30">
             <div className="flex items-start gap-4">
@@ -593,20 +593,14 @@ export default function HomePage() {
                 <div
                   key={i}
                   className="rounded-2xl bg-slate-900 p-5 text-white shadow-md"
+                  dir={language === "ar" ? "rtl" : "ltr"}
                 >
-                  <div
-                    className={`flex items-center gap-4 ${
-                      language === "ar" ? "flex-row-reverse" : "flex-row"
-                    }`}
-                  >
+                  <div className="flex items-center gap-4">
                     <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-white/10 text-emerald-400">
                       {item.icon}
                     </div>
 
-                    <div
-                      className="flex-1"
-                      dir={language === "ar" ? "rtl" : "ltr"}
-                    >
+                    <div className="flex-1">
                       <div className="text-sm font-semibold text-slate-100">
                         {item.text}
                       </div>

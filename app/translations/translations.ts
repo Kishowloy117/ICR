@@ -1457,7 +1457,7 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "expertise.final.cta": "تعرف على خدماتنا",
 
     // Why ICR Page
-    "whyicr.hero.title": "توظيف البحاث لدعم النمو استراتيجي",
+    "whyicr.hero.title": "البحث محرك النمو الاستراتيجي",
     "whyicr.hero.description":
       "تتجاوز ICR حدود جمع البيانات، حيث نعمل كشريك استراتيجي لدعم تحقيق نتائج أعمال أفضل من خلال أبحاث مركزة، ورؤى عملية، وتوصيات استراتيجية مدروسة.",
     "whyicr.cta.discuss": "دعونا نطلع كيف يمكننا دعم أهدافكم",

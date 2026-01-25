@@ -13,11 +13,13 @@ import {
 } from "@/components/ui/sheet";
 import { useState } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const { language, changeLanguage, t } = useLanguage();
+  const pathname = usePathname();
 
   const navItems = [
     { label: "nav.home", href: "/" },
@@ -59,22 +61,35 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <nav className="hidden items-center gap-2 md:flex">
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="relative text-sm font-medium text-slate-700 px-4 py-2 rounded-lg transition-all duration-300 hover:text-emerald-600 group overflow-hidden"
-              >
-                {/* Glass effect background */}
-                <span className="absolute inset-0 bg-emerald-50/80 backdrop-blur-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-emerald-200/50" />
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`relative text-sm font-medium px-4 py-2 rounded-lg transition-all duration-300 group overflow-hidden ${
+                    isActive
+                      ? "text-emerald-600"
+                      : "text-slate-700 hover:text-emerald-600"
+                  }`}
+                >
+                  {/* Glass effect background */}
+                  <span
+                    className={`absolute inset-0 bg-emerald-50/80 backdrop-blur-sm rounded-lg transition-opacity duration-300 border border-emerald-200/50 ${
+                      isActive
+                        ? "opacity-100"
+                        : "opacity-0 group-hover:opacity-100"
+                    }`}
+                  />
 
-                {/* Shine effect */}
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-200/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                  {/* Shine effect */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-200/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
 
-                {/* Text */}
-                <span className="relative z-10">{t(item.label)}</span>
-              </Link>
-            ))}
+                  {/* Text */}
+                  <span className="relative z-10">{t(item.label)}</span>
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Desktop Language Selector */}
@@ -143,27 +158,46 @@ export default function Navbar() {
 
                 {/* Navigation Items */}
                 <nav className="flex flex-col p-6 pb-48 space-y-1 overflow-y-auto max-h-[calc(110vh-280px)]">
-                  {navItems.map((item) => (
-                    <SheetClose asChild key={item.label}>
-                      <Link
-                        href={item.href}
-                        className="group relative flex items-center py-3 px-4 rounded-lg text-sm font-medium text-slate-200 transition-all duration-300 overflow-hidden"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {/* Glass effect background */}
-                        <span className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-white/20" />
+                  {navItems.map((item) => {
+                    const isActive = pathname === item.href;
+                    return (
+                      <SheetClose asChild key={item.label}>
+                        <Link
+                          href={item.href}
+                          className="group relative flex items-center py-3 px-4 rounded-lg text-sm font-medium text-slate-200 transition-all duration-300 overflow-hidden"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {/* Glass effect background */}
+                          <span
+                            className={`absolute inset-0 bg-white/10 backdrop-blur-sm rounded-lg transition-opacity duration-300 border border-white/20 ${
+                              isActive
+                                ? "opacity-100"
+                                : "opacity-0 group-hover:opacity-100"
+                            }`}
+                          />
 
-                        {/* Shine effect */}
-                        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                          {/* Shine effect */}
+                          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
 
-                        {/* Content */}
-                        <span className="relative z-10 flex items-center gap-3 group-hover:text-white transition-colors">
-                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                          {t(item.label)}
-                        </span>
-                      </Link>
-                    </SheetClose>
-                  ))}
+                          {/* Content */}
+                          <span
+                            className={`relative z-10 flex items-center gap-3 transition-colors ${
+                              isActive ? "text-white" : "group-hover:text-white"
+                            }`}
+                          >
+                            <span
+                              className={`h-1.5 w-1.5 rounded-full bg-emerald-400 transition-opacity ${
+                                isActive
+                                  ? "opacity-100"
+                                  : "opacity-0 group-hover:opacity-100"
+                              }`}
+                            />
+                            {t(item.label)}
+                          </span>
+                        </Link>
+                      </SheetClose>
+                    );
+                  })}
                 </nav>
 
                 {/* Language Selector in Mobile */}

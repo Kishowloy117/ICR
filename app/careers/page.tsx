@@ -191,9 +191,9 @@ export default function CareerPage() {
       <section className="w-full bg-gradient-to-b from-[#f7fafc] to-[#eef4f7] py-12">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-8">
-            <div className="inline-block rounded-full bg-[#e6f6f3] px-4 py-1 text-sm text-emerald-600 font-semibold mb-4 shadow-sm">
+            {/* <div className="inline-block rounded-full bg-[#e6f6f3] px-4 py-1 text-sm text-emerald-600 font-semibold mb-4 shadow-sm">
               {t("careers.section.whyworkwithus")}
-            </div>
+            </div> */}
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-2">
               {t("careers.why.title")}
             </h2>

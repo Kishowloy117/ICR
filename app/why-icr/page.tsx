@@ -14,7 +14,7 @@ import {
 import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Page() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <main>
@@ -492,77 +492,119 @@ export default function Page() {
           </p>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-lg bg-white p-6 shadow-sm text-left">
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-emerald-50 text-emerald-600 mb-3">
-                <Users className="h-5 w-5" />
+            <div
+              className="rounded-lg bg-white p-6 shadow-sm"
+              dir={language === "ar" ? "rtl" : "ltr"}
+            >
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                  <Users className="h-5 w-5" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-slate-900">
+                    {t("whyicr.success.relationships")}
+                  </h4>
+                  <p className="mt-2 text-sm text-slate-600">
+                    {t("whyicr.success.item3")}
+                  </p>
+                </div>
               </div>
-              <h4 className="text-lg font-semibold text-slate-900">
-                {t("whyicr.success.relationships")}
-              </h4>
-              <p className="mt-2 text-sm text-slate-600">
-                {t("whyicr.success.item3")}
-              </p>
             </div>
 
-            <div className="rounded-lg bg-emerald-50 p-6 shadow-md ring-1 ring-emerald-100 border border-emerald-200 text-left">
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-white text-emerald-600 mb-3">
-                <Award className="h-5 w-5" />
+            <div
+              className="rounded-lg bg-emerald-50 p-6 shadow-md ring-1 ring-emerald-100 border border-emerald-200"
+              dir={language === "ar" ? "rtl" : "ltr"}
+            >
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-white text-emerald-600">
+                  <Award className="h-5 w-5" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-slate-900">
+                    {t("whyicr.success.expertise")}
+                  </h4>
+                  <p className="mt-2 text-sm text-slate-600">
+                    {t("whyicr.success.item2")}
+                  </p>
+                </div>
               </div>
-              <h4 className="text-lg font-semibold text-slate-900">
-                {t("whyicr.success.expertise")}
-              </h4>
-              <p className="mt-2 text-sm text-slate-600">
-                {t("whyicr.success.item2")}
-              </p>
             </div>
 
-            <div className="rounded-lg bg-white p-6 shadow-sm text-left">
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-emerald-50 text-emerald-600 mb-3">
-                <Zap className="h-5 w-5" />
+            <div
+              className="rounded-lg bg-white p-6 shadow-sm"
+              dir={language === "ar" ? "rtl" : "ltr"}
+            >
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                  <Zap className="h-5 w-5" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-slate-900">
+                    {t("whyicr.success.innovation")}
+                  </h4>
+                  <p className="mt-2 text-sm text-slate-600">
+                    {t("whyicr.success.item1")}
+                  </p>
+                </div>
               </div>
-              <h4 className="text-lg font-semibold text-slate-900">
-                {t("whyicr.success.innovation")}
-              </h4>
-              <p className="mt-2 text-sm text-slate-600">
-                {t("whyicr.success.item1")}
-              </p>
             </div>
 
-            <div className="rounded-lg bg-white p-6 shadow-sm text-left">
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-emerald-50 text-emerald-600 mb-3">
-                <BarChart2 className="h-5 w-5" />
+            <div
+              className="rounded-lg bg-white p-6 shadow-sm"
+              dir={language === "ar" ? "rtl" : "ltr"}
+            >
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                  <BarChart2 className="h-5 w-5" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-slate-900">
+                    {t("whyicr.success.tools")}
+                  </h4>
+                  <p className="mt-2 text-sm text-slate-600">
+                    {t("whyicr.success.item5")}
+                  </p>
+                </div>
               </div>
-              <h4 className="text-lg font-semibold text-slate-900">
-                {t("whyicr.success.tools")}
-              </h4>
-              <p className="mt-2 text-sm text-slate-600">
-                {t("whyicr.success.item5")}
-              </p>
             </div>
 
-            <div className="rounded-lg bg-emerald-50 p-6 shadow-md ring-1 ring-emerald-100 border border-emerald-200 text-left">
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-white text-emerald-600 mb-3">
-                <Wrench className="h-5 w-5" />
+            <div
+              className="rounded-lg bg-emerald-50 p-6 shadow-md ring-1 ring-emerald-100 border border-emerald-200"
+              dir={language === "ar" ? "rtl" : "ltr"}
+            >
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-white text-emerald-600">
+                  <Wrench className="h-5 w-5" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-slate-900">
+                    {t("whyicr.success.process")}
+                  </h4>
+                  <p className="mt-2 text-sm text-slate-600">
+                    {t("whyicr.success.item4")}
+                  </p>
+                </div>
               </div>
-              <h4 className="text-lg font-semibold text-slate-900">
-                {t("whyicr.success.process")}
-              </h4>
-              <p className="mt-2 text-sm text-slate-600">
-                {t("whyicr.success.item4")}
-              </p>
             </div>
 
-            <div className="rounded-lg bg-white p-6 shadow-sm text-left">
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-emerald-50 text-emerald-600 mb-3">
-                <FileText className="h-5 w-5" />
+            <div
+              className="rounded-lg bg-white p-6 shadow-sm"
+              dir={language === "ar" ? "rtl" : "ltr"}
+            >
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                  <FileText className="h-5 w-5" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-slate-900">
+                    {t("whyicr.success.talent")}
+                  </h4>
+                  <p className="mt-2 text-sm text-slate-600">
+                    ICR teams blend marketing experience with core research
+                    skill — delivering clarity at every stage.
+                  </p>
+                </div>
               </div>
-              <h4 className="text-lg font-semibold text-slate-900">
-                {t("whyicr.success.talent")}
-              </h4>
-              <p className="mt-2 text-sm text-slate-600">
-                ICR teams blend marketing experience with core research skill —
-                delivering clarity at every stage.
-              </p>
             </div>
           </div>
         </div>
