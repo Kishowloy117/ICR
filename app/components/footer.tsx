@@ -36,7 +36,12 @@ export default function Footer() {
 
           {/* Middle - Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold text-slate-900 mb-4">
+            <h4
+              // className="text-lg font-semibold text-slate-900 mb-4"
+              className={`text-lg font-semibold text-slate-900 mb-4 ${
+                language === "ar" ? "text-right" : "text-left"
+              }`}
+            >
               {t("footer.quicklinks")}
             </h4>
             <ul className="grid grid-cols-2 gap-2 text-sm text-slate-700">
@@ -102,19 +107,33 @@ export default function Footer() {
 
           {/* Right - Contact */}
           <div>
-            <h4 className="text-lg font-semibold text-slate-900 mb-4">
+            <h4
+              // className="text-lg font-semibold text-slate-900 mb-4"
+              className={`text-lg font-semibold text-slate-900 mb-4 ${
+                language === "ar" ? "text-right" : "text-left"
+              }`}
+            >
               {t("nav.contact")}
             </h4>
-            <div className="text-sm text-slate-700">
+            <div
+              // className="text-sm text-slate-700"
+              className={`text-sm text-slate-700 ${
+                language === "ar" ? "text-right" : "text-left"
+              }`}
+            >
               <a
                 href="mailto:info@icr-me.com"
-                className="hover:text-emerald-600 transition-colors"
+                // className="hover:text-emerald-600 transition-colors"
               >
                 info@icr-me.com
               </a>
             </div>
 
-            <p className="mt-3 text-sm text-slate-600">
+            <p
+              className={`mt-3 text-sm text-slate-600 ${
+                language === "ar" ? "text-right" : "text-left"
+              }`}
+            >
               {t("contact.email.desc")}
             </p>
           </div>
