@@ -171,9 +171,9 @@ export default function CareerPage() {
         </div>
 
         <div className="mx-auto max-w-3xl px-4 text-center">
-          <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-4">
+          {/* <div className="inline-block rounded-full bg-black/20 px-3 py-1 text-xs text-white/70 mb-4">
             {t("careers.section.careers")}
-          </div>
+          </div> */}
           <h1 className="mx-auto max-w-3xl text-3xl font-sans leading-tight text-white md:text-5xl">
             {t("careers.hero.title")}
             <br />

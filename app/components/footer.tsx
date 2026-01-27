@@ -51,7 +51,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/expertise"
-                  className="hover:text-emerald-600 transition-colors block"
+                  className="hover:text-emerald-600 transition-colors block text-right"
                 >
                   {t("nav.expertise")}
                 </Link>
@@ -67,7 +67,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="hover:text-emerald-600 transition-colors block"
+                  className="hover:text-emerald-600 transition-colors block text-right"
                 >
                   {t("nav.about")}
                 </Link>
@@ -83,7 +83,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/ContactUS"
-                  className="hover:text-emerald-600 transition-colors block"
+                  className="hover:text-emerald-600 transition-colors block text-right"
                 >
                   {t("nav.contact")}
                 </Link>
