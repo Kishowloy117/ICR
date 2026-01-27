@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <footer
@@ -51,7 +51,10 @@ export default function Footer() {
               <li>
                 <Link
                   href="/expertise"
-                  className="hover:text-emerald-600 transition-colors block text-right"
+                  // className="hover:text-emerald-600 transition-colors block text-right"
+                  className={`hover:text-emerald-600 transition-colors block ${
+                    language === "ar" ? "text-right" : "text-left"
+                  }`}
                 >
                   {t("nav.expertise")}
                 </Link>
@@ -67,7 +70,10 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="hover:text-emerald-600 transition-colors block text-right"
+                  // className="hover:text-emerald-600 transition-colors block text-right"
+                  className={`hover:text-emerald-600 transition-colors block ${
+                    language === "ar" ? "text-right" : "text-left"
+                  }`}
                 >
                   {t("nav.about")}
                 </Link>
@@ -83,7 +89,10 @@ export default function Footer() {
               <li>
                 <Link
                   href="/ContactUS"
-                  className="hover:text-emerald-600 transition-colors block text-right"
+                  // className="hover:text-emerald-600 transition-colors block text-right"
+                  className={`hover:text-emerald-600 transition-colors block ${
+                    language === "ar" ? "text-right" : "text-left"
+                  }`}
                 >
                   {t("nav.contact")}
                 </Link>
