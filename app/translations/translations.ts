@@ -550,7 +550,7 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "nav.expertise": "专业知识",
     "nav.whyicr": "为什么选择ICR",
     "nav.about": "关于",
-    "nav.careers": "职业",
+    "nav.careers": "职业发展",
     "nav.contact": "联系",
     "nav.menu": "菜单",
     "nav.language": "语言",
@@ -600,7 +600,7 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
     "home.expertise.data.desc": "将复杂数据转化为清晰、可执行的洞察成果。",
 
     // Home page - Why Choose ICR
-    "home.why.title": "为什么选择洞察咨询与研究",
+    "home.why.title": "为什么选择ICR",
     "home.why.description":
       "我们帮助组织实现从证据到洞察，再从洞察到清晰、可论证的决策的转变。",
     "home.why.listen": "我们先倾听，并为您的业务需求定制研究。",
@@ -986,7 +986,7 @@ export const translations: Record<"en" | "zh" | "ar", TranslationKeys> = {
       "提供聚焦于业务启示与行动建议的决策就绪型报告。",
 
     "whyicr.industries.title": "我们服务的行业与领域：",
-    "whyicr.industries.description": "",
+    "whyicr.industries.description": "我们为客户提供跨领域支持:",
 
     "whyicr.industry.consumer": "消费品 (FMCG/Consumer Goods)",
     "whyicr.industry.healthcare": "医疗与制药 (Healthcare & Pharma)",

@@ -160,11 +160,11 @@ export default function ServicesPage() {
                   {t("services.process.description")}
                 </p>
 
-                <div className="mt-6 flex items-center space-x-3">
-                  <div className="h-1 w-20 rounded bg-emerald-400"></div>
-                  <div className="h-1 w-24 rounded bg-slate-600"></div>
-                  <div className="h-1 w-24 rounded bg-slate-600"></div>
-                  <div className="h-1 w-24 rounded bg-slate-600"></div>
+                <div className="mt-6 flex items-center space-x-2 md:space-x-3">
+                  <div className="h-1 w-12 md:w-20 rounded bg-emerald-400"></div>
+                  <div className="h-1 w-16 md:w-24 rounded bg-slate-600"></div>
+                  <div className="h-1 w-16 md:w-24 rounded bg-slate-600 "></div>
+                  <div className="h-1 w-16 md:w-24 rounded bg-slate-600 hidden md:block"></div>
                 </div>
               </div>
 
