@@ -268,7 +268,7 @@ export default function ServicesPage() {
         {/* CTA */}
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center py-4 px-4 bg-gradient-to-br from-[#0a1f2e] to-[#041a2e]">
           <Link href="/ContactUS" className="w-full sm:w-auto">
-            <Button className="bg-emerald-500 w-full sm:w-auto px-6 py-6 text-sm font-semibold hover:bg-emerald-600">
+            <Button className="bg-emerald-500 w-full sm:w-auto sm:px-2 px-6 py-6 text-sm font-semibold hover:bg-emerald-600">
               {t("services.cta.discuss")}
             </Button>
           </Link>
